@@ -1,0 +1,17 @@
+{
+		"email" = "supermanager_ED@yopmail.com",
+		"password" = "123456",
+		"confirm password" = "123456789",
+		"partnerName" = "Dong Corporation",
+		"brandName" = "Automation_Brand_" + generateNumber(),
+		"field" = "FOOD",
+		"placeholderTextBoxKR" = "입력",
+		"placeholderTextBoxEN" = "Input",
+		"placeholderPhoneTextBoxEN" = "Number Only",
+		"placeholderPhoneTextBoxKR" = "숫자만 입력",
+		"placeholderFieldDropdownListKR" = "선택",
+		"placeholderFieldDropdownListEN" = "Select",
+		"placeholderPartnerDropdownListKR" = "파트너 검색",
+		"placeholderPartnerDropdownListEN" = "Partner search"
+}
+	
