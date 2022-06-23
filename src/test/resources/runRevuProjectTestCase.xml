@@ -8,8 +8,8 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
 
-	<parameter name="urlAdmin" value="https://admin.test.ent.revu.net/login?redirect=%2F" />
-	<parameter name="urlUser" value="https://vn.revu.net/" />
+	<parameter name="urlAdmin" value="dev" />
+	<!--<parameter name="urlUser" value="https://vn.revu.net/" />-->
 
 	<test name="Run on FireFox">
 		<parameter name="browser" value="firefox" />

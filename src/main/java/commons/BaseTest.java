@@ -54,7 +54,8 @@ public class BaseTest {
 		  }else {
 			  throw new RuntimeException("Browser name is invalid");
 		  }
-		driver.get(appUrl);
+		//driver.get(appUrl);
+		driver.get(GlobalConstants.ADMIN_TESTING_URL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
 		return driver;
@@ -63,8 +64,11 @@ public class BaseTest {
 	protected String getEnvironmentUrl(String environmentName) {
 		String url = null;
 		switch (environmentName) {
-		case "ADMIN":
+		case "Test":
 			url = GlobalConstants.ADMIN_TESTING_URL;
+			break;
+		case "Staging":
+			url = GlobalConstants.ADMIN_STAGING_URL;
 			break;
 		case "INFLUENCERS":
 			url = GlobalConstants.PORTAL_TESTING_URL;

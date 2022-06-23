@@ -17,6 +17,9 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 
+		<!-- Default Environment -->
+		<!--<environment>Test</environment> -->
+
 		<!-- Global variable for dependencies -->
 		<webdriver.version>3.141.59</webdriver.version>
 		<testng.version>6.14.3</testng.version>
@@ -130,6 +133,14 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+
 	</dependencies>
 
 	<!-- Compiler/ Run Test -->
@@ -155,7 +166,7 @@
 				<configuration>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<file>src/test/resources/runRevuProject.xml</file>
+						<file>src/test/resources/runRevuProjectTestCase.xml</file>
 					</suiteXmlFiles>
 
 					<!-- Argument -->

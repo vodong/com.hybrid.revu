@@ -33,11 +33,11 @@ public class Advertiser_Management extends BaseTest {
 	String imageAvatart = "Avatar.jpg";
 	String partnerName, brandName, field, placeholderTextBoxKR,placeholderTextBoxEN, placeholderFieldDropdownListKR, placeholderFieldDropdownListEN, placeholderPhoneTextBoxEN, placeholderPhoneTextBoxKR, placeholderPartnerDropdownListKR, placeholderPartnerDropdownListEN;
 
-	@Parameters({ "browser", "urlAdmin", "urlUser" })
+	@Parameters({ "browser", "urlAdmin"})
 	@BeforeClass
-	public void beforeClass(String browserName, String adminURL, String userURL) {
+	public void beforeClass(String browserName, String adminURL) {
 		this.adminURL = adminURL;
-		this.userURL = userURL;
+//		this.userURL =  userURL;
 		driver = getBrowserDriver(browserName, this.adminURL);
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		emailaddress = "supermanager_ED@yopmail.com";

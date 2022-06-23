@@ -5,6 +5,7 @@ import java.io.File;
 public class GlobalConstants {
 	public static final String PORTAL_TESTING_URL = "https://tw.test.porsche.revu.net/";
 	public static final String ADMIN_TESTING_URL = "https://admin.test.ent.revu.net/login?redirect=%2F";
+	public static final String ADMIN_STAGING_URL = "https://admin.staging.ent.revu.net/login?redirect=%2F";
 	public static final String PROJECT_PATH = System.getProperty("user.dir");
 	public static final String JAVA_VERSION = System.getProperty("java.version");
 	public static final String OS_NAME = System.getProperty("os.name");
