@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Revu" parallel="false">
+  
+	<listeners>
+		<listener class-name="commons.MethodListener"/>
+		<listener class-name="reportConfig.ExtentTestListener"/>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+
+	<!--<parameter name="urlAdmin" value="dev" />-->
+	<!--<parameter name="urlUser" value="https://vn.revu.net/" />-->
+
+	<test name="Run on FireFox">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.revu.admin.Advertiser_Management"/>
+		</classes>
+	  </test>
+</suite> <!-- Suite -->

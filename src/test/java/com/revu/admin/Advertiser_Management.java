@@ -5,6 +5,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.lang.reflect.Method;
+
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +17,7 @@ import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
+import environmentConfig.Environment;
 import pageObjects.revu.Admin.AdminBrandManagementObject;
 import pageObjects.revu.Admin.AdminCreateBrandManagementObject;
 import pageObjects.revu.Admin.AdminDashBoardObject;
@@ -29,16 +32,20 @@ public class Advertiser_Management extends BaseTest {
 	AdminBrandManagementObject adminBrandManagementPage;
 	AdminCreateBrandManagementObject adminCreateNewBrandPage;
 	String emailaddress, password, confirmpassword;
-	String adminURL, userURL;
 	String imageAvatart = "Avatar.jpg";
 	String partnerName, brandName, field, placeholderTextBoxKR,placeholderTextBoxEN, placeholderFieldDropdownListKR, placeholderFieldDropdownListEN, placeholderPhoneTextBoxEN, placeholderPhoneTextBoxKR, placeholderPartnerDropdownListKR, placeholderPartnerDropdownListEN;
-
-	@Parameters({ "browser", "urlAdmin"})
+	
+	Environment environment;
+	
+	@Parameters({ "browser"})
 	@BeforeClass
-	public void beforeClass(String browserName, String adminURL) {
-		this.adminURL = adminURL;
-//		this.userURL =  userURL;
-		driver = getBrowserDriver(browserName, this.adminURL);
+	public void beforeClass(String browserName) {
+		
+		String environmentName = System.getProperty("envMaven");
+		ConfigFactory.setProperty("envOwner", environmentName);
+		environment = ConfigFactory.create(Environment.class);
+		driver = getBrowserDriver(browserName, environment.appUrl());
+		
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		emailaddress = "supermanager_ED@yopmail.com";
 		password = "123456";

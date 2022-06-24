@@ -18,7 +18,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 
 		<!-- Default Environment -->
-		<!--<environment>Test</environment> -->
+		<environment>Test</environment>
 
 		<!-- Global variable for dependencies -->
 		<webdriver.version>3.141.59</webdriver.version>
@@ -166,7 +166,7 @@
 				<configuration>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<file>src/test/resources/runRevuProjectTestCase.xml</file>
+						<file>src/test/resources/runRevuProjectTestCase2.xml</file>
 					</suiteXmlFiles>
 
 					<!-- Argument -->

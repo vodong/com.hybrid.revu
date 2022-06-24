@@ -3,7 +3,7 @@ package environmentConfig;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
-@Sources({"classpath:${environment}.properties"})
+@Sources({"classpath:${envOwner}.properties"})
 public interface Environment extends Config {
 	
 	@Key("app.url")
