@@ -59,7 +59,7 @@ public class AdminBrandManagementObject extends BasePage {
 	}
 
 	public void enterToSearchBrandTextBox(String textValue) {
-		waitForAllElementInVisible(driver, AdminAdvertiserPageUI.BRAND_TEXTBOX);
+		waitForElementClickable(driver, AdminAdvertiserPageUI.BRAND_TEXTBOX);
 		sendkeyToElement(driver, AdminAdvertiserPageUI.BRAND_TEXTBOX, textValue);
 	}
 
@@ -116,5 +116,10 @@ public class AdminBrandManagementObject extends BasePage {
 	public Object getBrandNameByRownNumber(String rowNumber, String columnNumber) {
 		waitForAllElementVisible(driver, AdminAdvertiserPageUI.BRAND_NAME_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, columnNumber);
 		return getElementText(driver, AdminAdvertiserPageUI.BRAND_NAME_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, columnNumber);
+	}
+
+	public void clickToResetButton() {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.RESET_BUTTON);
+		clickToElement(driver, AdminAdvertiserPageUI.RESET_BUTTON);
 	}
 }

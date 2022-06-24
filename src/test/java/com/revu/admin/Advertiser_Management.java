@@ -711,57 +711,80 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_09_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
-//		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Search Brand");
-//		adminBrandManagementPage.enterToSearchBrandTextBox(brandName);
-
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Search Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Click on Search Button");
 		adminBrandManagementPage.clickToSearchButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 03: Click on Delete Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Delete Button");
 		
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
 
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 05: Verify Message Popup is Displayed");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 03: Verify Message Popup is Displayed");
 		assertTrue(adminBrandManagementPage.isPopupDisplayed());
 
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 06: Verify Message Popup translate to English");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 04: Verify Message Popup translate to English");
 		adminBrandManagementPage.openSelectLanguageList(driver, "English");
 		assertEquals(adminBrandManagementPage.getTitlePopup(), "Delete Brand");
 		assertEquals(adminBrandManagementPage.getTextMessage(), "Are you sure you want to delete this brand? You can't undo this action.");
 		assertEquals(adminBrandManagementPage.getDeleteButtonText(), "Delete");
 		assertEquals(adminBrandManagementPage.getCancelButtonText(), "Cancel");
 
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 07: Verify Message Popup translate to Korea");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 05: Verify Message Popup translate to Korea");
 		adminBrandManagementPage.openSelectLanguageList(driver, "한국어");
 		assertEquals(adminBrandManagementPage.getTitlePopup(), "브랜드 삭제");
 		assertEquals(adminBrandManagementPage.getTextMessage(), "브랜드를 삭제 하시겠습니까? 삭제된 후에는 다시 복구할 수 없습니다.");
 		assertEquals(adminBrandManagementPage.getDeleteButtonText(), "삭제하기");
 		assertEquals(adminBrandManagementPage.getCancelButtonText(), "취소");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Close Popup By X Icon");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Close Popup By X Icon");
 		adminBrandManagementPage.clickToClosePopupByIcon();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 10: Close Popup By Clicking On Cancel Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Close Popup By Clicking On Cancel Button");
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
 		adminBrandManagementPage.clickToClosePopupCancelButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 11: Delete Brand");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 08: Delete Brand");
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
 		adminBrandManagementPage.clickToDeleteButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 12: Verify Brand Is Deleted");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Verify Brand Is Deleted");
 		assertNotEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandName);
 	}
 
 	@Test
 	public void TC_10_Delete_Brand_Advertiser_Have_CamPaign(Method method) {
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Search Brand");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Search Brand");
+		adminBrandManagementPage.enterToSearchBrandTextBox(brandNameHasCampaign);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Search Button");
+		adminBrandManagementPage.clickToResetButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 03: Search Brand");
+		adminBrandManagementPage.enterToSearchBrandTextBox(brandNameHasCampaign);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Delete Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 04: Click on Search Button");
+		adminBrandManagementPage.clickToSearchButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 03: Verify Message on Popup");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Click on Delete Button");
+		
+		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 04: Close Popup");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 06: Verify Message Popup is Displayed");
+		assertTrue(adminBrandManagementPage.isPopupDisplayed());
+
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 07: Verify Message Popup translate to English");
+		adminBrandManagementPage.openSelectLanguageList(driver, "English");
+		assertEquals(adminBrandManagementPage.getTitlePopup(), "Delete Brand");
+		assertEquals(adminBrandManagementPage.getTextMessage(), "You cannot delete the brand that has any campaign history.");
+		assertEquals(adminBrandManagementPage.getDeleteButtonText(), "Confirm");
+
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 08: Verify Message Popup translate to Korea");
+		adminBrandManagementPage.openSelectLanguageList(driver, "한국어");
+		assertEquals(adminBrandManagementPage.getTitlePopup(), "브랜드 삭제");
+		assertEquals(adminBrandManagementPage.getTextMessage(), "캠페인을 진행한 이력이 있는 광고주는 삭제할 수 없습니다.");
+		assertEquals(adminBrandManagementPage.getDeleteButtonText(), "확인");
+
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Verify Brand Is Deleted");
+		assertEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandNameHasCampaign);
 	}
 
 	@AfterClass(alwaysRun = true)

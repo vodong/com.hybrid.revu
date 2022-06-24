@@ -13,6 +13,7 @@ public class AdminAdvertiserPageUI {
 	public static final String CREATE_NEW_BRAND_BUTTON = "XPATH=//a[contains(text(),'%s')]";
 	public static final String BRAND_TEXTBOX = "XPATH=//input[@ng-model='filter.l_name']";
 	public static final String SEARCH_BUTTON = "CSS=button.btn-search";
+	public static final String RESET_BUTTON = "CSS=button.btn-clear";
 	public static final String DELETE_BRAND_POPUP = "CSS=div.modal-content";
 	public static final String TITLE_DELETE_BRAND_POPUP = "xpath=//div[@ng-controller='AlertConfirmController']//h5";
 	public static final String MESSAGE_DELETE_BRAND_POPUP = "xpath=//div[@ng-controller='AlertConfirmController']//span";
