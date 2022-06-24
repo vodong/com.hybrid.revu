@@ -57,4 +57,64 @@ public class AdminBrandManagementObject extends BasePage {
 		waitForElementVisible(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue, String.valueOf(totalNumberIndex));
 		return isElementDisplayed(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue, String.valueOf(totalNumberIndex));
 	}
+
+	public void enterToSearchBrandTextBox(String textValue) {
+		waitForAllElementInVisible(driver, AdminAdvertiserPageUI.BRAND_TEXTBOX);
+		sendkeyToElement(driver, AdminAdvertiserPageUI.BRAND_TEXTBOX, textValue);
+	}
+
+	public void clickToSearchButton() {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.SEARCH_BUTTON);
+		clickToElement(driver, AdminAdvertiserPageUI.SEARCH_BUTTON);
+	}
+
+	public void clickToDeleteButtonByRownNumber(String rowNumber, String textValue) {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.TEXT_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
+		clickToElement(driver, AdminAdvertiserPageUI.TEXT_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
+	}
+
+	public boolean isPopupDisplayed() {
+		waitForElementVisible(driver, AdminAdvertiserPageUI.DELETE_BRAND_POPUP);
+		return isElementDisplayed(driver, AdminAdvertiserPageUI.DELETE_BRAND_POPUP);
+	}
+
+	public String getTitlePopup() {
+		waitForElementVisible(driver, AdminAdvertiserPageUI.TITLE_DELETE_BRAND_POPUP);
+		return getElementText(driver, AdminAdvertiserPageUI.TITLE_DELETE_BRAND_POPUP);
+	}
+
+	public String getTextMessage() {
+		waitForElementVisible(driver, AdminAdvertiserPageUI.MESSAGE_DELETE_BRAND_POPUP);
+		return getElementText(driver, AdminAdvertiserPageUI.MESSAGE_DELETE_BRAND_POPUP);
+	}
+
+	public String getDeleteButtonText() {
+		waitForElementVisible(driver, AdminAdvertiserPageUI.DELETE_BUTTON_POPUP);
+		return getElementText(driver, AdminAdvertiserPageUI.DELETE_BUTTON_POPUP);
+	}
+
+	public String getCancelButtonText() {
+		waitForElementVisible(driver, AdminAdvertiserPageUI.CANCEL_BUTTON_POPUP);
+		return getElementText(driver, AdminAdvertiserPageUI.CANCEL_BUTTON_POPUP);
+	}
+
+	public void clickToClosePopupByIcon() {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.CLOSE_BUTTON_POPUP);
+		clickToElement(driver, AdminAdvertiserPageUI.CLOSE_BUTTON_POPUP);
+	}
+
+	public void clickToClosePopupCancelButton() {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.CANCEL_BUTTON_POPUP);
+		clickToElement(driver, AdminAdvertiserPageUI.CANCEL_BUTTON_POPUP);
+	}
+
+	public void clickToDeleteButton() {
+		waitForElementClickable(driver, AdminAdvertiserPageUI.DELETE_BUTTON_POPUP);
+		clickToElement(driver, AdminAdvertiserPageUI.DELETE_BUTTON_POPUP);
+	}
+
+	public Object getBrandNameByRownNumber(String rowNumber, String columnNumber) {
+		waitForAllElementVisible(driver, AdminAdvertiserPageUI.BRAND_NAME_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, columnNumber);
+		return getElementText(driver, AdminAdvertiserPageUI.BRAND_NAME_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, columnNumber);
+	}
 }

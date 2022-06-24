@@ -8,7 +8,7 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
 
-	<parameter name="urlAdmin" value="dev" />
+	<parameter name="appUrl" value="Test" />
 	<!--<parameter name="urlUser" value="https://vn.revu.net/" />-->
 
 	<test name="Run on FireFox">

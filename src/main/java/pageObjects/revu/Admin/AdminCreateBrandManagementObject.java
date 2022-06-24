@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.GlobalConstants;
+import pageUIs.revu.admin.AdminAdvertiserPageUI;
 import pageUIs.revu.admin.AdminCreateBrandPageUI;
 
 public class AdminCreateBrandManagementObject extends BasePage {
@@ -139,5 +140,10 @@ public class AdminCreateBrandManagementObject extends BasePage {
 		waitForElementVisible(driver, AdminCreateBrandPageUI.PARTNER_TEXTBOX);
 		selectitemindropdownlist(driver, AdminCreateBrandPageUI.PARTNER_TEXTBOX, AdminCreateBrandPageUI.PARTNER_DROPDOWN_LIST, textValue);
 		sleepInSecond(shorttime);
+	}
+
+	public void enterToEmailTextBox(String emailAddress) {
+		waitForElementVisible(driver, AdminCreateBrandPageUI.EMAIL_TEXTBOX);
+		sendkeyToElement(driver, AdminCreateBrandPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 }
