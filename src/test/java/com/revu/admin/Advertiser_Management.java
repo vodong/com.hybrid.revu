@@ -74,7 +74,7 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_01_Open_Admin_Page_And_Select_Country(Method method) {
-		ExtentTestManager.startTest(method.getName(), "Login To DasbhBoard Page");
+		ExtentTestManager.startTest(method.getName(), "Open Admin Page And Select Country");
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Open Login popup");
 
 		adminHomePage.openLoginPopup();
@@ -86,6 +86,7 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_02_Login_To_DashBoard_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Login To DasbhBoard Page");
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 01: Enter Email'" + emailaddress + "'");
 		adminHomePage.enterToEmailTextbox(emailaddress);
 
@@ -101,6 +102,7 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_03_Check_Translate_To_Korea_Brand_Management_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 01: Click on 'Advertiser Brand Management Link");
 		adminDashBoardPage.clickOnByMenuNameLink(driver, "광고주 관리");
@@ -286,6 +288,7 @@ public class Advertiser_Management extends BaseTest {
 	}
 
 	public void TC_04_Check_Translate_To_English_Brand_Management_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 1: Change to English Language");
 		adminBrandManagementPage.openSelectLanguageList(driver, "English");
 
@@ -379,6 +382,7 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_05_Check_Translate_To_Korea_Create_Brand_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 01: Click on 'Create a new Brand' Button");
 		adminBrandManagementPage.openCreateANewBrand("+ 새 브랜드 생성");
@@ -512,6 +516,7 @@ public class Advertiser_Management extends BaseTest {
 	}
 
 	public void TC_06_Check_Translate_To_English_Create_Brand_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 01: Verify Title of Company Information section translate to English");
 		adminCreateNewBrandPage.refeshCurrentPage(driver);
@@ -642,6 +647,7 @@ public class Advertiser_Management extends BaseTest {
 	
 	@Test
 	public void TC_07_Create_Brand_Non_Use_Option(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Create Brand By Nonuse Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
 		adminCreateNewBrandPage.refeshCurrentPage(driver);
 		adminCreateNewBrandPage.upLoadMultipleFiles(driver, imageAvatart);
@@ -671,6 +677,7 @@ public class Advertiser_Management extends BaseTest {
 	}
 
 	public void TC_08_Create_Brand_Use_Option(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Create Brand By Use Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
 		adminBrandManagementPage.openCreateANewBrand("+ 새 브랜드 생성");
 		adminCreateNewBrandPage.upLoadMultipleFiles(driver, imageAvatart);
@@ -711,6 +718,7 @@ public class Advertiser_Management extends BaseTest {
 
 	@Test
 	public void TC_09_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Delete Brand Do Not Have Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Click on Search Button");
 		adminBrandManagementPage.clickToSearchButton();
 
@@ -751,7 +759,8 @@ public class Advertiser_Management extends BaseTest {
 	}
 
 	@Test
-	public void TC_10_Delete_Brand_Advertiser_Have_CamPaign(Method method) {
+	public void TC_10_Delete_Brand_Advertiser_Has_CamPaign(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Delete Brand Has Campaign");
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Search Brand");
 		adminBrandManagementPage.enterToSearchBrandTextBox(brandNameHasCampaign);
 		
