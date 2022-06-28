@@ -18,4 +18,8 @@ public class PartnerBrandPageObject extends BasePage {
 		waitForElementVisible(driver, PartnerPageUI.PARTNER_NAME);
 		return getElementText(driver, PartnerPageUI.PARTNER_NAME);
 	}
+
+	public void closePartnerBrandPage(String linkValue) {
+		CloseAllWindownsWithoutParent(driver, linkValue);
+	}
 }

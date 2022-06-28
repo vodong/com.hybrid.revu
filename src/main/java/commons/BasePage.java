@@ -113,6 +113,16 @@ public class BasePage {
 			}
 		}
 	}
+	
+	protected void switchToWindowById (WebDriver driver, String currentid) {
+		Set<String> Allwindows = driver.getWindowHandles();
+		
+		for (String id : Allwindows) {
+			if(!id.equals(currentid)) {
+				driver.switchTo().window(id);	
+			}
+		}
+	}
 
 	protected void CloseAllWindownsWithoutParent(WebDriver driver, String parentid) {
 

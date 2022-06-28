@@ -35,7 +35,7 @@ public class Advertiser_Management extends BaseTest {
 	PartnerBrandPageObject partnerBrandPage;
 	AdminDetailBrandManagementObject adminDetailBrandPage;
 	AdminCreateBrandManagementObject adminCreateNewBrandPage;
-	String emailaddress, password, confirmpassword, brandNameHasCampaign, partnerNameAndEmail, partnerEmailAddress;
+	String emailaddress, password, confirmpassword, brandNameHasCampaign, partnerNameAndEmail, partnerEmailAddress, getCurrentUrl;
 	String imageAvatart = "Avatar.jpg";
 	String partnerName, brandName, field, placeholderTextBoxKR, placeholderTextBoxEN, placeholderFieldDropdownListKR,
 			placeholderFieldDropdownListEN, placeholderPhoneTextBoxEN, placeholderPhoneTextBoxKR,
@@ -723,9 +723,11 @@ public class Advertiser_Management extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 10: Delete Brand");
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
 		adminBrandManagementPage.clickToDeleteButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 11: Click on 'Brand Management Link");
+		adminBrandManagementPage.openByNameLink(driver, "브랜드 관리");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 11: Verify Brand Is Deleted '" + brandName + "'");
-		adminBrandManagementPage.refeshCurrentPage(driver);
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 12: Verify Brand Is Deleted '" + brandName + "'");
 		assertNotEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandName);
 	}
 
@@ -848,30 +850,34 @@ public class Advertiser_Management extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 10: Open Brand Information Detail Page");
 		adminBrandManagementPage.clickToBrandNameByRownNumber("1", brandName);
 		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
+		getCurrentUrl = adminDetailBrandPage.getPageUrl(driver);
 		
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 11: Verify Brand Information Detail Page");
 		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
 					
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 12: Open See Brand Partner Page");
 		adminDetailBrandPage.clickToSeeBrandPageButton();
-		adminDetailBrandPage.switchToWinDowByLink("https://partner.test.ent.revu.net/");
+		adminDetailBrandPage.switchToWinDownById("1");
 		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
 		
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Verify Brand Partner Page");
 		assertEquals(partnerBrandPage.getPartnerName(), brandName);
 		
-//		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Close Brand Partner Page");
-//		partnerBrandPage.closePartnerBrandPage();
-//		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
-//		
-//		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Change Brand Information");
-//		adminDetailBrandPage.switchToWinDowByLink();
-//		adminDetailBrandPage.clickOnButtonByName("설정함");
-//		adminDetailBrandPage.enterToEmailTextBox(emailaddress);
-//		adminDetailBrandPage.clickToPasswordSettingButton("직접 설정");
-//		adminDetailBrandPage.enterToPasswordTextBox("123456");
-//		adminDetailBrandPage.enterToConfirmPasswordTextBox("123456");
-//		adminDetailBrandPage.clickSaveButton("저장하기");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Close Brand Partner Page");
+//		adminDetailBrandPage.switchToWinDowByLink("https://admin.test.ent.revu.net");
+		adminDetailBrandPage.switchToWinDownById("0");
+		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Change Brand Information");
+		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Click on Use Button");
+		adminDetailBrandPage.clickOnButtonByName("설정함");
+		adminDetailBrandPage.enterToEmailTextBox(emailaddress);
+		adminDetailBrandPage.clickToPasswordSettingButton("직접 설정");
+		adminDetailBrandPage.enterToPasswordTextBox("123456");
+		adminDetailBrandPage.enterToConfirmPasswordTextBox("123456");
+		adminDetailBrandPage.clickSaveButton("저장하기");
 //		
 //		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
 
