@@ -100,13 +100,14 @@ public class BasePage {
 		}
 	}
 
-	protected void switchtowindowbylink(WebDriver driver, String expectedrelativelink) {
+	public void switchtowindowbylink(WebDriver driver, String expectedrelativelink) {
 		Set<String> Allwindows = driver.getWindowHandles();
 
 		for (String id : Allwindows) {
 			if (!id.equals(expectedrelativelink)) {
+				sleepInSecond(shorTimeOut);
 				driver.switchTo().window(id);
-
+				sleepInSecond(shorTimeOut);
 				String actuallink = driver.getCurrentUrl();
 				if (actuallink.equals(expectedrelativelink))
 					break;
@@ -114,7 +115,7 @@ public class BasePage {
 		}
 	}
 	
-	protected void switchToWindowById (WebDriver driver, String currentid) {
+	public void switchToWindowById (WebDriver driver, String currentid) {
 		Set<String> Allwindows = driver.getWindowHandles();
 		
 		for (String id : Allwindows) {

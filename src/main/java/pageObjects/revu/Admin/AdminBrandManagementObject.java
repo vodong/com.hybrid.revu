@@ -125,6 +125,7 @@ public class AdminBrandManagementObject extends BasePage {
 
 	public void clickToBrandNameByRownNumber(String rowNumber, String textValue) {
 		waitForElementClickable(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
+		sleepInSecond(shortTimeOut);
 		clickToElement(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
 	}
 }

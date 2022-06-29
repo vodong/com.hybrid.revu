@@ -122,6 +122,7 @@ public class AdminCreateBrandManagementObject extends BasePage {
 
 	public boolean isAvatarUpLoaded() {
 		waitForElementVisible(driver, AdminCreateBrandPageUI.AVATAR_UPLOADED);
+		sleepInSecond(shorttime);
 		return isImageLoaded(driver, AdminCreateBrandPageUI.AVATAR_UPLOADED);
 	}
 	

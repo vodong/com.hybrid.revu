@@ -20,10 +20,6 @@ public class AdminDetailBrandManagementObject extends BasePage {
 		clickToElement(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
 	}
 
-	public void switchToWinDowByLink(String textValue) {
-		switchtowindowbylink(driver, textValue);
-	}
-
 	public String getSeeBrandTextButton() {
 		waitForElementVisible(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
 		return getElementText(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
@@ -59,8 +55,7 @@ public class AdminDetailBrandManagementObject extends BasePage {
 		clickToElement(driver, PartnerPageUI.BUTTON_NAME, textValue);
 	}
 
-	public void switchToWinDownById(String id) {
-		switchToWindowById(driver, id);
+	public void switchTab(String urlValue) {
+		switchtowindowbylink(driver, urlValue);
 	}
-
 }

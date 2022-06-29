@@ -103,7 +103,7 @@ public class Advertiser_Management extends BaseTest {
 		assertTrue(adminDashBoardPage.isLogOutLinkDisplayed());
 	}
 
-	@Test
+	
 	public void TC_03_Check_Translate_To_Korea_Brand_Management_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -383,7 +383,7 @@ public class Advertiser_Management extends BaseTest {
 		adminBrandManagementPage.openSelectLanguageList(driver, "한국어");
 	}
 
-	@Test
+	
 	public void TC_05_Check_Translate_To_Korea_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -518,7 +518,6 @@ public class Advertiser_Management extends BaseTest {
 		assertEquals(adminCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(), "정보가 일치하지 않습니다.");
 	}
 
-	@Test
 	public void TC_06_Check_Translate_To_English_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -649,7 +648,7 @@ public class Advertiser_Management extends BaseTest {
 				"The confirmation does not match.");
 	}
 	
-	@Test
+	
 	public void TC_07_Create_Brand_Non_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Nonuse Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
@@ -679,9 +678,8 @@ public class Advertiser_Management extends BaseTest {
 		assertTrue(adminBrandManagementPage.isTextCreatedBrandAtRowDisplayed("브랜드명", "1", brandName));
 		assertTrue(adminBrandManagementPage.isTextCreatedBrandAtRowDisplayed("분야", "1", field));
 
-	}
-	
-	@Test
+	}	
+
 	public void TC_08_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Do Not Have Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Click on Search Button");
@@ -731,7 +729,7 @@ public class Advertiser_Management extends BaseTest {
 		assertNotEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandName);
 	}
 
-	@Test
+	
 	public void TC_09_Create_Brand_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Use Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
@@ -776,7 +774,7 @@ public class Advertiser_Management extends BaseTest {
 		adminBrandManagementPage.clickToClosePopupCancelButton();
 	}
 
-	@Test
+
 	public void TC_10_Delete_Brand_Advertiser_Has_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Has Campaign");
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Search Brand");
@@ -814,9 +812,17 @@ public class Advertiser_Management extends BaseTest {
 		assertEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandNameHasCampaign);
 	}
 	
+	
 	@Test
 	public void TC_11_Edit_Brand_Information(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Edit Brand Information");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Click on 'Advertiser Brand Management Link");
+		adminDashBoardPage.clickOnByMenuNameLink(driver, "광고주 관리");
+
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on 'Brand Management Link");
+		adminDashBoardPage.openByNameLink(driver, "브랜드 관리");
+		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
+		
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Click on 'Create a new Brand' Button");
 		adminBrandManagementPage.openCreateANewBrand("+ 새 브랜드 생성");
 		adminCreateNewBrandPage = PageGeneratorManager.getCreateANewBrandPage(driver);
@@ -850,40 +856,43 @@ public class Advertiser_Management extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 10: Open Brand Information Detail Page");
 		adminBrandManagementPage.clickToBrandNameByRownNumber("1", brandName);
 		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 11: Get Current Page URL");
 		getCurrentUrl = adminDetailBrandPage.getPageUrl(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 11: Verify Brand Information Detail Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 12: Verify Brand Information Detail Page");
 		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
 					
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 12: Open See Brand Partner Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Open See Brand Partner Page");
 		adminDetailBrandPage.clickToSeeBrandPageButton();
-		adminDetailBrandPage.switchToWinDownById("1");
-		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Verify Brand Partner Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Switch To Advertiser Page");
+		adminDetailBrandPage.switchTab("partner.test.ent.revu.net");
+		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
+
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Verify Brand Partner Page");
 		assertEquals(partnerBrandPage.getPartnerName(), brandName);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Close Brand Partner Page");
-//		adminDetailBrandPage.switchToWinDowByLink("https://admin.test.ent.revu.net");
-		adminDetailBrandPage.switchToWinDownById("0");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 16: Switch To Edit Brand Page");
+		partnerBrandPage.switchTab(getCurrentUrl);
 		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Change Brand Information");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 17: Change Brand Information");
 		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Click on Use Button");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 18: Click on Use Button");
 		adminDetailBrandPage.clickOnButtonByName("설정함");
 		adminDetailBrandPage.enterToEmailTextBox(emailaddress);
 		adminDetailBrandPage.clickToPasswordSettingButton("직접 설정");
 		adminDetailBrandPage.enterToPasswordTextBox("123456");
 		adminDetailBrandPage.enterToConfirmPasswordTextBox("123456");
-		adminDetailBrandPage.clickSaveButton("저장하기");
-//		
-//		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
+		adminDetailBrandPage.clickSaveButton("저장하기");	
+		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
 
 //		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Log in Brand Partner Page By Brand Information");
 
 	}
+	
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
