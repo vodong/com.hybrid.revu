@@ -1,4 +1,4 @@
-package com.revu.admin_kr;
+package com.revu.admin.kr;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
@@ -911,14 +911,8 @@ public class Advertiser_Management_Role extends BaseTest {
 		
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 25: Open Login Form");
 		adminHomePage.openLoginPopup();
-//
-//		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 26: Open Country List");
-//		adminHomePage.openSelectCountryList();
-//		
-//		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 27: Select Country");
-//		adminHomePage.selectCountry("Korea");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 28: Switch To Advertiser Tab");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 26: Switch To Advertiser Tab");
 		adminHomePage.clickToAdvertiserTab("광고주");
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 29: Enter To Email TextBox");

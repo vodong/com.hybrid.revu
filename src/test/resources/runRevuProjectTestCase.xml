@@ -14,7 +14,7 @@
 	<test name="Run on FireFox">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.revu.admin.Advertiser_Management"/>
+			<class name="com.revu.admin.kr.Advertiser_Management_Role"/>
 		</classes>
 	  </test>
 </suite> <!-- Suite -->
