@@ -10,4 +10,5 @@ public class PartnerPageUI {
 	public static final String RESET_PASSWORD_BUTTON = "CSS=div.form-group-yt button.button_setting";
 	public static final String DYNAMIC_RESET_PASSWORD_BUTTON = "XPATH=//div/button[contains(text(),'%s')]";
 	public static final String BUTTON_NAME = "XPATH=//button[contains(text(),'%s')]";
+	public static final String NAVBAR_LEFT_MENU = "CSS=ul.navbar-right li.delivery-menu";
 }

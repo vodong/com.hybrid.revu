@@ -3,7 +3,7 @@ package pageObjects.revu.Admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.revu.admin.AdminDashboardPageUI;
+import pageUIs.revu.admin.BasePageUI;
 
 public class AdminDashBoardObject extends BasePage {
 	private WebDriver driver;
@@ -13,7 +13,7 @@ public class AdminDashBoardObject extends BasePage {
 	}
 
 	public boolean isLogOutLinkDisplayed() {
-		waitForElementVisible(driver, AdminDashboardPageUI.LOGOUT_LINK_HEADER);
-		return isElementDisplayed(driver, AdminDashboardPageUI.LOGOUT_LINK_HEADER);
+		waitForElementVisible(driver, BasePageUI.LOGOUT_LINK_HEADER);
+		return isElementDisplayed(driver, BasePageUI.LOGOUT_LINK_HEADER);
 	}
 }

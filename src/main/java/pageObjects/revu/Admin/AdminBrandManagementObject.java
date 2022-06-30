@@ -6,6 +6,7 @@ import commons.BasePage;
 import commons.GlobalConstants;
 import pageUIs.revu.admin.AdminAdvertiserPageUI;
 import pageUIs.revu.admin.AdminDashboardPageUI;
+import pageUIs.revu.admin.BasePageUI;
 
 public class AdminBrandManagementObject extends BasePage {
 	private WebDriver driver;
@@ -127,5 +128,10 @@ public class AdminBrandManagementObject extends BasePage {
 		waitForElementClickable(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
 		sleepInSecond(shortTimeOut);
 		clickToElement(driver, AdminAdvertiserPageUI.TEXT_BRAND_CREATED_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, textValue);
+	}
+
+	public void clickOnLogOutButton() {
+		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_HEADER);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK_HEADER);
 	}
 }

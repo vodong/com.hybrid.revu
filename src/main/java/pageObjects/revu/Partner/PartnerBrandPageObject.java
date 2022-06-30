@@ -30,4 +30,9 @@ public class PartnerBrandPageObject extends BasePage {
 	public void closeTab(String linkValue) {
 		CloseAllWindownsWithoutParent(driver, linkValue);
 	}
+
+	public boolean isDeliveryMenuDisplayed() {
+		waitForElementVisible(driver, PartnerPageUI.NAVBAR_LEFT_MENU);
+		return isElementDisplayed(driver, PartnerPageUI.NAVBAR_LEFT_MENU);
+	}
 }

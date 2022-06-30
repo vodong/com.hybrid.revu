@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
+import pageObjects.revu.Partner.PartnerBrandPageObject;
 import pageUIs.revu.admin.AdminHomePageUI;
+import pageUIs.revu.admin.BasePageUI;
 
 public class AdminHomePageObject extends BasePage {
 	private WebDriver driver;
@@ -16,8 +18,8 @@ public class AdminHomePageObject extends BasePage {
 	}
 
 	public void openLoginPopup() {
-		waitForElementClickable(driver, AdminHomePageUI.LOGIN_LINK_HEADER);
-		clickToElement(driver, AdminHomePageUI.LOGIN_LINK_HEADER);
+		waitForElementClickable(driver, AdminHomePageUI.LOGIN_LINK);
+		clickToElement(driver, AdminHomePageUI.LOGIN_LINK);
 	}
 
 	public void openSelectCountryList() {
@@ -44,9 +46,36 @@ public class AdminHomePageObject extends BasePage {
 	}
 
 	public AdminDashBoardObject openAdminDashBoardPage(String textBoxName) {
-		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON, textBoxName);
-		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON, textBoxName);
+		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textBoxName);
+		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textBoxName);
 		sleepInSecond(ShortTime);
 		return PageGeneratorManager.getDashboardPage(driver);
+	}
+
+	public boolean isLoginButtonDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.LOGIN_LINK);
+		return isElementDisplayed(driver, AdminHomePageUI.LOGIN_LINK);
+	}
+
+	public void clickToAdvertiserTab(String textValue) {
+		waitForElementClickable(driver, BasePageUI.PARTNER_ADVERTISER_TAB, textValue);
+		clickToElement(driver, BasePageUI.PARTNER_ADVERTISER_TAB, textValue);
+	}
+
+	public PartnerBrandPageObject openAdvertiserPage(String textBoxName) {
+		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON_ADVERTISER, textBoxName);
+		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_ADVERTISER, textBoxName);
+		sleepInSecond(ShortTime);
+		return PageGeneratorManager.getPartnerBrandPage(driver);
+	}
+
+	public void enterToEmailAdvertiserTextBox(String emailValue) {
+		waitForElementVisible(driver, BasePageUI.EMAIL_TEXTBOX_ADVERTISER_TAB);
+		sendkeyToElement(driver, BasePageUI.EMAIL_TEXTBOX_ADVERTISER_TAB, emailValue);
+	}
+
+	public void enterToPasswordAdvertiserTextBox(String passwordValue) {
+		waitForElementVisible(driver, BasePageUI.PASSWORD_TEXTBOX_LOGIN_ADVERTISER_TAB);
+		sendkeyToElement(driver, BasePageUI.PASSWORD_TEXTBOX_LOGIN_ADVERTISER_TAB, passwordValue);
 	}
 }
