@@ -75,14 +75,14 @@ public class AdminCreateBrandManagementObject extends BasePage {
 		return isElementEnabled(driver, AdminCreateBrandPageUI.SAVE_BUTTON_ATTRIBUTE, textValue);
 	}
 
-	public void enterToPasswordTextBox(String password) {
+	public void enterToPasswordTextBox(String passwordValue) {
 		waitForElementVisible(driver, AdminCreateBrandPageUI.PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, AdminCreateBrandPageUI.PASSWORD_TEXTBOX, password);
+		sendkeyToElement(driver, AdminCreateBrandPageUI.PASSWORD_TEXTBOX, passwordValue);
 	}
 
-	public void enterToConfirmPasswordTextBox(String confirmPassword) {
+	public void enterToConfirmPasswordTextBox(String confirmPasswordValue) {
 		waitForElementVisible(driver, AdminCreateBrandPageUI.CONFIRM_PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, AdminCreateBrandPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
+		sendkeyToElement(driver, AdminCreateBrandPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPasswordValue);
 	}
 
 	public void clickSaveButton(String textValue) {

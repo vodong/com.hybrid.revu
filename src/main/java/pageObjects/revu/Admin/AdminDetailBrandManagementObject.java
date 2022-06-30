@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.GlobalConstants;
-import pageUIs.revu.Partner.PartnerPageUI;
+import pageUIs.revu.admin.AdminCreateBrandPageUI;
 import pageUIs.revu.admin.AdminDetailBrandPageUI;
+import pageUIs.revu.admin.BasePageUI;
 
 public class AdminDetailBrandManagementObject extends BasePage {
 	private WebDriver driver;
@@ -26,36 +27,36 @@ public class AdminDetailBrandManagementObject extends BasePage {
 	}
 
 	public void enterToEmailTextBox(String emailaddress) {
-		waitForElementInVisible(driver, PartnerPageUI.EMAIL_TEXTBOX);
-		sendkeyToElement(driver, PartnerPageUI.EMAIL_TEXTBOX, emailaddress);
-	}
-
-	public void clickToPasswordSettingButton(String textValue) {
-		waitForElementInVisible(driver, PartnerPageUI.DYNAMIC_RESET_PASSWORD_BUTTON);
-		sendkeyToElement(driver, PartnerPageUI.DYNAMIC_RESET_PASSWORD_BUTTON, textValue);
-	}
-
-	public void enterToPasswordTextBox(String password) {
-		waitForElementInVisible(driver, PartnerPageUI.PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, PartnerPageUI.PASSWORD_TEXTBOX, password);
-	}
-
-	public void enterToConfirmPasswordTextBox(String confirmPassword) {
-		waitForElementInVisible(driver, PartnerPageUI.CONFIRM_PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, PartnerPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
-	}
-
-	public void clickSaveButton(String textValue) {
-		waitForElementClickable(driver, PartnerPageUI.SAVE_BUTTON_TEXT, textValue);
-		clickToElement(driver, PartnerPageUI.SAVE_BUTTON_TEXT, textValue);
-	}
-
-	public void clickOnButtonByName(String textValue) {
-		waitForElementClickable(driver, PartnerPageUI.BUTTON_NAME, textValue);
-		clickToElement(driver, PartnerPageUI.BUTTON_NAME, textValue);
+		waitForElementVisible(driver, BasePageUI.EMAIL_TEXTBOX);
+		sendkeyToElement(driver, BasePageUI.EMAIL_TEXTBOX, emailaddress);
 	}
 
 	public void switchTab(String urlValue) {
 		switchtowindowbylink(driver, urlValue);
+	}
+
+	public void clickOnButtonByName(String textValue) {
+		waitForElementClickable(driver, BasePageUI.BUTTON_NAME, textValue);
+		clickToElement(driver, BasePageUI.BUTTON_NAME, textValue);
+	}
+
+	public void clickToPasswordSettingButton(String textValue) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_RESET_PASSWORD_BUTTON, textValue);
+		clickToElement(driver, BasePageUI.DYNAMIC_RESET_PASSWORD_BUTTON, textValue);
+	}
+
+	public void enterToPasswordTextBox(String passwordValue) {
+		waitForElementVisible(driver, BasePageUI.PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, BasePageUI.PASSWORD_TEXTBOX, passwordValue);
+	}
+
+	public void enterToConfirmPasswordTextBox(String confirmPasswordValue) {
+		waitForElementVisible(driver, BasePageUI.CONFIRM_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, BasePageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPasswordValue);
+	}
+
+	public void clickSaveButton(String textValue) {
+		waitForElementClickable(driver, BasePageUI.SAVE_BUTTON_TEXT, textValue);
+		clickToElement(driver, BasePageUI.SAVE_BUTTON_TEXT, textValue);
 	}
 }

@@ -34,6 +34,10 @@ public class BasePage {
 	public String getPageTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
+	
+	public String getParentID(WebDriver driver) {
+		return driver.getWindowHandle();
+	}
 
 	public String getPageUrl(WebDriver driver) {
 		return driver.getCurrentUrl();

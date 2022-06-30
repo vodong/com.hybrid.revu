@@ -26,4 +26,8 @@ public class PartnerBrandPageObject extends BasePage {
 	public void switchTab(String urlValue) {
 		switchtowindowbylink(driver, urlValue);
 	}
+
+	public void closeTab(String linkValue) {
+		CloseAllWindownsWithoutParent(driver, linkValue);
+	}
 }

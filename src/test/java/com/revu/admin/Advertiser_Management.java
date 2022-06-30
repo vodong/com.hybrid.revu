@@ -35,7 +35,7 @@ public class Advertiser_Management extends BaseTest {
 	PartnerBrandPageObject partnerBrandPage;
 	AdminDetailBrandManagementObject adminDetailBrandPage;
 	AdminCreateBrandManagementObject adminCreateNewBrandPage;
-	String emailaddress, password, confirmpassword, brandNameHasCampaign, partnerNameAndEmail, partnerEmailAddress, getCurrentUrl;
+	String emailaddress, password, confirmpassword, brandNameHasCampaign, partnerNameAndEmail, partnerEmailAddress, getCurrentUrl, getCurrentPageID;
 	String imageAvatart = "Avatar.jpg";
 	String partnerName, brandName, field, placeholderTextBoxKR, placeholderTextBoxEN, placeholderFieldDropdownListKR,
 			placeholderFieldDropdownListEN, placeholderPhoneTextBoxEN, placeholderPhoneTextBoxKR,
@@ -860,36 +860,50 @@ public class Advertiser_Management extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 11: Get Current Page URL");
 		getCurrentUrl = adminDetailBrandPage.getPageUrl(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 12: Verify Brand Information Detail Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 12: Get Current Page ID");
+		getCurrentPageID = adminDetailBrandPage.getParentID(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Verify Brand Information Detail Page");
 		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
 					
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 13: Open See Brand Partner Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Open See Brand Partner Page");
 		adminDetailBrandPage.clickToSeeBrandPageButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 14: Switch To Advertiser Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Switch To Advertiser Page");
 		adminDetailBrandPage.switchTab("partner.test.ent.revu.net");
 		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Verify Brand Partner Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 16: Verify Brand Partner Page");
 		assertEquals(partnerBrandPage.getPartnerName(), brandName);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 16: Switch To Edit Brand Page");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 17: Switch To Edit Brand Page");
 		partnerBrandPage.switchTab(getCurrentUrl);
 		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 17: Change Brand Information");
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 18: Close Advertiser Page");
+		partnerBrandPage.closeTab(getCurrentPageID);
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 19: Verify Change To Brand Information Successfully");
 		assertEquals(adminDetailBrandPage.getSeeBrandTextButton(), "브랜드 화면 보기");
 		
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 18: Click on Use Button");
 		adminDetailBrandPage.clickOnButtonByName("설정함");
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 19: Enter Emaill Address'" + partnerEmailAddress + "'");
 		adminDetailBrandPage.enterToEmailTextBox(emailaddress);
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 20: Open Setting Password");
 		adminDetailBrandPage.clickToPasswordSettingButton("직접 설정");
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 21: Enter To Password TextBox");
 		adminDetailBrandPage.enterToPasswordTextBox("123456");
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 22: Enter To Confirm Password TextBox");
 		adminDetailBrandPage.enterToConfirmPasswordTextBox("123456");
+		
+		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 22: Click On Save Button");
 		adminDetailBrandPage.clickSaveButton("저장하기");	
 		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
-
-//		ExtentTestManager.getTest().log(Status.INFO,"Brand Management - Step 15: Log in Brand Partner Page By Brand Information");
 
 	}
 	
