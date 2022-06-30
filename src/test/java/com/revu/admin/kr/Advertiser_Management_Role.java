@@ -814,7 +814,6 @@ public class Advertiser_Management_Role extends BaseTest {
 		assertEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandNameHasCampaign);
 	}
 	
-	
 	@Test
 	public void TC_11_Edit_Brand_Information(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Edit Brand Information");
