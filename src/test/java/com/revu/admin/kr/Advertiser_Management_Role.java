@@ -52,7 +52,6 @@ public class Advertiser_Management_Role extends BaseTest {
 //		environment = ConfigFactory.create(Environment.class);
 //		driver = getBrowserDriver(browserName, environment.appUrl());
 
-		// Run TestNG
 		driver = getBrowserDriver(browserName, appUrl);
 
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
@@ -102,7 +101,8 @@ public class Advertiser_Management_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 04: Verify Login Successfull");
 		assertTrue(adminDashBoardPage.isLogOutLinkDisplayed());
 	}
-
+	
+	@Test
 	public void TC_03_Check_Translate_To_Korea_Brand_Management_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -289,6 +289,7 @@ public class Advertiser_Management_Role extends BaseTest {
 		adminBrandManagementPage.openSelectLanguageList(driver, "한국어");
 	}
 
+	@Test
 	public void TC_04_Check_Translate_To_English_Brand_Management_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 1: Change to English Language");
@@ -382,6 +383,7 @@ public class Advertiser_Management_Role extends BaseTest {
 		adminBrandManagementPage.openSelectLanguageList(driver, "한국어");
 	}
 
+	@Test
 	public void TC_05_Check_Translate_To_Korea_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -516,6 +518,7 @@ public class Advertiser_Management_Role extends BaseTest {
 		assertEquals(adminCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(), "정보가 일치하지 않습니다.");
 	}
 
+	@Test
 	public void TC_06_Check_Translate_To_English_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
@@ -645,7 +648,8 @@ public class Advertiser_Management_Role extends BaseTest {
 		assertEquals(adminCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(),
 				"The confirmation does not match.");
 	}
-		
+	
+	@Test
 	public void TC_07_Create_Brand_Non_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Nonuse Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
@@ -677,6 +681,7 @@ public class Advertiser_Management_Role extends BaseTest {
 
 	}	
 
+	@Test
 	public void TC_08_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Do Not Have Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Click on Search Button");
@@ -726,7 +731,7 @@ public class Advertiser_Management_Role extends BaseTest {
 		assertNotEquals(adminBrandManagementPage.getBrandNameByRownNumber("1","3"), brandName);
 	}
 
-	
+	@Test
 	public void TC_09_Create_Brand_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Use Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Upload Avatar");
@@ -771,7 +776,7 @@ public class Advertiser_Management_Role extends BaseTest {
 		adminBrandManagementPage.clickToClosePopupCancelButton();
 	}
 
-
+	@Test
 	public void TC_10_Delete_Brand_Advertiser_Has_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Has Campaign");
 		ExtentTestManager.getTest().log(Status.INFO,"Brand Management Page - Step 01: Search Brand");
@@ -926,13 +931,9 @@ public class Advertiser_Management_Role extends BaseTest {
 		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 32: Open Advertiser Page Successfull");
-		assertTrue(partnerBrandPage.isDeliveryMenuDisplayed());
-		
-		
+		assertTrue(partnerBrandPage.isDeliveryMenuDisplayed());	
 	}
 	
-	
-
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		closeBrowserAndDriver();
