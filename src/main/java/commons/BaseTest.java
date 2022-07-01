@@ -41,7 +41,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
 		if(browserName.equals("firefox")) {
 			  WebDriverManager.firefoxdriver().setup();
 			  driver = new FirefoxDriver();
@@ -54,8 +54,8 @@ public class BaseTest {
 		  }else {
 			  throw new RuntimeException("Browser name is invalid");
 		  }
-		//driver.get(appUrl);
-		driver.get(GlobalConstants.ADMIN_TESTING_URL);
+		driver.get(getEnvironmentUrl(environmentName));
+		//driver.get(GlobalConstants.ADMIN_TESTING_URL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
 		return driver;
