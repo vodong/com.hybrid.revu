@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ import pageObjects.revu.Admin.AdminCreateBrandManagementObject;
 import pageObjects.revu.Admin.AdminDashBoardObject;
 import pageObjects.revu.Admin.AdminDetailBrandManagementObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
-import pageObjects.revu.Partner.PartnerBrandPageObject;
+import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
 import reportConfig.ExtentTestManager;
 
 public class Advertiser_Management_Role extends BaseTest {
@@ -33,7 +34,7 @@ public class Advertiser_Management_Role extends BaseTest {
 	AdminDashBoardObject adminDashBoardPage;
 	AdminHomePageObject adminHomePage;
 	AdminBrandManagementObject adminBrandManagementPage;
-	PartnerBrandPageObject partnerBrandPage;
+	AdvertiserDashBoardPageObject advertiserDashBoardPage;
 	AdminDetailBrandManagementObject adminDetailBrandPage;
 	AdminCreateBrandManagementObject adminCreateNewBrandPage;
 	String partnerEmailAddress,getCurrentUrl, getCurrentPageID;
@@ -41,17 +42,16 @@ public class Advertiser_Management_Role extends BaseTest {
 	String brandName;
 
 	Environment environment;
-
-	@Parameters({ "browser", "appUrl" })
+	@Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
 	@BeforeClass
-	public void beforeClass(String browserName, String appUrl) {
+	public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
 		// Maven
 //		String environmentName = System.getProperty("envMaven");
 //		ConfigFactory.setProperty("envOwner", environmentName);
 //		environment = ConfigFactory.create(Environment.class);
 //		driver = getBrowserDriver(browserName, environment.appUrl());
 
-		driver = getBrowserDriver(browserName, appUrl);
+		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		brandName = "Automation_Brand_" + generateNumber();
@@ -904,17 +904,17 @@ public class Advertiser_Management_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 15: Switch To Advertiser Page");
 		adminDetailBrandPage.switchTab(GlobalConstants.ADVERTISER_TEST_URL);
-		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
+		advertiserDashBoardPage = PageGeneratorManager.getAdvertiserDashBoardPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 16: Verify Advertiser Name '" + brandName + "'");
-		assertEquals(partnerBrandPage.getPartnerName(), brandName);
+		assertEquals(advertiserDashBoardPage.getPartnerName(), brandName);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 17: Switch To Edit Brand Page");
-		partnerBrandPage.switchTab(getCurrentUrl);
+		advertiserDashBoardPage.switchTab(getCurrentUrl);
 		adminDetailBrandPage = PageGeneratorManager.getDetailBrandPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 18: Close Advertiser Page");
-		partnerBrandPage.closeTab(getCurrentPageID);
+		advertiserDashBoardPage.closeTab(getCurrentPageID);
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management - Step 19: Verify Change To Brand Information Successfully");
@@ -935,36 +935,47 @@ public class Advertiser_Management_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 22: Enter To Confirm Password TextBox");
 		adminDetailBrandPage.enterToConfirmPasswordTextBox(GlobalConstants.PASSWORD);
-
+		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 22: Click On Save Button");
 		adminDetailBrandPage.clickSaveButton("저장하기");
-		adminBrandManagementPage = PageGeneratorManager.getManagementPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 23: Verify Email Alerady Exists In System Korea Language");
+		assertEquals(adminDetailBrandPage.getErrorMessageAtEmailTextBox(),"이미 사용 중 입니다.");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 25: Change To English Language");
+		adminDetailBrandPage.openSelectLanguageList(driver, GlobalConstants.ENGLISH_LANGUAGE);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 26: Verify Email Alerady Exists In System English Language");
+		assertEquals(adminDetailBrandPage.getErrorMessageAtEmailTextBox(),"The email has already been taken.");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 23: Log Out Manager Account");
-		adminBrandManagementPage.clickOnLogOutButton();
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 27: Change To Korea Language");
+		adminDetailBrandPage.openSelectLanguageList(driver, GlobalConstants.KOREA_LANGUAGE);
+
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 28: Log Out Manager Account");
+		adminDetailBrandPage.clickOnLogOutButton();
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 24: Verify Login Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 29: Verify Login Page");
 		assertTrue(adminHomePage.isLoginButtonDisplayed());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 25: Open Login Form");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 30: Open Login Form");
 		adminHomePage.openLoginPopup();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 26: Switch To Advertiser Tab");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 31: Switch To Advertiser Tab");
 		adminHomePage.clickToAdvertiserTab("광고주");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 29: Enter To Email TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 32: Enter To Email TextBox");
 		adminHomePage.enterToEmailAdvertiserTextBox(partnerEmailAddress);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 30: Enter To Password TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 33: Enter To Password TextBox");
 		adminHomePage.enterToPasswordAdvertiserTextBox(GlobalConstants.PASSWORD);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 31: Open Advertiser Page");
-		partnerBrandPage = adminHomePage.openAdvertiserPage("로그인");
-		partnerBrandPage = PageGeneratorManager.getPartnerBrandPage(driver);
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 34: Open Advertiser Page");
+		advertiserDashBoardPage = adminHomePage.openAdvertiserPage("로그인");
+		advertiserDashBoardPage = PageGeneratorManager.getAdvertiserDashBoardPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 32: Open Advertiser Page Successfull");
-		assertTrue(partnerBrandPage.isDeliveryMenuDisplayed());
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 35: Open Advertiser Page Successfull");
+		assertTrue(advertiserDashBoardPage.isDeliveryMenuDisplayed());
 	}
 
 	@AfterClass(alwaysRun = true)

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.GlobalConstants;
-import pageUIs.revu.admin.AdminCreateBrandPageUI;
 import pageUIs.revu.admin.AdminDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
@@ -58,5 +57,15 @@ public class AdminDetailBrandManagementObject extends BasePage {
 	public void clickSaveButton(String textValue) {
 		waitForElementClickable(driver, BasePageUI.SAVE_BUTTON_TEXT, textValue);
 		clickToElement(driver, BasePageUI.SAVE_BUTTON_TEXT, textValue);
+	}
+
+	public String getErrorMessageAtEmailTextBox() {
+		waitForElementVisible(driver, AdminDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
+		return getElementText(driver, AdminDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
+	}
+
+	public void clickOnLogOutButton() {
+		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_HEADER);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK_HEADER);
 	}
 }

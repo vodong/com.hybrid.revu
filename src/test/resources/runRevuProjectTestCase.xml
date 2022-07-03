@@ -8,11 +8,15 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
 
-	<parameter name="appUrl" value="Test" />
+	<parameter name="envName" value="local" />
+	<parameter name="serverName" value="Test" />
+
 	<!--<parameter name="urlUser" value="https://vn.revu.net/" />-->
 
 	<test name="Run on FireFox">
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="Firefox" />
+		<parameter name="osName" value="Windows" />
+		<parameter name="osVersion" value="10" />
 		<classes>
 			<class name="com.revu.admin.kr.Advertiser_Management_Role"/>
 		</classes>

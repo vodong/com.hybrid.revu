@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.GlobalConstants;
-import pageUIs.revu.Partner.PartnerPageUI;
 
 public class PartnerBrandPageObject extends BasePage {
 	private WebDriver driver;
@@ -12,11 +11,6 @@ public class PartnerBrandPageObject extends BasePage {
 
 	public PartnerBrandPageObject(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public String getPartnerName() {
-		waitForElementVisible(driver, PartnerPageUI.PARTNER_NAME);
-		return getElementText(driver, PartnerPageUI.PARTNER_NAME);
 	}
 
 	public void closePartnerBrandPage(String linkValue) {
@@ -29,10 +23,5 @@ public class PartnerBrandPageObject extends BasePage {
 
 	public void closeTab(String linkValue) {
 		CloseAllWindownsWithoutParent(driver, linkValue);
-	}
-
-	public boolean isDeliveryMenuDisplayed() {
-		waitForElementVisible(driver, PartnerPageUI.NAVBAR_LEFT_MENU);
-		return isElementDisplayed(driver, PartnerPageUI.NAVBAR_LEFT_MENU);
 	}
 }

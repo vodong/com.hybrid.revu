@@ -63,5 +63,8 @@ public class GlobalConstants {
 	public static final String CANCEL_SETTING_KR = "설정 취소";
 	public static final String DELETE_BUTTON = "삭제하기";
 	
-
+	//Browser Stack
+	public static final String BROWSE_USERNAME = "vodongpham_vbRLlM";
+	public static final String BROWSE_AUTOMATE_KEY = "idztyWmBznShx8tLvKAe";
+	public static final String BROWSE_STACK_URL = "https://" + BROWSE_USERNAME + ":" + BROWSE_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 }
