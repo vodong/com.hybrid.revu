@@ -6,7 +6,6 @@ import commons.BasePage;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
-import pageObjects.revu.Partner.PartnerBrandPageObject;
 import pageUIs.revu.admin.AdminHomePageUI;
 import pageUIs.revu.admin.BasePageUI;
 
@@ -62,13 +61,6 @@ public class AdminHomePageObject extends BasePage {
 		waitForElementClickable(driver, BasePageUI.PARTNER_ADVERTISER_TAB, textValue);
 		clickToElement(driver, BasePageUI.PARTNER_ADVERTISER_TAB, textValue);
 	}
-
-//	public PartnerBrandPageObject openAdvertiserPage(String textBoxName) {
-//		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON_ADVERTISER, textBoxName);
-//		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_ADVERTISER, textBoxName);
-//		sleepInSecond(ShortTime);
-//		return PageGeneratorManager.getPartnerBrandPage(driver);
-//	}
 
 	public void enterToEmailAdvertiserTextBox(String emailValue) {
 		waitForElementVisible(driver, BasePageUI.EMAIL_TEXTBOX_ADVERTISER_TAB);

@@ -34,6 +34,8 @@ public class GlobalConstants {
 	public static final String PARTNER_NAME_SEARCH_FIELD = "Dong Corporation";
 	public static final String PARTNER_NAME_AND_EMAIL_SEARCH_FIELD = "Dong Corporation (partner_ED2@yopmail.com)";
 	public static final String FIELD_DROPDOWN_LIST = "FOOD";
+	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_KR = "브랜드명 검색 ";
+	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_EN = "Brand Search";
 	public static final String PLACE_HOLDER_TEXTBOX_KR = "입력";
 	public static final String PLACE_HOLDER_TEXTBOX_EN = "Input";
 	public static final String PLACE_HOLDER_PHONE_TEXTBOX_EN = "Number Only";

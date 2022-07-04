@@ -7,14 +7,11 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
 import factoryEnvironment.BrowserStackFactory;
 import factoryEnvironment.LocalFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
@@ -23,46 +20,6 @@ public class BaseTest {
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
 	}
-
-//	protected WebDriver getBrowserDriver(String browserName) {
-//		if(browserName.equals("firefox")) {
-//			  WebDriverManager.firefoxdriver().setup();
-//			  driver = new FirefoxDriver();
-//		  }else if(browserName.equals("chrome")) {
-//			  WebDriverManager.chromedriver().setup();
-//			  driver = new ChromeDriver();
-//		  }else if(browserName.equals("edge")) {
-//			  WebDriverManager.edgedriver().setup();
-//			  driver = new ChromeDriver();
-//		  }else {
-//			  throw new RuntimeException("Browser name is invalid");
-//		  }
-//		driver.get(GlobalConstants.ADMIN_TESTING_URL);
-//		driver.manage().window().maximize();
-//		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
-//		return driver;
-//	}
-//
-//	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
-//		if(browserName.equals("firefox")) {
-//			  WebDriverManager.firefoxdriver().setup();
-//			  driver = new FirefoxDriver();
-//		  }else if(browserName.equals("chrome")) {
-//			  WebDriverManager.chromedriver().setup();
-//			  driver = new ChromeDriver();
-//		  }else if(browserName.equals("edge")) {
-//			  WebDriverManager.edgedriver().setup();
-//			  driver = new ChromeDriver();
-//		  }else {
-//			  throw new RuntimeException("Browser name is invalid");
-//		  }
-//		driver.get(getEnvironmentUrl(environmentName));
-//		//driver.get(GlobalConstants.ADMIN_TESTING_URL);
-//		driver.manage().window().maximize();
-//		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
-//		return driver;
-//	}
-	
 	
 	protected WebDriver getBrowserDriver(String envName, String serverName, String browserName, String osName, String osVersion) {
 		switch (envName) {

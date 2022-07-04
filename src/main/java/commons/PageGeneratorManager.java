@@ -8,6 +8,9 @@ import pageObjects.revu.Admin.AdminDashBoardObject;
 import pageObjects.revu.Admin.AdminDetailBrandManagementObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
+import pageObjects.revu.Partner.PartnerBrandManagementObject;
+import pageObjects.revu.Partner.PartnerCreateBrandManagementObject;
+import pageObjects.revu.Partner.PartnerDetailBrandManagementObject;
 
 public class PageGeneratorManager {
 
@@ -30,10 +33,20 @@ public class PageGeneratorManager {
 	public static AdminDetailBrandManagementObject getDetailBrandPage(WebDriver driver) {
 		return new AdminDetailBrandManagementObject(driver);
 	}
-
+	
 	public static AdvertiserDashBoardPageObject getAdvertiserDashBoardPage(WebDriver driver) {
 		return new AdvertiserDashBoardPageObject(driver);
 	}
+
+	public static PartnerBrandManagementObject getPartnerBrandMangementPage(WebDriver driver) {
+		return new PartnerBrandManagementObject(driver);
+	}
 	
+	public static PartnerCreateBrandManagementObject getPartnerCreateANewBrandPage(WebDriver driver) {
+		return new PartnerCreateBrandManagementObject(driver);
+	}
 	
+	public static PartnerDetailBrandManagementObject getPartnerDetailBrandPage(WebDriver driver) {
+		return new PartnerDetailBrandManagementObject(driver);
+	}
 }

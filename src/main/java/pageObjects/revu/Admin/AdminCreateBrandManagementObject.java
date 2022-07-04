@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.GlobalConstants;
-import pageUIs.revu.admin.AdminAdvertiserPageUI;
 import pageUIs.revu.admin.AdminCreateBrandPageUI;
 
 public class AdminCreateBrandManagementObject extends BasePage {
