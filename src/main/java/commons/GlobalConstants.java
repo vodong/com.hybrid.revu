@@ -44,7 +44,8 @@ public class GlobalConstants {
 	public static final String PLACE_HOLDER_FIELD_DROPDOWN_LIST_EN = "Select";
 	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_KR = "파트너 검색";
 	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_EN = "Partner search";
-	public static final String BRAND_NAME_HAS_CAMPAIGN = "Automation_Brand_7539";
+	public static final String BRAND_NAME_HAS_CAMPAIGN_MANAGER_ROLE_KR = "Automation_Brand_7539";
+	public static final String BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR = "MATE International Marketing";
 	public static final String KOREA_LANGUAGE = "한국어";
 	public static final String ENGLISH_LANGUAGE = "English";
 	public static final String ADVERTISER_MANAGEMENT_LINK = "광고주 관리";

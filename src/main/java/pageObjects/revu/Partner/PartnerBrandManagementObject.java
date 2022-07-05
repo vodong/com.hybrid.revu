@@ -1,5 +1,6 @@
 package pageObjects.revu.Partner;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
@@ -59,13 +60,15 @@ public class PartnerBrandManagementObject extends BasePage {
 	}
 
 	public void enterToSearchBrandTextBox(String textValue) {
-		waitForElementClickable(driver, PartnerAdvertiserPageUI.BRAND_TEXTBOX);
-		sendkeyToElement(driver, PartnerAdvertiserPageUI.BRAND_TEXTBOX, textValue);
+		waitForElementClickable(driver, PartnerAdvertiserPageUI.SEARCH_TEXTBOX);
+		sendkeyToElement(driver, PartnerAdvertiserPageUI.SEARCH_TEXTBOX, textValue);
+		pressKeyToElement(driver, PartnerAdvertiserPageUI.SEARCH_TEXTBOX_AFTER_INPUTTING, Keys.ENTER);
+		sleepInSecond(shortTimeOut);
 	}
 
 	public void clickToSearchButton() {
-		waitForElementClickable(driver, PartnerAdvertiserPageUI.SEARCH_BUTTON);
-		clickToElement(driver, PartnerAdvertiserPageUI.SEARCH_BUTTON);
+		waitForElementVisible(driver, PartnerAdvertiserPageUI.SEARCH_TEXTBOX);
+		pressKeyToElement(driver, PartnerAdvertiserPageUI.SEARCH_TEXTBOX, Keys.ENTER);
 	}
 
 	public void clickToDeleteButtonByRownNumber(String rowNumber, String textValue) {

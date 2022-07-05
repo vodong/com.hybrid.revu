@@ -20,5 +20,6 @@ public class PartnerAdvertiserPageUI {
 	public static final String CANCEL_BUTTON_POPUP = "css=button.btn-close";
 	public static final String CLOSE_BUTTON_POPUP = "css=button.close ";
 	public static final String SEARCH_TEXTBOX = "css=div.search_box input.ng-pristine";
+	public static final String SEARCH_TEXTBOX_AFTER_INPUTTING = "css=div.search_box input.ng-valid-parse";
 	public static final String SEARCH_PLACEHOLDER_TEXTBOX = "XPATH=//input[@placeholder='%s']";
 }
