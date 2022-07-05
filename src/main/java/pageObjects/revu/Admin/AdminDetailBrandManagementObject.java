@@ -3,13 +3,13 @@ package pageObjects.revu.Admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants;
+import commons.GlobalConstants_KR;
 import pageUIs.revu.admin.AdminDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
 public class AdminDetailBrandManagementObject extends BasePage {
 	private WebDriver driver;
-	private long shorttime = GlobalConstants.SHORT_TIME_OUT_WAIT_ELEMENT;
+	private long shorttime = GlobalConstants_KR.SHORT_TIME_OUT_WAIT_ELEMENT;
 
 	public AdminDetailBrandManagementObject(WebDriver driver) {
 		this.driver = driver;

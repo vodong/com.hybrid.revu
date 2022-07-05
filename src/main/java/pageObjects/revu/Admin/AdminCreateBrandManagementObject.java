@@ -3,12 +3,12 @@ package pageObjects.revu.Admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants;
+import commons.GlobalConstants_KR;
 import pageUIs.revu.admin.AdminCreateBrandPageUI;
 
 public class AdminCreateBrandManagementObject extends BasePage {
 	private WebDriver driver;
-	private long shorttime = GlobalConstants.SHORT_TIME_OUT_WAIT_ELEMENT;
+	private long shorttime = GlobalConstants_KR.SHORT_TIME_OUT_WAIT_ELEMENT;
 
 	public AdminCreateBrandManagementObject(WebDriver driver) {
 		this.driver = driver;
@@ -145,5 +145,10 @@ public class AdminCreateBrandManagementObject extends BasePage {
 	public void enterToEmailTextBox(String emailAddress) {
 		waitForElementVisible(driver, AdminCreateBrandPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, AdminCreateBrandPageUI.EMAIL_TEXTBOX, emailAddress);
+	}
+
+	public void enterToRepresentativeTextBox(String textValue) {
+		waitForElementVisible(driver, AdminCreateBrandPageUI.REPRESENTATIVE_TEXTBOX);
+		sendkeyToElement(driver, AdminCreateBrandPageUI.REPRESENTATIVE_TEXTBOX, textValue);
 	}
 }

@@ -28,4 +28,5 @@ public class AdminCreateBrandPageUI {
 	public static final String BRAND_NAME_TEXTBOX = "XPATH=//input[@ng-model='data.name']";
 	public static final String PARTNER_TEXTBOX = "CSS=div.typeahead input.input-sm";
 	public static final String PARTNER_DROPDOWN_LIST = "CSS=ul.ng-isolate-scope li.ng-scope a.ng-binding";
+	public static final String REPRESENTATIVE_TEXTBOX = "XPATH=//input[@ng-model='data.representative']";
 }

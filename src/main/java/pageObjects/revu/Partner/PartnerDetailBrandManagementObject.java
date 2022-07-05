@@ -3,14 +3,14 @@ package pageObjects.revu.Partner;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants;
+import commons.GlobalConstants_KR;
 import pageUIs.revu.Partner.PartnerDetailBrandPageUI;
 import pageUIs.revu.admin.AdminDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
 public class PartnerDetailBrandManagementObject extends BasePage {
 	private WebDriver driver;
-	private long shorttime = GlobalConstants.SHORT_TIME_OUT_WAIT_ELEMENT;
+	private long shorttime = GlobalConstants_KR.SHORT_TIME_OUT_WAIT_ELEMENT;
 
 	public PartnerDetailBrandManagementObject (WebDriver driver) {
 		this.driver = driver;

@@ -2,7 +2,7 @@ package commons;
 
 import java.io.File;
 
-public class GlobalConstants {
+public class GlobalConstants_KR {
 	public static final String PROJECT_PATH = System.getProperty("user.dir");
 	public static final String JAVA_VERSION = System.getProperty("java.version");
 	public static final String OS_NAME = System.getProperty("os.name");
