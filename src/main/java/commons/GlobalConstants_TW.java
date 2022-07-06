@@ -35,23 +35,27 @@ public class GlobalConstants_TW {
 	public static final String PARTNER_NAME_SEARCH_FIELD = "Edward_POE_Company";
 	public static final String PARTNER_NAME_AND_EMAIL_SEARCH_FIELD = "Edward_POE_Company (phamvodong8@gmail.com)";
 	public static final String FIELD_DROPDOWN_LIST = "FOOD";
-	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_KR = "브랜드명 검색 ";
+	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_TW = "搜尋品牌";
 	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_EN = "Brand Search";
 	public static final String PLACE_HOLDER_TEXTBOX_TW = "輸入";
 	public static final String PLACE_HOLDER_TEXTBOX_EN = "Input";
 	public static final String PLACE_HOLDER_PHONE_TEXTBOX_EN = "Number Only";
 	public static final String PLACE_HOLDER_PHONE_TEXTBOX_TW = "僅能輸入數字";
+	public static final String LOGIN_BUTTON = "登入";
 //	public static final String PLACE_HOLDER_FIELD_DROPDOWN_LIST_TW = "선택";
 //	public static final String PLACE_HOLDER_FIELD_DROPDOWN_LIST_EN = "Select";
 	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_TW = "合作夥伴搜尋";
 	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_EN = "Partner search";
 	public static final String BRAND_NAME_HAS_CAMPAIGN_MANAGER_ROLE_TW = "Test Branch tw 12";
-	public static final String BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR = "MATE International Marketing";
+	public static final String BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR = "Company test";
 	public static final String TAIWAN_LANGUAGE = "繁體中文";
 	public static final String ENGLISH_LANGUAGE = "English";
 	public static final String ADVERTISER_MANAGEMENT_LINK = "廣告商管理";
 	public static final String BRAND_MANAGEMENT_LINK = "品牌管理";
-	public static final String TITLE_BRAND_MANGEMENT_DETAIL_PAGE = "品牌資訊";
+	public static final String TITLE_BRAND_MANGEMENT_DETAIL_PAGE_TW = "品牌資訊";
+	public static final String TITLE_BRAND_MANGEMENT_DETAIL_PAGE_EN = "Brand Information";
+	public static final String TITLE_BRAND_MANGEMENT_PAGE_TW = "品牌管理\n+ 新建一個新品牌";
+	public static final String TITLE_BRAND_MANGEMENT_PAGE_EN = "Brand Management\n+ Create a new brand";
 	public static final String CREATE_A_NEW_BRAND_BUTTON = "+ 新建一個新品牌";
 	public static final String SEE_BRAND_BUTTON = "查看品牌頁面";
 	public static final String USE_BUTTON_TW = "使用";
@@ -67,6 +71,8 @@ public class GlobalConstants_TW {
 	public static final String CANCEL_SETTING_EN = "Cancel setting";
 	public static final String CANCEL_SETTING_TW = "取消";
 	public static final String DELETE_BUTTON = "刪除";
+	public static final String DELETE_BUTTON_AT_BRAND_MANAGEMENT_PAGE_TW = "刪除品牌";
+	public static final String DELETE_BUTTON_AT_BRAND_MANAGEMENT_PAGE_EN = "Delete";
 	
 	//Browser Stack
 	public static final String BROWSE_USERNAME = "vodongpham_vbRLlM";

@@ -148,4 +148,9 @@ public class PartnerCreateBrandManagementObject extends BasePage{
 		sendkeyToElement(driver, PartnerCreateBrandManagementUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
+	public void enterToRepresentativeTextBox(String textValue) {
+		waitForElementVisible(driver, PartnerCreateBrandManagementUI.REPRESENTATIVE_TEXTBOX);
+		sendkeyToElement(driver, PartnerCreateBrandManagementUI.REPRESENTATIVE_TEXTBOX, textValue);
+	}
+
 }
