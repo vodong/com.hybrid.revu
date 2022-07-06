@@ -29,6 +29,7 @@ public class GlobalConstants_KR {
 	public static final String PASSWORD = "123456";
 	public static final String INCORRECT_PASSWORD = "123456789";
 	public static final String EMAIL_PARTNER_ROLE = "kr.partner1@revu.net";
+	public static final String WRONG_EMAIL_FORMAT = "kr.com";
 	
 	// Brand Management Information
 	public static final String PARTNER_NAME_SEARCH_FIELD = "Dong Corporation";

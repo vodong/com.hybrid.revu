@@ -18,6 +18,7 @@ import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
 import commons.GlobalConstants_KR;
+import commons.GlobalConstants_TW;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;
 import pageObjects.revu.Admin.AdminBrandManagementObject;
@@ -416,6 +417,18 @@ public class Advertiser_Korea_Management_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 34: Verify Error Message At Confirm Password textbox translate to Korea");
 		assertEquals(adminCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(), "정보가 일치하지 않습니다.");
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 35: Enter To Email TextBox Wrong Email Format");
+		adminCreateNewBrandPage.enterToEmailTextBox(GlobalConstants_KR.WRONG_EMAIL_FORMAT);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 36: Click On Save Button");
+		adminCreateNewBrandPage.clickSaveButton(GlobalConstants_KR.SAVE_BUTTON_KR);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 37: Verify Error Message At Email textbox translate to Taiwan When Inputting Wrong Email Format");
+		assertEquals(adminCreateNewBrandPage.getErrorMessageAtEmailTextBox(), "이메일 형식에 맞게 입력해주세요.");
 	}
 
 	@Test
@@ -551,6 +564,18 @@ public class Advertiser_Korea_Management_Role extends BaseTest {
 				"Create Brand Page - Step 35: Verify Error Message At Confirm Password textbox translate to English");
 		assertEquals(adminCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(),
 				"The confirmation does not match.");
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 34: Enter To Email TextBox Wrong Email Format");
+		adminCreateNewBrandPage.enterToEmailTextBox(GlobalConstants_KR.WRONG_EMAIL_FORMAT);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 35: Click On Save Button");
+		adminCreateNewBrandPage.clickSaveButton(GlobalConstants_KR.SAVE_BUTTON_EN);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 36: Verify Error Message At Email textbox translate to Taiwan When Inputting Wrong Email Format");
+		assertEquals(adminCreateNewBrandPage.getErrorMessageAtEmailTextBox(), "The email must be a valid email address.");
 	}
 
 	@Test

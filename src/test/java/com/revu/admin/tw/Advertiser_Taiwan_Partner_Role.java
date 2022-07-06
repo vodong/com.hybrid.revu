@@ -821,7 +821,7 @@ public class Advertiser_Taiwan_Partner_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management - Step 11: Verify Brand Information Detail Page");
-		assertEquals(partnerDetailBrandPage.getSeeBrandTextButton(), GlobalConstants_TW.TITLE_BRAND_MANGEMENT_PAGE);
+		assertEquals(partnerDetailBrandPage.getSeeBrandTextButton(), GlobalConstants_TW.TITLE_BRAND_MANGEMENT_DETAIL_PAGE);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 12: Open See Brand Partner Page");
 		partnerDetailBrandPage.clickToSeeBrandPageButton();

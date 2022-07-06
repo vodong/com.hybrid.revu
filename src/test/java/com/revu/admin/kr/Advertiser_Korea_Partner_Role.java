@@ -423,6 +423,18 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 33: Verify Error Message At Confirm Password textbox translate to Korea");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(), "정보가 일치하지 않습니다.");
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 34: Enter To Email TextBox Wrong Email Format");
+		partnerCreateNewBrandPage.enterToEmailTextBox(GlobalConstants_KR.WRONG_EMAIL_FORMAT);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 35: Click On Save Button");
+		partnerCreateNewBrandPage.clickSaveButton(GlobalConstants_KR.SAVE_BUTTON_KR);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 36: Verify Error Message At Email textbox translate to Taiwan When Inputting Wrong Email Format");
+		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtEmailTextBox(), "이메일 형식에 맞게 입력해주세요.");
 	}
 
 	@Test
@@ -558,6 +570,18 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 				"Create Brand Page - Step 33: Verify Error Message At Confirm Password textbox translate to English");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtConfirmPasswordTextBox(),
 				"The confirmation does not match.");
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 34: Enter To Email TextBox Wrong Email Format");
+		partnerCreateNewBrandPage.enterToEmailTextBox(GlobalConstants_KR.WRONG_EMAIL_FORMAT);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 35: Click On Save Button");
+		partnerCreateNewBrandPage.clickSaveButton(GlobalConstants_KR.SAVE_BUTTON_EN);
+		
+		ExtentTestManager.getTest().log(Status.INFO,
+				"Create Brand Page - Step 36: Verify Error Message At Email textbox translate to Taiwan When Inputting Wrong Email Format");
+		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtEmailTextBox(), "The email must be a valid email address.");
 	}
 
 	@Test
