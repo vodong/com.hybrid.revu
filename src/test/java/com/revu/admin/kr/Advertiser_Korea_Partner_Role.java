@@ -42,16 +42,16 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	String brandName;
 
 	Environment environment;
-	@Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	@Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
 	@BeforeClass
-	public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+	public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion,@Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
 		// Maven
 //		String environmentName = System.getProperty("envMaven");
 //		ConfigFactory.setProperty("envOwner", environmentName);
 //		environment = ConfigFactory.create(Environment.class);
 //		driver = getBrowserDriver(browserName, environment.appUrl());
 
-		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		brandName = "Automation_Brand_" + generateNumber();
@@ -106,46 +106,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 				"Brand Management Page - Step 04: Verify Place Holder Of Search Text Box is Korea Text");
 		assertTrue(partnerBrandManagementPage.isSearchTextBoxDisplayed(GlobalConstants_KR.PLACE_HOLDER_SEARCH_TEXTBOX_KR));
 
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 04: Verify Brand label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("브랜드명", GlobalConstants.PLACE_HOLDER_TEXTBOX_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 05: Verify Field label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderFieldDropDownListDisplayed("분야", GlobalConstants.PLACE_HOLDER_FIELD_DROPDOWN_LIST_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 07: Verify Representative label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("담당자명", GlobalConstants.PLACE_HOLDER_TEXTBOX_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 08: Verify Partner label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("브랜드명", GlobalConstants.PLACE_HOLDER_TEXTBOX_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 09: Verify Email label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("이메일", GlobalConstants.PLACE_HOLDER_TEXTBOX_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 10: Verify Phone label is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("휴대전화", GlobalConstants.PLACE_HOLDER_PHONE_TEXTBOX_KR));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 11: Verify Search button is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isButtonDisplayed("검색"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 12: Verify Reset button is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isButtonDisplayed("초기화"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 06: Verify Brand No. column is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("브랜드 번호"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 07: Verify Partner column is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("파트너명"));
-
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 05: Verify Brand column is Korea languages");
 		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("브랜드명"));
@@ -173,10 +133,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 11: Verify Camp. Completed column is Korea languages");
 		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("캠페인 종료"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 15: Verify Date of Creation column is Korea languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("생성 일자"));
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 12: Verify Delete column is Korea languages");
@@ -200,46 +156,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 03: Verify Place Holder Of Search Text Box is English Text");
 		assertTrue(partnerBrandManagementPage.isSearchTextBoxDisplayed(GlobalConstants_KR.PLACE_HOLDER_SEARCH_TEXTBOX_EN));
-
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 03: Verify Brand label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("Brand", GlobalConstants.PLACE_HOLDER_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 04: Verify Field label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderFieldDropDownListDisplayed("Field", GlobalConstants.PLACE_HOLDER_FIELD_DROPDOWN_LIST_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 05: Verify Representative label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("Representative", GlobalConstants.PLACE_HOLDER_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 06: Verify Partner label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("Partner", GlobalConstants.PLACE_HOLDER_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 07: Verify Email label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("Email", GlobalConstants.PLACE_HOLDER_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 08: Verify Phone label is English languages");
-//		assertTrue(partnerBrandManagementPage.isPlaceHolderDisplayed("Phone", GlobalConstants.PLACE_HOLDER_PHONE_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 09: Verify Search button is English languages");
-//		assertTrue(partnerBrandManagementPage.isButtonDisplayed("Search"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 10: Verify Reset button is English languages");
-//		assertTrue(partnerBrandManagementPage.isButtonDisplayed("Reset"));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 04: Verify Brand No. column is English languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("Brand No."));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 05: Verify Partner column is English languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("Partner"));
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 04: Verify Brand column is English languages");
@@ -268,10 +184,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 10: Verify Camp. Completed column is English languages");
 		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("Camp. Completed"));
-
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Brand Management Page - Step 13: Verify Date of Creation column is English languages");
-//		assertTrue(partnerBrandManagementPage.isColumnNameDisplayed("Date of Creation"));
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 11: Verify Delete column is English languages");
@@ -311,11 +223,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 06: Verify Brand area translate to Korea");
 		assertTrue(partnerCreateNewBrandPage.isPlaceHolderByLabelNameDisplayed("브랜드명", GlobalConstants_KR.PLACE_HOLDER_TEXTBOX_KR));
-
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Create Brand Page - Step 07: Verify Partner area translate to Korea");
-//		assertTrue(partnerCreateNewBrandPage.isPlaceHolderByLabelNameDisplayed("파트너", GlobalConstants.PLACE_HOLDER_PARTNER_DROPDOWN_LIST_KR));
-//
+		
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 07: Verify Account Setting area translate to Korea");
 		assertTrue(partnerCreateNewBrandPage.isAccountSettingDisplayed("계정 설정"));
@@ -412,10 +320,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 				"Create Brand Page - Step 31: Verify Error Message At Field DropDown List translate to Korea");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtFieldDropdownList(), "필수입력사항 입니다.");
 
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Create Brand Page - Step 32: Verify Error Message At Partner dropdown list translate to Korea");
-//		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtPartnerDropdownList(), "필수입력사항 입니다.");
-
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 32: Verify Error Message At Email textbox translate to Korea");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtEmailTextBox(), "필수입력사항 입니다.");
@@ -464,11 +368,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 07: Verify Brand area translate to English");
 		assertTrue(partnerCreateNewBrandPage.isPlaceHolderByLabelNameDisplayed("Brand",GlobalConstants_KR.PLACE_HOLDER_TEXTBOX_EN));
-//
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Create Brand Page - Step 08: Verify Partner area translate to English");
-//		assertTrue(
-//				partnerCreateNewBrandPage.isPlaceHolderByLabelNameDisplayed("Partner", GlobalConstants.PLACE_HOLDER_PARTNER_DROPDOWN_LIST_EN));
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 08: Verify Account Setting area translate to English");
@@ -557,10 +456,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 				"Create Brand Page - Step 31: Verify Error Message At Field DropDown List translate to English");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtFieldDropdownList(), "The selected value is invalid.");
 
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Create Brand Page - Step 33: Verify Error Message At Partner dropdown list translate to English");
-//		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtPartnerDropdownList(), "This field is required.");
-
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 32: Verify Error Message At Email textbox translate to English");
 		assertEquals(partnerCreateNewBrandPage.getErrorMessageAtEmailTextBox(),
@@ -605,19 +500,12 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 06: Select Field '" + GlobalConstants_KR.FIELD_DROPDOWN_LIST + "'");
 		partnerCreateNewBrandPage.selectField(GlobalConstants_KR.FIELD_DROPDOWN_LIST);
 
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 07: Input Partner Name '" + GlobalConstants.PARTNER_NAME_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.enterToPartNameTextBox(GlobalConstants.PARTNER_NAME_SEARCH_FIELD);
-//
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 08: Select Partner Name '" + GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.selectPartnerByName(GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD);
-
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 07: Click on 'Save' button");
 		partnerCreateNewBrandPage.clickSaveButton(GlobalConstants_KR.SAVE_BUTTON_KR);
 		partnerBrandManagementPage = PageGeneratorManager.getPartnerBrandMangementPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management - Step 08: Verify Brand has just been created in Brand Management list");
-//		assertTrue(partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("파트너명", "1", GlobalConstants.PARTNER_NAME_SEARCH_FIELD));
 		assertTrue(partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("브랜드명", "1", brandName));
 		assertTrue(partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("분야", "1", GlobalConstants_KR.FIELD_DROPDOWN_LIST));
 
@@ -628,9 +516,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Do Not Have Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Input Brand Name '" + brandName + "'");
 		partnerBrandManagementPage.enterToSearchBrandTextBox(brandName);
-
-		//ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Search Button");
-		//partnerBrandManagementPage.clickToSearchButton();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Delete Button");
 		partnerBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants_KR.DELETE_BUTTON);
@@ -705,12 +590,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 05: Select Field '" + GlobalConstants_KR.FIELD_DROPDOWN_LIST + "'");
 		partnerCreateNewBrandPage.selectField(GlobalConstants_KR.FIELD_DROPDOWN_LIST);
 
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 06: Input Partner Name '" + GlobalConstants.PARTNER_NAME_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.enterToPartNameTextBox(GlobalConstants.PARTNER_NAME_SEARCH_FIELD);
-//
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 07: Select Partner Name '" + GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.selectPartnerByName(GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD);
-
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 06: Click on 'Use' button");
 		partnerCreateNewBrandPage.clickOnButtonByName(GlobalConstants_KR.USE_BUTTON_KR);
 
@@ -732,7 +611,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management - Step 12: Verify Brand has just been created in Brand Management list");
-//		partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("파트너명", "1", GlobalConstants.PARTNER_NAME_SEARCH_FIELD);
 		partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("브랜드명", "1", brandName);
 		partnerBrandManagementPage.isTextCreatedBrandAtRowDisplayed("분야", "1", GlobalConstants_KR.FIELD_DROPDOWN_LIST);
 
@@ -748,15 +626,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Has Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Search Brand '" + GlobalConstants_KR.BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR + "'");
 		partnerBrandManagementPage.enterToSearchBrandTextBox(GlobalConstants_KR.BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR);
-
-//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Search Button");
-//		partnerBrandManagementPage.clickToResetButton();
-
-//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Search Brand '" + GlobalConstants.BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR + "'");
-//		partnerBrandManagementPage.enterToSearchBrandTextBox(GlobalConstants.BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR);
-
-//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 03: Click on Search Button");
-//		partnerBrandManagementPage.clickToSearchButton();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Delete Button");
 		partnerBrandManagementPage.clickToDeleteButtonByRownNumber("1", "삭제하기");
@@ -816,12 +685,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 07: Select Field");
 		partnerCreateNewBrandPage.selectField(GlobalConstants_KR.FIELD_DROPDOWN_LIST);
-
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 05: Input Partner Name '" + GlobalConstants.PARTNER_NAME_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.enterToPartNameTextBox(GlobalConstants.PARTNER_NAME_SEARCH_FIELD);
-//
-//		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 06: Select Partner Name '" + GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD + "'");
-//		partnerCreateNewBrandPage.selectPartnerByName(GlobalConstants.PARTNER_NAME_AND_EMAIL_SEARCH_FIELD);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 08: Click on 'Save' button");
 		partnerCreateNewBrandPage.clickSaveButton("저장하기");

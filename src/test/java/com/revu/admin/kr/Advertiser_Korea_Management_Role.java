@@ -43,16 +43,16 @@ public class Advertiser_Korea_Management_Role extends BaseTest {
 	String brandName;
 
 	Environment environment;
-	@Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	@Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
 	@BeforeClass
-	public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+	public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion,@Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
 		// Maven
 //		String environmentName = System.getProperty("envMaven");
 //		ConfigFactory.setProperty("envOwner", environmentName);
 //		environment = ConfigFactory.create(Environment.class);
 //		driver = getBrowserDriver(browserName, environment.appUrl());
 
-		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		brandName = "Automation_Brand_" + generateNumber();

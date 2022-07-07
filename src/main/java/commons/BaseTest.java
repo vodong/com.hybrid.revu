@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import factoryEnvironment.BrowserStackFactory;
+import factoryEnvironment.GridFactory;
 import factoryEnvironment.LocalFactory;
 
 public class BaseTest {
@@ -21,14 +22,14 @@ public class BaseTest {
 		log = LogFactory.getLog(getClass());
 	}
 	
-	protected WebDriver getBrowserDriver(String envName, String serverName, String browserName, String osName, String osVersion) {
+	protected WebDriver getBrowserDriver(String envName, String serverName, String browserName, String osName, String osVersion, String ipAddress, String portNumber) {
 		switch (envName) {
 		case "local":
 			driver = new LocalFactory(browserName).createDriver();
 			break;
-//		case "Grid":
-//			driver = new LocalFactory(browserName).createDriver();
-//			break;
+		case "grid":
+			driver = new GridFactory(browserName, ipAddress, portNumber).createDriver();
+			break;
 		case "BrowserStack":
 			driver = new BrowserStackFactory(browserName, osName, osVersion).createDriver();
 			break;
@@ -108,7 +109,7 @@ public class BaseTest {
 	}
 
 	protected void closeBrowserAndDriver() {
-		//if(envName.equals("local") || envName.equals("Grid")) {
+		//if(envName.equals("local") || envName.equals("grid")) {
 			String cmd = "";
 			try {
 				String osName = System.getProperty("os.name").toLowerCase();

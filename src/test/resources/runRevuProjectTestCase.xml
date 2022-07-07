@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Revu">
+<suite name="Revu" parallel="tests" thread-count="2">
   
 	<listeners>
 		<listener class-name="commons.MethodListener"/>
@@ -11,10 +11,10 @@
 	<parameter name="envName" value="local" />
 	<parameter name="serverName" value="Test" />
 
-	<!--<parameter name="urlUser" value="https://vn.revu.net/" />-->
-
 	<test name="Run on FireFox">
 		<parameter name="browser" value="Firefox" />
+		<!--<parameter name="ipAddress" value="localhost" /> -->
+		<!--<parameter name="portNumber" value="4444" /> -->
 		<parameter name="osName" value="Windows" />
 		<parameter name="osVersion" value="10" />
 		<classes>
