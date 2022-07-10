@@ -10,7 +10,7 @@ import pageUIs.revu.admin.BasePageUI;
 
 public class PartnerDetailBrandManagementObject extends BasePage {
 	private WebDriver driver;
-	private long shorttime = GlobalConstants_KR.SHORT_TIME_OUT_WAIT_ELEMENT;
+	private long shorttime = GlobalConstants_KR.shortTimeoutWaiElement;
 
 	public PartnerDetailBrandManagementObject (WebDriver driver) {
 		this.driver = driver;

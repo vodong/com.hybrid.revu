@@ -10,7 +10,7 @@ public class ExtentManager {
 	public static final ExtentReports extentReports = new ExtentReports();
 
 	public synchronized static ExtentReports createExtentReports() {
-		ExtentSparkReporter reporter = new ExtentSparkReporter(GlobalConstants_KR.PROJECT_PATH + "/extentV5/ExtentReport.html");
+		ExtentSparkReporter reporter = new ExtentSparkReporter(GlobalConstants_KR.projectPath + "/extentV5/ExtentReport.html");
 		reporter.config().setReportName("Revu HTML Report");
 		reporter.config().setDocumentTitle("Revu HTML Report");
 		reporter.config().setTimelineEnabled(true);
@@ -21,7 +21,7 @@ public class ExtentManager {
 		extentReports.setSystemInfo("Revu Company", "Automation FC");
 		extentReports.setSystemInfo("Project", "Revu");
 		extentReports.setSystemInfo("Team", "Pham Vo Dong - Edward");
-		extentReports.setSystemInfo("JDK version", GlobalConstants_KR.JAVA_VERSION);
+		extentReports.setSystemInfo("JDK version", GlobalConstants_KR.javaVersion);
 		return extentReports;
 	}
 }

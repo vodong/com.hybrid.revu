@@ -13,7 +13,7 @@ public class DynamicData {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-			return mapper.readValue(new File(GlobalConstants_KR.PROJECT_PATH + "/testdata/com/revu/data/DynamicData.json"), DynamicData.class);
+			return mapper.readValue(new File(GlobalConstants_KR.projectPath + "/testdata/com/revu/data/DynamicData.json"), DynamicData.class);
 			
 		} catch(Exception ex) {
 			ex.printStackTrace();

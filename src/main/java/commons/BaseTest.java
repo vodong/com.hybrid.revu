@@ -13,9 +13,10 @@ import org.testng.Reporter;
 import factoryEnvironment.BrowserStackFactory;
 import factoryEnvironment.GridFactory;
 import factoryEnvironment.LocalFactory;
+//import utilities.PropertiesConfig;
 
 public class BaseTest {
-	private WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	protected final Log log;
 
 	protected BaseTest() {
@@ -25,36 +26,37 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String envName, String serverName, String browserName, String osName, String osVersion, String ipAddress, String portNumber) {
 		switch (envName) {
 		case "local":
-			driver = new LocalFactory(browserName).createDriver();
+			driver.set(new LocalFactory(browserName).createDriver());
 			break;
 		case "grid":
-			driver = new GridFactory(browserName, ipAddress, portNumber).createDriver();
+			driver.set(new GridFactory(browserName, ipAddress, portNumber).createDriver());
 			break;
 		case "BrowserStack":
-			driver = new BrowserStackFactory(browserName, osName, osVersion).createDriver();
+			driver.set(new BrowserStackFactory(browserName, osName, osVersion).createDriver());
 			break;
 		default:
-			driver = new LocalFactory(browserName).createDriver();
+			driver.set(new LocalFactory(browserName).createDriver());
 			break;
 		}
 		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(GlobalConstants_KR.LONG_TIME_OUT, TimeUnit.SECONDS);
-		driver.get(getEnvironmentValue(serverName));
-		return driver;
+		driver.get().manage().window().maximize();
+		driver.get().manage().timeouts().implicitlyWait(GlobalConstants_KR.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
+//		driver.get().manage().timeouts().implicitlyWait(PropertiesConfig.getFileConfigReader().getLongTimeout(), TimeUnit.SECONDS);
+		driver.get().get(getEnvironmentValue(serverName));
+		return driver.get();
 	}
 
 	protected String getEnvironmentValue(String serverName) {
 		String url = null;
 		switch (serverName) {
 		case "Test":
-			url = GlobalConstants_KR.ADMIN_TESTING_URL;
+			url = GlobalConstants_KR.getGlobalConstants().getAdminTestingUrl();
 			break;
 		case "Staging":
-			url = GlobalConstants_KR.ADMIN_STAGING_URL;
+			url = GlobalConstants_KR.getGlobalConstants().getAdminStagingUrl();
 			break;
 		case "INFLUENCERS":
-			url = GlobalConstants_KR.PORTAL_TESTING_URL;
+			url = GlobalConstants_KR.getGlobalConstants().getTestingUrl();
 			break;
 		}
 		return url;
@@ -109,7 +111,6 @@ public class BaseTest {
 	}
 
 	protected void closeBrowserAndDriver() {
-		//if(envName.equals("local") || envName.equals("grid")) {
 			String cmd = "";
 			try {
 				String osName = System.getProperty("os.name").toLowerCase();
@@ -153,8 +154,9 @@ public class BaseTest {
 				}
 
 				if (driver != null) {
-					driver.manage().deleteAllCookies();
-					driver.quit();
+					driver.get().manage().deleteAllCookies();
+					driver.get().quit();
+					driver.remove();
 				}
 			} catch (Exception e) {
 				log.info(e.getMessage());
@@ -168,11 +170,10 @@ public class BaseTest {
 					e.printStackTrace();
 				}
 			}
-		//}
 	}
 
 	public WebDriver getDriverInstance() {
-		return this.driver;
+		return driver.get();
 	}
 	
 	public int generateNumber() {

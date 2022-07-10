@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import factoryBrowser.BrowserList;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LocalFactory {
@@ -15,14 +16,14 @@ public class LocalFactory {
 	}
 	
 	public WebDriver createDriver() {
-		Browser browser = Browser.valueOf(browserName.toUpperCase());
-		if(browser == Browser.FIREFOX) {
+		BrowserList browser = BrowserList.valueOf(browserName.toUpperCase());
+		if(browser == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver(); 
-		}else if(browser == Browser.CHROME) {
+		}else if(browser == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		}else if(browser == Browser.EDGE) {
+		}else if(browser == BrowserList.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			driver = new ChromeDriver();
 		}else {

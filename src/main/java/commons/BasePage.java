@@ -385,10 +385,15 @@ public class BasePage {
 	protected void switchToDefaultContent(WebDriver driver) {
 		driver.switchTo().defaultContent();
 	}
-
+	
 	protected void hoverMouseToElement(WebDriver driver, String locatorType) {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElement(driver, locatorType)).perform();
+	}
+
+	protected void hoverMouseToElement(WebDriver driver, String locatorType, String... dynamicValue) {
+		Actions action = new Actions(driver);
+		action.moveToElement(getWebElement(driver, getDynamicElement(locatorType, dynamicValue))).perform();
 	}
 
 	protected void pressKeyToElement(WebDriver driver, String locatorType, Keys key) {
@@ -496,7 +501,7 @@ public class BasePage {
 	}
 
 	public void upLoadMultipleFiles(WebDriver driver, String... fileNames) {
-		String filePath = GlobalConstants_KR.UPLOAD_FILE;
+		String filePath = GlobalConstants_KR.getGlobalConstants().getUploadFile();
 		String fullFileName = "";
 		for (String file : fileNames) {
 			fullFileName = fullFileName + filePath + file + "\n";
@@ -617,7 +622,7 @@ public class BasePage {
 		}
 	}
 
-	private long longTimeOut = GlobalConstants_KR.LONG_TIME_OUT;
-	private long shorTimeOut = GlobalConstants_KR.SHORT_TIME_OUT;
+	private long longTimeOut = GlobalConstants_KR.getGlobalConstants().getLongTimeout();
+	private long shorTimeOut = GlobalConstants_KR.getGlobalConstants().getShortTimeout();
 
 }

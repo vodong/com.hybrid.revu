@@ -2,73 +2,85 @@ package commons;
 
 import java.io.File;
 
+import lombok.Getter;
+
+@Getter
 public class GlobalConstants_KR {
-	public static final String PROJECT_PATH = System.getProperty("user.dir");
-	public static final String JAVA_VERSION = System.getProperty("java.version");
-	public static final String OS_NAME = System.getProperty("os.name");
-	public static final String UPLOAD_FILE = PROJECT_PATH + File.separator + "uploadFiles" + File.separator;
-	public static final String TEST_DATA = PROJECT_PATH + File.separator + "testdata" + File.separator;
-	public static final String DOWNLOAD_FILE = PROJECT_PATH + File.separator + "downloadFiles";
-	public static final String BROWSER_LOG = PROJECT_PATH + File.separator + "browserLogs";
-	public static final String DRAG_DROP_HTML5 = PROJECT_PATH + File.separator + "dragDropHTML5";
-	public static final String AUTO_IT_SCRIPT = PROJECT_PATH + File.separator + "autoIT";
-	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "reportNGImages" + File.separator;
-	public static final long SHORT_TIME_OUT = 2;
-	public static final long SHORT_TIME_OUT_WAIT_ELEMENT = 2;
-	public static final long LONG_TIME_OUT = 30;
-	public static final long RETRY_TEST__FAIL = 3;
+	private static GlobalConstants_KR globalInstanceKR;
+	
+	public static synchronized GlobalConstants_KR getGlobalConstants() {
+		if(globalInstanceKR == null) {
+			globalInstanceKR = new GlobalConstants_KR();
+		}
+		return globalInstanceKR;
+	}
+	
+	private final String projectPath = System.getProperty("user.dir");
+	private final String javaVersion = System.getProperty("java.version");
+	private final String osName = System.getProperty("os.name");
+	private final String uploadFile = projectPath + File.separator + "uploadFiles" + File.separator;
+	private final String testData = projectPath + File.separator + "testdata" + File.separator;
+	private final String downloadFile = projectPath + File.separator + "downloadFiles";
+	private final String browserLog = projectPath + File.separator + "browserLogs";
+	private final String dragDropHTML5 = projectPath + File.separator + "dragDropHTML5";
+	private final String autoITScritp = projectPath + File.separator + "autoIT";
+	private final String reportingScreenshot = projectPath + File.separator + "reportNGImages" + File.separator;
+	private final long shortTimeout = 2;
+	private final long shortTimeoutWaiElement = 2;
+	private final long longTimeout = 30;
+	private final long retryTestFail = 3;
 	
 	// Definition URL
-	public static final String PORTAL_TESTING_URL = "https://tw.test.porsche.revu.net/";
-	public static final String ADMIN_TESTING_URL = "https://admin.test.ent.revu.net/";
-	public static final String ADMIN_STAGING_URL = "https://admin.staging.ent.revu.net";
-	public static final String ADVERTISER_TEST_URL = "partner";
+	private final String testingUrl = "https://tw.test.porsche.revu.net/";
+	private final String adminTestingUrl = "https://admin.test.ent.revu.net/";
+	private final String adminStagingUrl = "https://admin.staging.ent.revu.net";
+	private final String advertiserTestUrl = "partner";
 	
 	// Admin Information
-	public static final String EMAIL_MANAGER_ROLE = "kr.super.manager@revu.net";
-	public static final String PASSWORD = "123456";
-	public static final String INCORRECT_PASSWORD = "123456789";
-	public static final String EMAIL_PARTNER_ROLE = "kr.partner1@revu.net";
-	public static final String WRONG_EMAIL_FORMAT = "kr.com";
+	private final String emailManagerRole = "kr.super.manager@revu.net";
+	private final String password = "123456";
+	private final String incorrectPassword = "123456789";
+	private final String emailPartnerRole = "kr.partner1@revu.net";
+	private final String wrongEmailFormat = "kr.com";
 	
 	// Brand Management Information
-	public static final String PARTNER_NAME_SEARCH_FIELD = "Dong Corporation";
-	public static final String PARTNER_NAME_AND_EMAIL_SEARCH_FIELD = "Dong Corporation (partner_ED2@yopmail.com)";
-	public static final String FIELD_DROPDOWN_LIST = "FOOD";
-	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_KR = "브랜드명 검색 ";
-	public static final String PLACE_HOLDER_SEARCH_TEXTBOX_EN = "Brand Search";
-	public static final String PLACE_HOLDER_TEXTBOX_KR = "입력";
-	public static final String PLACE_HOLDER_TEXTBOX_EN = "Input";
-	public static final String PLACE_HOLDER_PHONE_TEXTBOX_EN = "Number Only";
-	public static final String PLACE_HOLDER_PHONE_TEXTBOX_KR = "숫자만 입력";
-	public static final String PLACE_HOLDER_FIELD_DROPDOWN_LIST_KR = "선택";
-	public static final String PLACE_HOLDER_FIELD_DROPDOWN_LIST_EN = "Select";
-	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_KR = "파트너 검색";
-	public static final String PLACE_HOLDER_PARTNER_DROPDOWN_LIST_EN = "Partner search";
-	public static final String BRAND_NAME_HAS_CAMPAIGN_MANAGER_ROLE_KR = "Automation_Brand_7539";
-	public static final String BRAND_NAME_HAS_CAMPAIGN_PARTNER_ROLE_KR = "MATE International Marketing";
-	public static final String KOREA_LANGUAGE = "한국어";
-	public static final String ENGLISH_LANGUAGE = "English";
-	public static final String ADVERTISER_MANAGEMENT_LINK = "광고주 관리";
-	public static final String BRAND_MANAGEMENT_LINK = "브랜드 관리";
-	public static final String TITLE_BRAND_MANGEMENT_PAGE = "브랜드 화면 보기";
-	public static final String CREATE_A_NEW_BRAND_BUTTON = "+ 새 브랜드 생성";
-	public static final String USE_BUTTON_KR = "설정함";
-	public static final String USE_BUTTON_EN = "Use";
-	public static final String NON_USE_BUTTON_KR = "설정안함";
-	public static final String NON_USE_BUTTON_EN = "Nonuse";
-	public static final String SAVE_BUTTON_KR = "저장하기";
-	public static final String SAVE_BUTTON_EN = "Save";
-	public static final String PASSWORD_SETTING_KR = "직접 설정";
-	public static final String PASSWORD_SETTING_EN = "Password setting";
-	public static final String RESET_PASSWORD_BUTTON_EN = "Password setting";
-	public static final String RESET_PASSWORD_BUTTON_KR = "직접 설정";
-	public static final String CANCEL_SETTING_EN = "Cancel setting";
-	public static final String CANCEL_SETTING_KR = "설정 취소";
-	public static final String DELETE_BUTTON = "삭제하기";
+	private final String partnerNameSearchField = "Dong Corporation";
+	private final String partnerNameAndEmailSearchField = "Dong Corporation (partner_ED2@yopmail.com)";
+	private final String fieldDropDownListValue = "FOOD";
+	private final String placeholderSearchTextBoxKR = "브랜드명 검색 ";
+	private final String placeholderSearchTextBoxEN = "Brand Search";
+	private final String placeholderTextBoxKR = "입력";
+	private final String placeholderTextBoxEN = "Input";
+	private final String placeholderPhoneTextBoxEN = "Number Only";
+	private final String placeholderPhoneTextBoxKR = "숫자만 입력";
+	private final String placeholderFieldDropDownListKR = "선택";
+	private final String placeholderFieldDropDownListEN = "Select";
+	private final String placeholderPartnerDropDownListKR = "파트너 검색";
+	private final String placeholderPartnerDropDownListEN = "Partner search";
+	private final String brandNameHasCampaignManagerRoleKR = "Automation_Brand_7539";
+	private final String brandNameHasCampaignPartnerRoleKR = "MATE International Marketing";
+	private final String koreaLanguage = "한국어";
+	private final String englishLangguage = "English";
+	private final String advertiserManagementLink = "광고주 관리";
+	private final String brandManagementLink = "브랜드 관리";
+	private final String titleBrandManagementPage = "브랜드 화면 보기";
+	private final String createANewBrandButton = "+ 새 브랜드 생성";
+	private final String useButtonKR = "설정함";
+	private final String useButtonEN = "Use";
+	private final String nonUseButtonKR = "설정안함";
+	private final String nonUseButtonEN = "Nonuse";
+	private final String saveButtonKR = "저장하기";
+	private final String saveButtonEN = "Save";
+	private final String passwordSettingKR = "직접 설정";
+	private final String passwordSettingEN = "Password setting";
+	private final String resetPasswordButtonEN = "Password setting";
+	private final String resetPasswordButtonKR = "직접 설정";
+	private final String cancelSettingEN = "Cancel setting";
+	private final String cancelSettingKR = "설정 취소";
+	private final String deleteButtonKR = "삭제하기";
 	
 	//Browser Stack
-	public static final String BROWSE_USERNAME = "vodongpham_vbRLlM";
-	public static final String BROWSE_AUTOMATE_KEY = "idztyWmBznShx8tLvKAe";
-	public static final String BROWSE_STACK_URL = "https://" + BROWSE_USERNAME + ":" + BROWSE_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+	private final String browserUserName = "vodongpham_vbRLlM";
+	private final String browserAutomateKey = "idztyWmBznShx8tLvKAe";
+	private final String browserStackUrl = "https://" + browserUserName + ":" + browserAutomateKey + "@hub-cloud.browserstack.com/wd/hub";
 }

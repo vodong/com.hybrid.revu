@@ -11,7 +11,7 @@ import pageUIs.revu.admin.BasePageUI;
 
 public class AdminHomePageObject extends BasePage {
 	private WebDriver driver;
-	private long ShortTime = GlobalConstants_KR.SHORT_TIME_OUT_WAIT_ELEMENT;
+	private long ShortTime = GlobalConstants_KR.shortTimeoutWaiElement;
 
 	public AdminHomePageObject(WebDriver driver) {
 		this.driver = driver;
@@ -22,9 +22,9 @@ public class AdminHomePageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.LOGIN_LINK);
 	}
 
-	public void openSelectCountryList() {
-		waitForElementClickable(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST);
-		clickToElement(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST);
+	public void openCountryList() {
+		waitForElementClickable(driver, AdminHomePageUI.COUNTRY_LIST);
+		clickToElement(driver, AdminHomePageUI.COUNTRY_LIST);
 	}
 
 	public void enterToEmailTextbox(String emailaddress) {
@@ -39,9 +39,14 @@ public class AdminHomePageObject extends BasePage {
 		sleepInSecond(ShortTime);
 	}
 
-	public void selectCountry(String countryName) {
-		waitForElementClickable(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST_POPUP, countryName);
-		clickToElement(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST_POPUP, countryName);
+	public void hoverCountryName(String countryName) {
+		waitForElementVisible(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST, countryName);
+		hoverMouseToElement(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST, countryName);
+	}
+	
+	public void selectLanguage(String languageValue) {
+		waitForElementClickable(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST, languageValue);
+		clickToElement(driver, AdminHomePageUI.COUNTRY_DROPDOWN_LIST, languageValue);
 		sleepInSecond(ShortTime);
 	}
 

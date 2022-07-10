@@ -8,7 +8,7 @@ import pageUIs.revu.Advertiser.AdvertiserDashBoardPageUI;
 
 public class AdvertiserDashBoardPageObject extends BasePage {
 	private WebDriver driver;
-	long shortTimeOut = GlobalConstants_KR.SHORT_TIME_OUT;
+	long shortTimeOut = GlobalConstants_KR.shortTimeout;
 
 	public AdvertiserDashBoardPageObject(WebDriver driver) {
 		this.driver = driver;
