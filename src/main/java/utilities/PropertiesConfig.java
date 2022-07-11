@@ -6,11 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 
 public class PropertiesConfig {
 	private final Properties properties;
-	private final String propertyFilePath = GlobalConstants_KR.getGlobalConstants().getProjectPath() + "/resources/config.properties";
+	private final String propertyFilePath = GlobalConstants.getGlobalConstants().getProjectPath() + "/resources/config.properties";
 
 	private static PropertiesConfig configLoader;
 

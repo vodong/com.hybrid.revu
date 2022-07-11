@@ -3,12 +3,12 @@ package pageObjects.revu.Advertiser;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 import pageUIs.revu.Advertiser.AdvertiserDashBoardPageUI;
 
 public class AdvertiserDashBoardPageObject extends BasePage {
 	private WebDriver driver;
-	long shortTimeOut = GlobalConstants_KR.shortTimeout;
+	long shortTimeOut = GlobalConstants.getGlobalConstants().getShortTimeout();
 
 	public AdvertiserDashBoardPageObject(WebDriver driver) {
 		this.driver = driver;

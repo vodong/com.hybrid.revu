@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 
 public class BrowserStackFactory {
 	private WebDriver driver;
@@ -38,7 +38,7 @@ public class BrowserStackFactory {
 		}
 		
 		try {
-			driver = new RemoteWebDriver(new URL(GlobalConstants_KR.BROWSE_STACK_URL), capability);
+			driver = new RemoteWebDriver(new URL(GlobalConstants.getGlobalConstants().getBrowserStackUrl()), capability);
 		}catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

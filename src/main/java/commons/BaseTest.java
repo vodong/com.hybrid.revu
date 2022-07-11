@@ -40,7 +40,7 @@ public class BaseTest {
 		}
 		
 		driver.get().manage().window().maximize();
-		driver.get().manage().timeouts().implicitlyWait(GlobalConstants_KR.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
+		driver.get().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
 //		driver.get().manage().timeouts().implicitlyWait(PropertiesConfig.getFileConfigReader().getLongTimeout(), TimeUnit.SECONDS);
 		driver.get().get(getEnvironmentValue(serverName));
 		return driver.get();
@@ -50,13 +50,13 @@ public class BaseTest {
 		String url = null;
 		switch (serverName) {
 		case "Test":
-			url = GlobalConstants_KR.getGlobalConstants().getAdminTestingUrl();
+			url = GlobalConstants.getGlobalConstants().getAdminTestingUrl();
 			break;
 		case "Staging":
-			url = GlobalConstants_KR.getGlobalConstants().getAdminStagingUrl();
+			url = GlobalConstants.getGlobalConstants().getAdminStagingUrl();
 			break;
 		case "INFLUENCERS":
-			url = GlobalConstants_KR.getGlobalConstants().getTestingUrl();
+			url = GlobalConstants.getGlobalConstants().getTestingUrl();
 			break;
 		}
 		return url;

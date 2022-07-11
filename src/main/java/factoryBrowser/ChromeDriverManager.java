@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ChromeDriverManager implements BrowserFactory {
@@ -23,7 +23,7 @@ public class ChromeDriverManager implements BrowserFactory {
 		
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 		chromePrefs.put("profile.default_content_settings.popups", 0);
-		chromePrefs.put("profile.default_content_directory", GlobalConstants_KR.getGlobalConstants().getDownloadFile());
+		chromePrefs.put("profile.default_content_directory", GlobalConstants.getGlobalConstants().getDownloadFile());
 		options.setExperimentalOption("prefs", chromePrefs);
 		
 		//options.addArguments("--incognito");

@@ -3,7 +3,7 @@ package pageObjects.revu.Admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
 import pageUIs.revu.admin.AdminHomePageUI;
@@ -11,7 +11,7 @@ import pageUIs.revu.admin.BasePageUI;
 
 public class AdminHomePageObject extends BasePage {
 	private WebDriver driver;
-	private long ShortTime = GlobalConstants_KR.shortTimeoutWaiElement;
+	private long ShortTime = GlobalConstants.getGlobalConstants().getShortTimeoutWaiElement();
 
 	public AdminHomePageObject(WebDriver driver) {
 		this.driver = driver;

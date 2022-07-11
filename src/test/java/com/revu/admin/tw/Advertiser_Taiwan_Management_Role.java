@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 import commons.GlobalConstants_TW;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;

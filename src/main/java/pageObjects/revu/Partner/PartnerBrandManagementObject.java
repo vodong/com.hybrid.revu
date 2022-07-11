@@ -4,13 +4,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import commons.GlobalConstants_KR;
+import commons.GlobalConstants;
 import pageUIs.revu.Partner.PartnerAdvertiserPageUI;
-import pageUIs.revu.admin.AdminAdvertiserPageUI;
 
 public class PartnerBrandManagementObject extends BasePage {
 	private WebDriver driver;
-	long shortTimeOut = GlobalConstants_KR.shortTimeout;
+	long shortTimeOut = GlobalConstants.getGlobalConstants().getShortTimeout();
 
 	public PartnerBrandManagementObject(WebDriver driver) {
 		this.driver = driver;

@@ -501,7 +501,7 @@ public class BasePage {
 	}
 
 	public void upLoadMultipleFiles(WebDriver driver, String... fileNames) {
-		String filePath = GlobalConstants_KR.getGlobalConstants().getUploadFile();
+		String filePath = GlobalConstants.getGlobalConstants().getUploadFile();
 		String fullFileName = "";
 		for (String file : fileNames) {
 			fullFileName = fullFileName + filePath + file + "\n";
@@ -622,7 +622,7 @@ public class BasePage {
 		}
 	}
 
-	private long longTimeOut = GlobalConstants_KR.getGlobalConstants().getLongTimeout();
-	private long shorTimeOut = GlobalConstants_KR.getGlobalConstants().getShortTimeout();
+	private long longTimeOut = GlobalConstants.getGlobalConstants().getLongTimeout();
+	private long shorTimeOut = GlobalConstants.getGlobalConstants().getShortTimeout();
 
 }
