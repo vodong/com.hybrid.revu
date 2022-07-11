@@ -27,8 +27,8 @@ public class AdminBrandManagementObject extends BasePage {
 	}
 
 	public boolean isPlaceHolderFieldDropDownListDisplayed(String labelName, String placeHolderName) {
-		waitForElementVisible(driver, AdminAdvertiserPageUI.SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST, placeHolderName, labelName);
-		return isElementDisplayed(driver, AdminAdvertiserPageUI.SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST, placeHolderName, labelName);
+		waitForElementVisible(driver, AdminAdvertiserPageUI.SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST, labelName, placeHolderName);
+		return isElementDisplayed(driver, AdminAdvertiserPageUI.SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST, labelName, placeHolderName);
 	}
 
 	public boolean isColumnNameDisplayed(String columnName) {

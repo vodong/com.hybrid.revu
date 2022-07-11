@@ -7,6 +7,7 @@ public class AdminCreateBrandPageUI {
 	public static final String TITLE_AREA_NAME = "XPATH=//h3[text()='%s']";
 	public static final String PLACE_HOLDER_BY_LABEL_NAME = "XPATH=//div//label[text()='%s']/parent::div//input[@placeholder='%s']";
 	public static final String BUTTON_NAME = "XPATH=//button[contains(text(),'%s')]";
+//	public static final String PLACE_HOLDER_BY_DROPDOWN_LIST_NAME = "XPATH=//div//label[text()='%s']/parent::div//select-custome//span[contains(.,'%s')]";
 	public static final String PLACE_HOLDER_BY_DROPDOWN_LIST_NAME = "XPATH=//div//label[text()='%s']/parent::div//select-custome[contains(.,'%s')]";
 	public static final String FIELD_DROPDOWN_LIST = "CSS=div.form-group-yt  select-custome.ng-pristine div.select-btn";
 	public static final String FIELD_DROPDOWN_LIST_OPTION = "CSS=ul.ng-scope li.ng-scope span.ng-binding";

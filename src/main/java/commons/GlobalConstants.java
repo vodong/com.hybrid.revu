@@ -71,7 +71,6 @@ public class GlobalConstants {
 	private final String nonUseButtonEN = "Nonuse";
 	private final String saveButtonKR = "저장하기";
 	private final String passwordSettingKR = "직접 설정";	
-	private final String resetPasswordButtonKR = "직접 설정";
 	private final String cancelSettingKR = "설정 취소";
 	private final String deleteButtonKR = "삭제하기";
 	private final String searchButtonAtSearchFilterKR = "검색";
