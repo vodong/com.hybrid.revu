@@ -98,4 +98,9 @@ public class AdminHomePageObject extends BasePage {
 		sleepInSecond(ShortTime);
 		return PageGeneratorManager.getPartnerBrandMangementPage(driver);
 	}
+
+	public boolean isOpenLoginLinkDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.LOGIN_LINK);
+		return isElementDisplayed(driver,  AdminHomePageUI.LOGIN_LINK);
+	}
 }

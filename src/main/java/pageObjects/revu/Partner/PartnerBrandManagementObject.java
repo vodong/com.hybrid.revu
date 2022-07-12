@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import commons.GlobalConstants;
 import pageUIs.revu.Partner.PartnerAdvertiserPageUI;
+import pageUIs.revu.admin.AdminHomePageUI;
 
 public class PartnerBrandManagementObject extends BasePage {
 	private WebDriver driver;
@@ -134,5 +135,10 @@ public class PartnerBrandManagementObject extends BasePage {
 	public boolean isSearchTextBoxDisplayed(String textValue) {
 		waitForElementVisible(driver, PartnerAdvertiserPageUI.SEARCH_PLACEHOLDER_TEXTBOX, textValue);
 		return isElementDisplayed(driver, PartnerAdvertiserPageUI.SEARCH_PLACEHOLDER_TEXTBOX, textValue);
+	}
+
+	public boolean isOpenLoginLinkDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.LOGIN_LINK);
+		return isElementDisplayed(driver,  AdminHomePageUI.LOGIN_LINK);
 	}
 }

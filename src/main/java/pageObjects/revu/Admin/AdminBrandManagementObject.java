@@ -135,4 +135,9 @@ public class AdminBrandManagementObject extends BasePage {
 		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_HEADER);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_HEADER);
 	}
+
+	public boolean isOpenLoginLinkDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.LOGIN_LINK);
+		return isElementDisplayed(driver,  AdminHomePageUI.LOGIN_LINK);
+	}
 }

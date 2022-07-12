@@ -618,24 +618,28 @@ public class Advertiser_Taiwan_Management_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Click on Search Button");
 		adminBrandManagementPage.clickToSearchButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 03: Get Title Current Page");
-		getCurrentUrl = adminBrandManagementPage.getPageTitle(driver);
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 03: Get Title Current Page");
+//		getCurrentUrl = adminBrandManagementPage.getPageUrl(driver);
+//		System.out.println("TC 08_Manager " + getCurrentUrl);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 04: Refesh Current Page");
 		adminBrandManagementPage.refeshCurrentPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Get Title Current Page After Reloading");
-		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageTitle(driver);
-		adminHomePage = PageGeneratorManager.getHomePage(driver);
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Get Title Current Page After Reloading");
+//		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageUrl(driver);
+//		System.out.println("TC 08_Manager " + getCurrentUrlAfterRefesh);
+//		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Compare Previous Title To Current Page After Reloading");
-		if(getCurrentUrlAfterRefesh != getCurrentUrl) {
-			adminHomePage.openLoginPopup();
-			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
-		}else {
-			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Click on Delete Button");
-			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
-		}
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Compare Previous Title To Current Page After Reloading");
+//		if(adminBrandManagementPage.isOpenLoginLinkDisplayed()) {
+//			adminHomePage.openLoginPopup();
+//			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());	
+//			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Click on Delete Button");
+//			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
+//		}else {
+//			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Click on Delete Button");
+//			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
+//		}
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Click on Delete Button");
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
@@ -761,26 +765,31 @@ public class Advertiser_Taiwan_Management_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 04: Click on Search Button");
 		adminBrandManagementPage.clickToSearchButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Get Title Current Page");
-		getCurrentUrl = adminBrandManagementPage.getPageTitle(driver);
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Get Title Current Page");
+//		getCurrentUrl = adminBrandManagementPage.getPageUrl(driver);
+//		System.out.println("TC 10_Manager " + getCurrentUrl);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Refesh current page");
 		adminBrandManagementPage.refeshCurrentPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Get Title Current Page After Reloading");	
-		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageTitle(driver);
-		adminHomePage = PageGeneratorManager.getHomePage(driver);
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Get Title Current Page After Reloading");	
+//		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageTitle(driver);
+//		System.out.println("TC 10_Manager " + getCurrentUrlAfterRefesh);
+//		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 08: Compare Previous Title Page To Title Current Page After Reloading");
-		if(getCurrentUrlAfterRefesh != getCurrentUrl) {
-			adminHomePage.openLoginPopup();
-			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
-		}else {
-			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Click on Delete Button");
-			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1",
-					GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
-		}
-
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 08: Compare Previous Title Page To Title Current Page After Reloading");
+//		if(adminBrandManagementPage.isOpenLoginLinkDisplayed()) {
+//			adminHomePage.openLoginPopup();
+//			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
+//			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Click on Delete Button");
+//			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1",
+//					GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
+//		}else {
+//			ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Click on Delete Button");
+//			adminBrandManagementPage.clickToDeleteButtonByRownNumber("1",
+//					GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
+//		}
+		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Click on Delete Button");
 		adminBrandManagementPage.clickToDeleteButtonByRownNumber("1",
 				GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
@@ -831,26 +840,32 @@ public class Advertiser_Taiwan_Management_Role extends BaseTest {
 		adminBrandManagementPage.openByNameLink(driver, GlobalConstants.getGlobalConstants().getBrandManagementLinkTW());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 04: Get Title Current");
-		getCurrentUrl = adminBrandManagementPage.getPageTitle(driver);
+//		getCurrentUrl = adminBrandManagementPage.getPageUrl(driver);
+//		System.out.println("TC 11_Manager " + getCurrentUrl);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Refesh Current Page");
 		adminBrandManagementPage.refeshCurrentPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Get Title Current Page After Reloading");
-		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageTitle(driver);
-		adminHomePage = PageGeneratorManager.getHomePage(driver);
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Get Title Current Page After Reloading");
+//		getCurrentUrlAfterRefesh = adminBrandManagementPage.getPageUrl(driver);
+//		System.out.println("TC 11_Manager " + getCurrentUrlAfterRefesh);
+//		adminHomePage = PageGeneratorManager.getHomePage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Compare Previous Title Page To Title Current Page After Reloading");
-		if(getCurrentUrlAfterRefesh != getCurrentUrl) {
-			adminHomePage.openLoginPopup();
-			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
-		}else {
-			ExtentTestManager.getTest().log(Status.INFO,
-					"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
-			adminBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
-			adminCreateNewBrandPage = PageGeneratorManager.getCreateANewBrandPage(driver);
-		}
-
+//		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Compare Previous Title Page To Title Current Page After Reloading");
+//		if(adminBrandManagementPage.isOpenLoginLinkDisplayed()) {
+//			adminHomePage.openLoginPopup();
+//			adminBrandManagementPage = adminHomePage.openBrandManagementPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
+//			ExtentTestManager.getTest().log(Status.INFO,
+//					"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
+//			adminBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
+//			adminCreateNewBrandPage = PageGeneratorManager.getCreateANewBrandPage(driver);
+//		}else {
+//			ExtentTestManager.getTest().log(Status.INFO,
+//					"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
+//			adminBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
+//			adminCreateNewBrandPage = PageGeneratorManager.getCreateANewBrandPage(driver);
+//		}
+		
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
 		adminBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
