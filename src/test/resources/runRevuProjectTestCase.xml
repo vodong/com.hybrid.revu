@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Revu" parallel="tests" thread-count="2">
-  
 	<listeners>
 		<listener class-name="commons.MethodListener"/>
 		<listener class-name="reportConfig.ExtentTestListener"/>
@@ -13,10 +12,10 @@
 	  
 	  	<test name="Run on Firefox">
 		<parameter name="browser" value="Firefox" />
-		<parameter name="ipAddress" value="localhost" />
-		<parameter name="portNumber" value="4444" />
-		<!--<parameter name="osName" value="Windows" />-->
-		<!--<parameter name="osVersion" value="10" />-->
+		<!--<parameter name="ipAddress" value="localhost" />-->
+		<!--<parameter name="portNumber" value="4444" />-->
+		<parameter name="osName" value="Windows" />
+		<parameter name="osVersion" value="10" />
 		<classes>
 			<class name="com.revu.admin.kr.Advertiser_Korea_Management_Role"/>
 			<class name="com.revu.admin.kr.Advertiser_Korea_Partner_Role"/>
@@ -27,8 +26,10 @@
 		<parameter name="browser" value="Chrome" />
 		<parameter name="ipAddress" value="localhost" />
 		<parameter name="portNumber" value="4444" /> 
-		<!--<parameter name="osName" value="Windows" />-->
-		<!--<parameter name="osVersion" value="10" />-->
+		<!--<parameter name="ipAddress" value="localhost" />-->
+		<!--<parameter name="portNumber" value="4444" />-->
+		<parameter name="osName" value="Windows" />
+		<parameter name="osVersion" value="10" />
 		<classes>
 			<class name="com.revu.admin.tw.Advertiser_Taiwan_Management_Role"/>
 			<class name="com.revu.admin.tw.Advertiser_Taiwan_Partner_Role"/>
