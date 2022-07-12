@@ -101,6 +101,8 @@ public class GlobalConstants {
 	private final String deleteButtonOnPopupTW = "刪除";
 	private final String confirmButtonOnPopupTW = "確認";
 	private final String deleteButtonAtRowTW = "刪除品牌";
+	private final String searchButtonAtSearchFilterTW = "搜尋";
+	private final String resetButtonAtSearchFilterTW = "重新設定";
 	
 	// Brand Management Information English
 	private final String placeholderTextBoxEN = "Input";
@@ -115,6 +117,7 @@ public class GlobalConstants {
 	private final String cancelSettingEN = "Cancel setting";
 	private final String searchButtonAtSearchFilterEN = "Search";
 	private final String resetButtonAtSearchFilterEN = "Reset";
+	private final String deleteButtonEN = "Delete";
 	
 	//Language
 	private final String koreaLanguage = "한국어";

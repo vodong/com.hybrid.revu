@@ -289,7 +289,7 @@ public class Advertiser_Korea_Management_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 22: Verify Delete button is English languages");
-		assertTrue(adminBrandManagementPage.isTextAtRowDisplayed("Delete", "1", "Delete"));
+		assertTrue(adminBrandManagementPage.isTextAtRowDisplayed("Delete", "1", GlobalConstants.getGlobalConstants().getDeleteButtonEN()));
 
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 23: Change to Korea Language");
 		adminBrandManagementPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getKoreaLanguage());

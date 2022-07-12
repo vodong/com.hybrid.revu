@@ -168,7 +168,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 03: Verify Place Holder Of Search Text Box is English Text");
 		assertTrue(
-				partnerBrandManagementPage.isSearchTextBoxDisplayed(GlobalConstants.getGlobalConstants().getPlaceholderSearchTextBoxKR()));
+				partnerBrandManagementPage.isSearchTextBoxDisplayed(GlobalConstants.getGlobalConstants().getPlaceholderSearchTextBoxEN()));
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 04: Verify Brand column is English languages");
@@ -307,10 +307,6 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 23: Verify Account Information After Clicking On 'Use' Button");
 		partnerCreateNewBrandPage.clickOnButtonByName(GlobalConstants.getGlobalConstants().getUseButtonKR());
-
-//		ExtentTestManager.getTest().log(Status.INFO,
-//				"Create Brand Page - Step 24: Verify Reset Password button translate to Korea");
-//		assertEquals(partnerCreateNewBrandPage.getTextResetPasswordButton(), GlobalConstants.passwordSettingKR);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 24: Click on Password Setting Button");
 		partnerCreateNewBrandPage.clickToPasswordSettingButton(GlobalConstants.getGlobalConstants().getPasswordSettingKR());
@@ -560,7 +556,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 04: Verify Message Popup translate to English");
-		partnerBrandManagementPage.openSelectLanguageList(driver, "English");
+		partnerBrandManagementPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getEnglishLangguage());
 		assertEquals(partnerBrandManagementPage.getTitlePopup(), "Delete Brand");
 		assertEquals(partnerBrandManagementPage.getTextMessage(),
 				"Are you sure you want to delete this brand? You can't undo this action.");
@@ -569,7 +565,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 05: Verify Message Popup translate to Korea");
-		partnerBrandManagementPage.openSelectLanguageList(driver, "한국어");
+		partnerBrandManagementPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getKoreaLanguage());
 		assertEquals(partnerBrandManagementPage.getTitlePopup(), "브랜드 삭제");
 		assertEquals(partnerBrandManagementPage.getTextMessage(), "브랜드를 삭제 하시겠습니까? 삭제된 후에는 다시 복구할 수 없습니다.");
 		assertEquals(partnerBrandManagementPage.getDeleteButtonText(), "삭제하기");
