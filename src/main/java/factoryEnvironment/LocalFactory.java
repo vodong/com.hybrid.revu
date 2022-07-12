@@ -1,11 +1,13 @@
 package factoryEnvironment;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import factoryBrowser.BrowserList;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import factoryBrowser.BrowserNotSupportedException;
+import factoryBrowser.ChromeDriverManager;
+import factoryBrowser.EdgeDriverManager;
+import factoryBrowser.FirefoxDriverManager;
+import factoryBrowser.SafariDriverManager;
 
 public class LocalFactory {
 	private WebDriver driver;
@@ -17,19 +19,23 @@ public class LocalFactory {
 	
 	public WebDriver createDriver() {
 		BrowserList browser = BrowserList.valueOf(browserName.toUpperCase());
-		if(browser == BrowserList.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver(); 
-		}else if(browser == BrowserList.CHROME) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		}else if(browser == BrowserList.EDGE) {
-			WebDriverManager.edgedriver().setup();
-			driver = new ChromeDriver();
-		}else {
-			throw new RuntimeException("Browser name is invalid");
-		}
 		
+		switch (browser) {
+		case CHROME:
+			driver = new ChromeDriverManager().getBrowserDriver();
+			break;
+		case FIREFOX:
+			driver = new FirefoxDriverManager().getBrowserDriver();
+			break;
+		case EDGE:
+			driver = new EdgeDriverManager().getBrowserDriver();
+			break;
+		case SAFARI:
+			driver = new SafariDriverManager().getBrowserDriver();
+			break;
+		default:
+			throw new BrowserNotSupportedException(browserName);
+		}
 		return driver;
 	}
 }

@@ -10,15 +10,28 @@
 
 	<parameter name="envName" value="local" />
 	<parameter name="serverName" value="Test" />
-
-	<test name="Run on FireFox">
+	  
+	  	<test name="Run on Firefox">
 		<parameter name="browser" value="Firefox" />
-		<!--<parameter name="ipAddress" value="localhost" /> -->
-		<!--<parameter name="portNumber" value="4444" /> -->
-		<parameter name="osName" value="Windows" />
-		<parameter name="osVersion" value="10" />
+		<parameter name="ipAddress" value="localhost" />
+		<parameter name="portNumber" value="4444" />
+		<!--<parameter name="osName" value="Windows" />-->
+		<!--<parameter name="osVersion" value="10" />-->
 		<classes>
+			<class name="com.revu.admin.kr.Advertiser_Korea_Management_Role"/>
 			<class name="com.revu.admin.kr.Advertiser_Korea_Partner_Role"/>
+		</classes>
+	  </test>
+	  
+	  	<test name="Run on Chrome">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="ipAddress" value="localhost" />
+		<parameter name="portNumber" value="4444" /> 
+		<!--<parameter name="osName" value="Windows" />-->
+		<!--<parameter name="osVersion" value="10" />-->
+		<classes>
+			<class name="com.revu.admin.tw.Advertiser_Taiwan_Management_Role"/>
+			<class name="com.revu.admin.tw.Advertiser_Taiwan_Partner_Role"/>
 		</classes>
 	  </test>
 </suite> <!-- Suite -->

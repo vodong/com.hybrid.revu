@@ -39,10 +39,10 @@ public class BaseTest {
 			break;
 		}
 		
-		driver.get().manage().window().maximize();
 		driver.get().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
 //		driver.get().manage().timeouts().implicitlyWait(PropertiesConfig.getFileConfigReader().getLongTimeout(), TimeUnit.SECONDS);
 		driver.get().get(getEnvironmentValue(serverName));
+		driver.get().manage().window().maximize();
 		return driver.get();
 	}
 
@@ -115,7 +115,6 @@ public class BaseTest {
 			try {
 				String osName = System.getProperty("os.name").toLowerCase();
 				log.info("OS name = " + osName);
-
 				String driverInstanceName = driver.toString().toLowerCase();
 				log.info("Driver instance name = " + driverInstanceName);
 

@@ -41,6 +41,7 @@ public class BasePage {
 	}
 
 	public String getPageUrl(WebDriver driver) {
+		overrideImplicitTimeout(driver, shorTimeOut);
 		return driver.getCurrentUrl();
 	}
 

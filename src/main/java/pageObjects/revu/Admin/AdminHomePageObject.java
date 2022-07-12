@@ -6,6 +6,7 @@ import commons.BasePage;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
+import pageObjects.revu.Partner.PartnerBrandManagementObject;
 import pageUIs.revu.admin.AdminHomePageUI;
 import pageUIs.revu.admin.BasePageUI;
 
@@ -82,5 +83,19 @@ public class AdminHomePageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_ADVERTISER, textBoxName);
 		sleepInSecond(ShortTime);
 		return PageGeneratorManager.getAdvertiserDashBoardPage(driver);
+	}
+
+	public AdminBrandManagementObject openBrandManagementPage(String textValue) {
+		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textValue);
+		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textValue);
+		sleepInSecond(ShortTime);
+		return PageGeneratorManager.getManagementPage(driver);
+	}
+
+	public PartnerBrandManagementObject openBrandManagementPartnerPage(String textValue) {
+		waitForElementClickable(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textValue);
+		clickToElement(driver, AdminHomePageUI.LOGIN_BUTTON_PARTNER_MANAGER_ROLE, textValue);
+		sleepInSecond(ShortTime);
+		return PageGeneratorManager.getPartnerBrandMangementPage(driver);
 	}
 }

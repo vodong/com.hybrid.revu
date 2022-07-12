@@ -37,7 +37,7 @@ public class Advertiser_Taiwan_Partner_Role extends BaseTest {
 	AdvertiserDashBoardPageObject advertiserDashBoardPage;
 	PartnerDetailBrandManagementObject partnerDetailBrandPage;
 	PartnerCreateBrandManagementObject partnerCreateNewBrandPage;
-	String partnerEmailAddress, getCurrentUrl, getCurrentPageID, representativeName;
+	String partnerEmailAddress, getCurrentUrl, getCurrentPageID, representativeName, getCurrentUrlAfterRefesh;
 	String imageAvatart = "Avatar.jpg";
 	String brandName;
 
@@ -543,10 +543,7 @@ public class Advertiser_Taiwan_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 10: Delete Brand");
 		partnerBrandManagementPage.clickToDeleteButtonByRownNumber("1", GlobalConstants.getGlobalConstants().getDeleteButtonAtRowTW());
 		partnerBrandManagementPage.clickToDeleteButton();
-
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 11: Refesh Current Page");
-		partnerBrandManagementPage.refeshCurrentPage(driver);
-
+		
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 11: Click on 'Advertiser Management Link");
 		partnerBrandManagementPage.clickOnByMenuNameLink(driver, GlobalConstants.getGlobalConstants().getAdvertiserManagementLinkTW());
@@ -666,122 +663,143 @@ public class Advertiser_Taiwan_Partner_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 03: Click on 'Brand Management Link");
 		partnerBrandManagementPage.openByNameLink(driver, GlobalConstants.getGlobalConstants().getBrandManagementLinkTW());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 04: Get Title Current Page");
+		getCurrentUrl = partnerBrandManagementPage.getPageTitle(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 05: Refesh Current Page");
+		partnerBrandManagementPage.refeshCurrentPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 06: Get Title Current Page After Reloading");
+		getCurrentUrlAfterRefesh = partnerBrandManagementPage.getPageTitle(driver);
+		adminHomePage = PageGeneratorManager.getHomePage(driver);
 
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Compare Previous Title To Current Page After Reloading");
+		if(getCurrentUrlAfterRefesh != getCurrentUrl) {
+			adminHomePage.openLoginPopup();
+			partnerBrandManagementPage = adminHomePage.openBrandManagementPartnerPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
+		}else {
+			ExtentTestManager.getTest().log(Status.INFO,
+					"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
+			partnerBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
+			partnerCreateNewBrandPage = PageGeneratorManager.getPartnerCreateANewBrandPage(driver);
+		}
+		
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management Page - Step 01: Click on 'Create a new Brand' Button");
+				"Brand Management Page - Step 08: Click on 'Create a new Brand' Button");
 		partnerBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonTW());
 		partnerCreateNewBrandPage = PageGeneratorManager.getPartnerCreateANewBrandPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 02: Upload Avatar");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 09: Upload Avatar");
 		partnerCreateNewBrandPage.upLoadMultipleFiles(driver, imageAvatart);
 		assertTrue(partnerCreateNewBrandPage.isAvatarUpLoaded());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 03: Input Brand Name");
+		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 10: Input Brand Name");
 		partnerCreateNewBrandPage.enterToBrandNameTextBox(brandName);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 05: Click on 'Save' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 11: Click on 'Save' button");
 		partnerCreateNewBrandPage.clickSaveButton(GlobalConstants.getGlobalConstants().getSaveButtonTW());
 		partnerBrandManagementPage = PageGeneratorManager.getPartnerBrandMangementPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 06: Search Brand '" + brandName + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 12: Search Brand '" + brandName + "'");
 		partnerBrandManagementPage.enterToSearchBrandTextBox(brandName);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 07: Click on Search Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 13: Click on Search Button");
 		partnerBrandManagementPage.clickToSearchButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 08: Open Brand Information Detail Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 14: Open Brand Information Detail Page");
 		partnerBrandManagementPage.clickToBrandNameByRownNumber("1", brandName);
 		partnerDetailBrandPage = PageGeneratorManager.getPartnerDetailBrandPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 09: Get Current Page URL");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 15: Get Current Page URL");
 		getCurrentUrl = partnerDetailBrandPage.getPageUrl(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 10: Get Current Page ID");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 16: Get Current Page ID");
 		getCurrentPageID = partnerDetailBrandPage.getParentID(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 11: Verify Brand Information Detail Page");
+				"Brand Management - Step 17: Verify Brand Information Detail Page");
 		assertEquals(partnerDetailBrandPage.getSeeBrandTextButton(), GlobalConstants.getGlobalConstants().getSeeBrandButtonTW());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 12: Open See Brand Partner Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 18: Open See Brand Partner Page");
 		partnerDetailBrandPage.clickToSeeBrandPageButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 13: Switch To Advertiser Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 19: Switch To Advertiser Page");
 		partnerDetailBrandPage.switchTab(GlobalConstants.getGlobalConstants().getAdvertiserTestUrl());
 		advertiserDashBoardPage = PageGeneratorManager.getAdvertiserDashBoardPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 14: Verify Advertiser Name '" + brandName + "'");
+				"Brand Management - Step 20: Verify Advertiser Name '" + brandName + "'");
 		assertEquals(advertiserDashBoardPage.getPartnerName(), brandName);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 15: Switch To Edit Brand Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 21: Switch To Edit Brand Page");
 		advertiserDashBoardPage.switchTab(getCurrentUrl);
 		partnerDetailBrandPage = PageGeneratorManager.getPartnerDetailBrandPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 16: Close Advertiser Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 22: Close Advertiser Page");
 		advertiserDashBoardPage.closeTab(getCurrentPageID);
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 17: Verify Change To Brand Information Successfully");
+				"Brand Management - Step 23: Verify Change To Brand Information Successfully");
 		assertEquals(partnerDetailBrandPage.getSeeBrandTextButton(), GlobalConstants.getGlobalConstants().getSeeBrandButtonTW());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 18: Click on Use Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 24: Click on Use Button");
 		partnerDetailBrandPage.clickOnButtonByName(GlobalConstants.getGlobalConstants().getUseButtonTW());
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 19: Enter Emaill Address'" + partnerEmailAddress + "'");
+				"Brand Management - Step 25: Enter Emaill Address'" + partnerEmailAddress + "'");
 		partnerDetailBrandPage.enterToEmailTextBox(partnerEmailAddress);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 20: Open Setting Password");
-		partnerDetailBrandPage.clickToPasswordSettingButton("직접 설정");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 26: Open Setting Password");
+		partnerDetailBrandPage.clickToPasswordSettingButton(GlobalConstants.getGlobalConstants().getPasswordSettingTW());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 21: Enter To Password TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 27: Enter To Password TextBox");
 		partnerDetailBrandPage.enterToPasswordTextBox(GlobalConstants.getGlobalConstants().getPassword());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 22: Enter To Confirm Password TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 28: Enter To Confirm Password TextBox");
 		partnerDetailBrandPage.enterToConfirmPasswordTextBox(GlobalConstants.getGlobalConstants().getPassword());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 23: Click On Save Button");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 29: Click On Save Button");
 		partnerDetailBrandPage.clickSaveButton(GlobalConstants.getGlobalConstants().getSaveButtonTW());
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 24: Verify Email Alerady Exists In System Taiwan Language");
+				"Brand Management - Step 30: Verify Email Alerady Exists In System Taiwan Language");
 		assertEquals(partnerDetailBrandPage.getErrorMessageAtEmailTextBox(), "此信箱已註冊");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 25: Change To English Language");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 31: Change To English Language");
 		partnerDetailBrandPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getEnglishLangguage());
 
 		ExtentTestManager.getTest().log(Status.INFO,
-				"Brand Management - Step 26: Verify Email Alerady Exists In System English Language");
+				"Brand Management - Step 32: Verify Email Alerady Exists In System English Language");
 		assertEquals(partnerDetailBrandPage.getErrorMessageAtEmailTextBox(), "The email has already been taken.");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 27: Change To Taiwan Language");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 33: Change To Taiwan Language");
 		partnerDetailBrandPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getTaiwanLanguage());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 28: Log Out Manager Account");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 34: Log Out Manager Account");
 		partnerDetailBrandPage.clickOnLogOutButton();
 		adminHomePage = PageGeneratorManager.getHomePage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 29: Verify Login Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 35: Verify Login Page");
 		assertTrue(adminHomePage.isLoginButtonDisplayed());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 30: Open Login Form");
+		ExtentTestManager.getTest().log(Status.INFO, "Brand Management - Step 36: Open Login Form");
 		adminHomePage.openLoginPopup();
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 31: Switch To Advertiser Tab");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 37: Switch To Advertiser Tab");
 		adminHomePage.clickToAdvertiserTab("客戶");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 32: Enter To Email TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 38: Enter To Email TextBox");
 		adminHomePage.enterToEmailAdvertiserTextBox(partnerEmailAddress);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 33: Enter To Password TextBox");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 39: Enter To Password TextBox");
 		adminHomePage.enterToPasswordAdvertiserTextBox(GlobalConstants.getGlobalConstants().getPassword());
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 34: Open Advertiser Page");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 40: Open Advertiser Page");
 		advertiserDashBoardPage = adminHomePage.openAdvertiserPage(GlobalConstants.getGlobalConstants().getLoginButtonTW());
 		advertiserDashBoardPage = PageGeneratorManager.getAdvertiserDashBoardPage(driver);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 35: Open Advertiser Page Successfull");
+		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 41: Open Advertiser Page Successfull");
 		assertTrue(advertiserDashBoardPage.isDeliveryMenuDisplayed());
 	}
 
