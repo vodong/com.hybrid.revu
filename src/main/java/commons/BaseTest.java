@@ -118,17 +118,17 @@ public class BaseTest {
 				String driverInstanceName = driver.toString().toLowerCase();
 				log.info("Driver instance name = " + driverInstanceName);
 
-				if (driverInstanceName.contains("chrome")) {
+				if (driverInstanceName.contains("chrome") || osName.contains("mac")) {
 					if (osName.contains("window")) {
 						cmd = "taskkill /F /FI \"IMAGENAME eq chromedriver*\"";
 					} else {
 						cmd = "pkill chromedriver";
 					}
 				} else if (driverInstanceName.contains("internetexplorer")) {
-					if (osName.contains("window")) {
+					if (osName.contains("window") || osName.contains("mac")) {
 						cmd = "taskkill /F /FI \"IMAGENAME eq IEDriverServer*\"";
 					}
-				} else if (driverInstanceName.contains("firefox")) {
+				} else if (driverInstanceName.contains("firefox") || osName.contains("mac")) {
 					if (osName.contains("windows")) {
 						cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
 					} else {
