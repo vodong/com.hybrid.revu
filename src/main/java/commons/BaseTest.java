@@ -31,7 +31,7 @@ public class BaseTest {
 		case "grid":
 			driver.set(new GridFactory(browserName, ipAddress, portNumber).createDriver());
 			break;
-		case "BrowserStack":
+		case "browserstack":
 			driver.set(new BrowserStackFactory(browserName, osName, osVersion).createDriver());
 			break;
 		default:
@@ -111,65 +111,67 @@ public class BaseTest {
 	}
 
 	protected void closeBrowserAndDriver() {
-			String cmd = "";
-			try {
-				String osName = System.getProperty("os.name").toLowerCase();
-				log.info("OS name = " + osName);
-				String driverInstanceName = driver.toString().toLowerCase();
-				log.info("Driver instance name = " + driverInstanceName);
+		String cmd = "";
+		try {
+			String osName = System.getProperty("os.name").toLowerCase();
+			log.info("OS name = " + osName);
 
-				if (driverInstanceName.contains("chrome") || osName.contains("mac")) {
-					if (osName.contains("window")) {
-						cmd = "taskkill /F /FI \"IMAGENAME eq chromedriver*\"";
-					} else {
-						cmd = "pkill chromedriver";
-					}
-				} else if (driverInstanceName.contains("internetexplorer")) {
-					if (osName.contains("window") || osName.contains("mac")) {
-						cmd = "taskkill /F /FI \"IMAGENAME eq IEDriverServer*\"";
-					}
-				} else if (driverInstanceName.contains("firefox") || osName.contains("mac")) {
-					if (osName.contains("windows")) {
-						cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
-					} else {
-						cmd = "pkill geckodriver";
-					}
-				} else if (driverInstanceName.contains("edge")) {
-					if (osName.contains("window")) {
-						cmd = "taskkill /F /FI \"IMAGENAME eq msedgedriver*\"";
-					} else {
-						cmd = "pkill msedgedriver";
-					}
-				} else if (driverInstanceName.contains("opera")) {
-					if (osName.contains("window")) {
-						cmd = "taskkill /F /FI \"IMAGENAME eq operadriver*\"";
-					} else {
-						cmd = "pkill operadriver";
-					}
-				} else if (driverInstanceName.contains("safari")) {
-					if (osName.contains("mac")) {
-						cmd = "pkill safaridriver";
-					}
-				}
+			String driverInstanceName = driver.get().toString().toLowerCase();
+			log.info("Driver instance name = " + driverInstanceName);
 
-				if (driver != null) {
-					driver.get().manage().deleteAllCookies();
-					driver.get().quit();
-					driver.remove();
+			if (driverInstanceName.contains("chrome")) {
+				if (osName.contains("window")) {
+					cmd = "taskkill /F /FI \"IMAGENAME eq chromedriver*\"";
+				} else {
+					cmd = "pkill chromedriver";
 				}
-			} catch (Exception e) {
-				log.info(e.getMessage());
-			} finally {
-				try {
-					Process process = Runtime.getRuntime().exec(cmd);
-					process.waitFor();
-				} catch (IOException e) {
-					e.printStackTrace();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+			} else if (driverInstanceName.contains("internetexplorer")) {
+				if (osName.contains("window")) {
+					cmd = "taskkill /F /FI \"IMAGENAME eq IEDriverServer*\"";
+				}
+			} else if (driverInstanceName.contains("firefox")) {
+				if (osName.contains("windows")) {
+					cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
+				} else {
+					cmd = "pkill geckodriver";
+				}
+			} else if (driverInstanceName.contains("edge")) {
+				if (osName.contains("window")) {
+					cmd = "taskkill /F /FI \"IMAGENAME eq msedgedriver*\"";
+				} else {
+					cmd = "pkill msedgedriver";
+				}
+			} else if (driverInstanceName.contains("opera")) {
+				if (osName.contains("window")) {
+					cmd = "taskkill /F /FI \"IMAGENAME eq operadriver*\"";
+				} else {
+					cmd = "pkill operadriver";
+				}
+			} else if (driverInstanceName.contains("safari")) {
+				if (osName.contains("mac")) {
+					cmd = "pkill safaridriver";
 				}
 			}
-	}
+
+			if (driver != null) {
+				driver.get().manage().deleteAllCookies();
+				driver.get().quit();
+				
+				driver.remove();
+			}
+		} catch (Exception e) {
+			log.info(e.getMessage());
+		} finally {
+			try {
+				Process process = Runtime.getRuntime().exec(cmd);
+				process.waitFor();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+}
 
 	public WebDriver getDriverInstance() {
 		return driver.get();

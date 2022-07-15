@@ -1,31 +1,11 @@
-1657685621287	geckodriver	INFO	Listening on 127.0.0.1:16378
-1657685621773	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofilexlXUvD"
-2022-07-13 11:13:42.307 plugin-container[58980:898285] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 11:13:42.307 plugin-container[58980:898285] nil host used in call to allowsAnyHTTPSCertificateForHost:
-2022-07-13 11:13:42.312 plugin-container[58980:898285] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 11:13:42.312 plugin-container[58980:898285] nil host used in call to allowsAnyHTTPSCertificateForHost:
-2022-07-13 11:13:42.312 plugin-container[58980:898287] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 11:13:42.312 plugin-container[58980:898287] nil host used in call to allowsAnyHTTPSCertificateForHost:
-1657685622332	Marionette	INFO	Marionette enabled
-1657685622376	Marionette	INFO	Listening on port 60508
-Read port: 60508
-1657685622550	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofilexlXUvD/search.json.mozlz4", (void 0)))
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657685237279, line 165354: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657685237279, line 171401: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1657685237279, line 121048: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous messaJgaev for:" "https://admin.test.ent.revu.net"
-aScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gReciconsole.warn: LoginRecipes: "getRecipes: fpeManager is null
-alling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-2022-07-13 04:14:02.427 plugin-container[59004:898916] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 04:14:02.427 plugin-container[59004:898916] nil host used in call to allowsAnyHTTPSCertificateForHost:
-2022-07-13 04:14:02.431 plugin-container[59004:898916] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 04:14:02.431 plugin-container[59004:898916] nil host used in call to allowsAnyHTTPSCertificateForHost:
-2022-07-13 04:14:02.431 plugin-container[59004:898917] nil host used in call to allowsSpecificHTTPSCertificateForHost
-2022-07-13 04:14:02.431 plugin-container[59004:898917] nil host used in call to allowsAnyHTTPSCertificateForHost:
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657685237279, line 165354: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657685237279, line 171401: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1657685237279, line 121048: unreachable code after return statement
-1657685648181	Marionette	INFO	Stopped listening on port 60508
+1657857023661	geckodriver	INFO	Listening on 127.0.0.1:15645
+1657857023885	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileqi6Hrj"
+1657857024135	Marionette	INFO	Marionette enabled
+1657857024138	Marionette	INFO	Listening on port 54516
+Read port: 54516
+1657857024353	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileqi6Hrj\\search.json.mozlz4", (void 0)))
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657852121051, line 165355: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657852121051, line 171402: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1657852121051, line 121148: unreachable code after return statement
+1657857034040	Marionette	INFO	Stopped listening on port 54516

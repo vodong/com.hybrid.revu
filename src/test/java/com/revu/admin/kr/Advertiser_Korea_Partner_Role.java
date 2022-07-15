@@ -63,7 +63,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_01_Open_Admin_Page_And_Select_Country(Method method) {
+	public void Manage_Role_KR_TC_01_Open_Admin_Page_And_Select_Country(Method method) {
 
 		ExtentTestManager.startTest(method.getName(), "Open Admin Page And Select Country");
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Open Country List");
@@ -80,7 +80,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_02_Login_To_DashBoard_Page(Method method) {
+	public void Manage_Role_KR_TC_02_Login_To_DashBoard_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Login To DasbhBoard Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Admin Page - Step 01: Enter Email'" + GlobalConstants.getGlobalConstants().getEmailKoreaPartnerRole() + "'");
@@ -98,7 +98,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_03_Check_Translate_To_Korea_Brand_Management_Page(Method method) {
+	public void Manage_Role_KR_TC_03_Check_Translate_To_Korea_Brand_Management_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 01: Click on 'Advertiser Brand Management Link");
@@ -156,7 +156,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_04_Check_Translate_To_English_Brand_Management_Page(Method method) {
+	public void Manage_Role_KR_TC_04_Check_Translate_To_English_Brand_Management_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Brand Management Page");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Change to English Language");
 		partnerBrandManagementPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getEnglishLangguage());
@@ -211,7 +211,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_05_Check_Translate_To_Korea_Create_Brand_Page(Method method) {
+	public void Manage_Role_KR_TC_05_Check_Translate_To_Korea_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Create Brand Page - Step 01: Click on 'Create a new Brand' Button");
@@ -356,7 +356,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_06_Check_Translate_To_English_Create_Brand_Page(Method method) {
+	public void Manage_Role_KR_TC_06_Check_Translate_To_English_Create_Brand_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English At Create Brand Page");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Refresh Current Page");
 		partnerCreateNewBrandPage.refeshCurrentPage(driver);
@@ -505,7 +505,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_07_Create_Brand_Non_Use_Option(Method method) {
+	public void Manage_Role_KR_TC_07_Create_Brand_Non_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Nonuse Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Refesh Current Page");
 		partnerCreateNewBrandPage.refeshCurrentPage(driver);
@@ -541,7 +541,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_08_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
+	public void Manage_Role_KR_TC_08_Delete_Brand_Advertiser_Do_Not_Have_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Do Not Have Campaign");
 		ExtentTestManager.getTest().log(Status.INFO,
 				"Brand Management Page - Step 01: Input Brand Name '" + brandName + "'");
@@ -602,7 +602,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_09_Create_Brand_Use_Option(Method method) {
+	public void Manage_Role_KR_TC_09_Create_Brand_Use_Option(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Create Brand By Use Option");
 		ExtentTestManager.getTest().log(Status.INFO, "Create Brand Page - Step 01: Open Create A New Brand Page");
 		partnerBrandManagementPage.openCreateANewBrand(GlobalConstants.getGlobalConstants().getCreateANewBrandButtonKR());
@@ -656,7 +656,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_10_Delete_Brand_Advertiser_Has_CamPaign(Method method) {
+	public void Manage_Role_KR_TC_10_Delete_Brand_Advertiser_Has_CamPaign(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Delete Brand Has Campaign");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Search Brand '"
 				+ GlobalConstants.getGlobalConstants().getBrandNameHasCampaignPartnerRoleKR() + "'");
@@ -698,7 +698,7 @@ public class Advertiser_Korea_Partner_Role extends BaseTest {
 	}
 
 	@Test
-	public void TC_11_Edit_Brand_Information(Method method) {
+	public void Manage_Role_KR_TC_11_Edit_Brand_Information(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Edit Brand Information");
 		ExtentTestManager.getTest().log(Status.INFO, "Brand Management Page - Step 01: Refesh Page");
 		partnerBrandManagementPage.refeshCurrentPage(driver);
