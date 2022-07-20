@@ -174,7 +174,7 @@
 				<configuration>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<file>src/test/resources/runRevuProjectTestCase2.xml</file>
+						<file>src/test/resources/runRevuProjectTestCase.xml</file>
 					</suiteXmlFiles>
 
 					<!-- Argument -->
