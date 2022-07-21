@@ -6,11 +6,11 @@ import commons.BasePage;
 import commons.GlobalConstants;
 import pageUIs.revu.admin.AdminCreateBrandPageUI;
 
-public class AdminCreateBrandManagementObject extends BasePage {
+public class AdminCreateBrandManagementPageObject extends BasePage {
 	private WebDriver driver;
 	private long shorttime = GlobalConstants.getGlobalConstants().getShortTimeoutWaiElement();
 
-	public AdminCreateBrandManagementObject(WebDriver driver) {
+	public AdminCreateBrandManagementPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

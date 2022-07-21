@@ -9,11 +9,11 @@ import pageUIs.revu.admin.AdminDashboardPageUI;
 import pageUIs.revu.admin.AdminHomePageUI;
 import pageUIs.revu.admin.BasePageUI;
 
-public class AdminBrandManagementObject extends BasePage {
+public class AdminBrandManagementPageObject extends BasePage {
 	private WebDriver driver;
 	long shortTimeOut = GlobalConstants.getGlobalConstants().getShortTimeout();
 
-	public AdminBrandManagementObject(WebDriver driver) {
+	public AdminBrandManagementPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

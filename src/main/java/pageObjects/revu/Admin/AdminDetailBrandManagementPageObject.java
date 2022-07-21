@@ -6,10 +6,10 @@ import commons.BasePage;
 import pageUIs.revu.admin.AdminDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
-public class AdminDetailBrandManagementObject extends BasePage {
+public class AdminDetailBrandManagementPageObject extends BasePage {
 	private WebDriver driver;
 
-	public AdminDetailBrandManagementObject(WebDriver driver) {
+	public AdminDetailBrandManagementPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

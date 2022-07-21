@@ -20,10 +20,10 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;
-import pageObjects.revu.Admin.AdminBrandManagementObject;
-import pageObjects.revu.Admin.AdminCreateBrandManagementObject;
-import pageObjects.revu.Admin.AdminDashBoardObject;
-import pageObjects.revu.Admin.AdminDetailBrandManagementObject;
+import pageObjects.revu.Admin.AdminBrandManagementPageObject;
+import pageObjects.revu.Admin.AdminCreateBrandManagementPageObject;
+import pageObjects.revu.Admin.AdminDashBoardPageObject;
+import pageObjects.revu.Admin.AdminDetailBrandManagementPageObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
 import reportConfig.ExtentTestManager;
@@ -31,12 +31,12 @@ import reportConfig.ExtentTestManager;
 public class Advertiser_Korea_Management_Role extends BaseTest {
 
 	WebDriver driver;
-	AdminDashBoardObject adminDashBoardPage;
+	AdminDashBoardPageObject adminDashBoardPage;
 	AdminHomePageObject adminHomePage;
-	AdminBrandManagementObject adminBrandManagementPage;
+	AdminBrandManagementPageObject adminBrandManagementPage;
 	AdvertiserDashBoardPageObject advertiserDashBoardPage;
-	AdminDetailBrandManagementObject adminDetailBrandPage;
-	AdminCreateBrandManagementObject adminCreateNewBrandPage;
+	AdminDetailBrandManagementPageObject adminDetailBrandPage;
+	AdminCreateBrandManagementPageObject adminCreateNewBrandPage;
 	String partnerEmailAddress, getCurrentUrl, getCurrentPageID;
 	String imageAvatart = "Avatar.jpg";
 	String brandName;
@@ -968,7 +968,7 @@ public class Advertiser_Korea_Management_Role extends BaseTest {
 		assertTrue(advertiserDashBoardPage.isDeliveryMenuDisplayed());
 	}
 
-	@Parameters({ "browser" })
+	@Parameters({ "browser"})
 	@AfterClass(alwaysRun = true)
 	public void afterClass(String browserName) {
 		ExtentTestManager.getTest().log(Status.INFO, "Close broser '" + browserName + "'");

@@ -20,23 +20,23 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;
-import pageObjects.revu.Admin.AdminDashBoardObject;
+import pageObjects.revu.Admin.AdminDashBoardPageObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
-import pageObjects.revu.Partner.PartnerBrandManagementObject;
-import pageObjects.revu.Partner.PartnerCreateBrandManagementObject;
-import pageObjects.revu.Partner.PartnerDetailBrandManagementObject;
+import pageObjects.revu.Partner.PartnerBrandManagementPageObject;
+import pageObjects.revu.Partner.PartnerCreateBrandManagementPageObject;
+import pageObjects.revu.Partner.PartnerDetailBrandManagementPageObject;
 import reportConfig.ExtentTestManager;
 
 public class Advertiser_Taiwan_Partner_Role extends BaseTest {
 
 	WebDriver driver;
-	AdminDashBoardObject adminDashBoardPage;
+	AdminDashBoardPageObject adminDashBoardPage;
 	AdminHomePageObject adminHomePage;
-	PartnerBrandManagementObject partnerBrandManagementPage;
+	PartnerBrandManagementPageObject partnerBrandManagementPage;
 	AdvertiserDashBoardPageObject advertiserDashBoardPage;
-	PartnerDetailBrandManagementObject partnerDetailBrandPage;
-	PartnerCreateBrandManagementObject partnerCreateNewBrandPage;
+	PartnerDetailBrandManagementPageObject partnerDetailBrandPage;
+	PartnerCreateBrandManagementPageObject partnerCreateNewBrandPage;
 	String partnerEmailAddress, getCurrentUrl, getCurrentPageID, representativeName, getCurrentUrlAfterRefesh;
 	String imageAvatart = "Avatar.jpg";
 	String brandName;

@@ -6,10 +6,10 @@ import commons.BasePage;
 import pageUIs.revu.Partner.PartnerDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
-public class PartnerDetailBrandManagementObject extends BasePage {
+public class PartnerDetailBrandManagementPageObject extends BasePage {
 	private WebDriver driver;
 
-	public PartnerDetailBrandManagementObject (WebDriver driver) {
+	public PartnerDetailBrandManagementPageObject (WebDriver driver) {
 		this.driver = driver;
 	}
 

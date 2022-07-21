@@ -1,11 +1,17 @@
-1657857023661	geckodriver	INFO	Listening on 127.0.0.1:15645
-1657857023885	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileqi6Hrj"
-1657857024135	Marionette	INFO	Marionette enabled
-1657857024138	Marionette	INFO	Listening on port 54516
-Read port: 54516
-1657857024353	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileqi6Hrj\\search.json.mozlz4", (void 0)))
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657852121051, line 165355: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1657852121051, line 171402: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1657852121051, line 121148: unreachable code after return statement
-1657857034040	Marionette	INFO	Stopped listening on port 54516
+1658280307154	geckodriver	INFO	Listening on 127.0.0.1:47012
+1658280307538	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofileHGOmzm"
+2022-07-20 08:25:07.988 plugin-container[1429:25610] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 08:25:07.988 plugin-container[1429:25610] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-20 08:25:07.991 plugin-container[1429:25610] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 08:25:07.991 plugin-container[1429:25610] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-20 08:25:07.992 plugin-container[1429:25616] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 08:25:07.992 plugin-container[1429:25616] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658280308009	Marionette	INFO	Marionette enabled
+1658280308040	Marionette	INFO	Listening on port 49866
+Read port: 49866
+1658280308211	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofileHGOmzm/search.json.mozlz4", (void 0)))
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658214761983, line 165355: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658214761983, line 171402: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658214761983, line 121163: unreachable code after return statement
+1658280319863	Marionette	INFO	Stopped listening on port 49866

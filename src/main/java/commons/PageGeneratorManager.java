@@ -2,15 +2,15 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.revu.Admin.AdminBrandManagementObject;
-import pageObjects.revu.Admin.AdminCreateBrandManagementObject;
-import pageObjects.revu.Admin.AdminDashBoardObject;
-import pageObjects.revu.Admin.AdminDetailBrandManagementObject;
+import pageObjects.revu.Admin.AdminBrandManagementPageObject;
+import pageObjects.revu.Admin.AdminCreateBrandManagementPageObject;
+import pageObjects.revu.Admin.AdminDashBoardPageObject;
+import pageObjects.revu.Admin.AdminDetailBrandManagementPageObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
-import pageObjects.revu.Partner.PartnerBrandManagementObject;
-import pageObjects.revu.Partner.PartnerCreateBrandManagementObject;
-import pageObjects.revu.Partner.PartnerDetailBrandManagementObject;
+import pageObjects.revu.Partner.PartnerBrandManagementPageObject;
+import pageObjects.revu.Partner.PartnerCreateBrandManagementPageObject;
+import pageObjects.revu.Partner.PartnerDetailBrandManagementPageObject;
 
 public class PageGeneratorManager {
 
@@ -18,35 +18,35 @@ public class PageGeneratorManager {
 		return new AdminHomePageObject(driver);
 	}
 
-	public static AdminDashBoardObject getDashboardPage(WebDriver driver) {
-		return new AdminDashBoardObject(driver);
+	public static AdminDashBoardPageObject getDashboardPage(WebDriver driver) {
+		return new AdminDashBoardPageObject(driver);
 	}
 
-	public static AdminBrandManagementObject getManagementPage(WebDriver driver) {
-		return new AdminBrandManagementObject(driver);
+	public static AdminBrandManagementPageObject getManagementPage(WebDriver driver) {
+		return new AdminBrandManagementPageObject(driver);
 	}
 
-	public static AdminCreateBrandManagementObject getCreateANewBrandPage(WebDriver driver) {
-		return new AdminCreateBrandManagementObject(driver);
+	public static AdminCreateBrandManagementPageObject getCreateANewBrandPage(WebDriver driver) {
+		return new AdminCreateBrandManagementPageObject(driver);
 	}
 	
-	public static AdminDetailBrandManagementObject getDetailBrandPage(WebDriver driver) {
-		return new AdminDetailBrandManagementObject(driver);
+	public static AdminDetailBrandManagementPageObject getDetailBrandPage(WebDriver driver) {
+		return new AdminDetailBrandManagementPageObject(driver);
 	}
 	
 	public static AdvertiserDashBoardPageObject getAdvertiserDashBoardPage(WebDriver driver) {
 		return new AdvertiserDashBoardPageObject(driver);
 	}
 
-	public static PartnerBrandManagementObject getPartnerBrandMangementPage(WebDriver driver) {
-		return new PartnerBrandManagementObject(driver);
+	public static PartnerBrandManagementPageObject getPartnerBrandMangementPage(WebDriver driver) {
+		return new PartnerBrandManagementPageObject(driver);
 	}
 	
-	public static PartnerCreateBrandManagementObject getPartnerCreateANewBrandPage(WebDriver driver) {
-		return new PartnerCreateBrandManagementObject(driver);
+	public static PartnerCreateBrandManagementPageObject getPartnerCreateANewBrandPage(WebDriver driver) {
+		return new PartnerCreateBrandManagementPageObject(driver);
 	}
 	
-	public static PartnerDetailBrandManagementObject getPartnerDetailBrandPage(WebDriver driver) {
-		return new PartnerDetailBrandManagementObject(driver);
+	public static PartnerDetailBrandManagementPageObject getPartnerDetailBrandPage(WebDriver driver) {
+		return new PartnerDetailBrandManagementPageObject(driver);
 	}
 }

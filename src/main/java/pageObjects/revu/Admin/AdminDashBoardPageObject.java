@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.revu.admin.BasePageUI;
 
-public class AdminDashBoardObject extends BasePage {
+public class AdminDashBoardPageObject extends BasePage {
 	private WebDriver driver;
 
-	public AdminDashBoardObject(WebDriver driver) {
+	public AdminDashBoardPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

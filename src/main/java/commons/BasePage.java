@@ -18,8 +18,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.revu.Admin.AdminBrandManagementObject;
-import pageObjects.revu.Partner.PartnerBrandManagementObject;
+import pageObjects.revu.Admin.AdminBrandManagementPageObject;
+import pageObjects.revu.Partner.PartnerBrandManagementPageObject;
 import pageUIs.revu.admin.BasePageUI;
 
 public class BasePage {
@@ -584,13 +584,13 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.DYNAMIC_PARTNER_SIDER_LINK_BY_PAGE_NAME, pageName);
 	}
 
-	public AdminBrandManagementObject openByNameLink(WebDriver driver, String pageName) {
+	public AdminBrandManagementPageObject openByNameLink(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, BasePageUI.DYNAMIC_SIDER_LINK_BY_NAME, pageName);
 		clickToElement(driver, BasePageUI.DYNAMIC_SIDER_LINK_BY_NAME, pageName);
 		return PageGeneratorManager.getManagementPage(driver);
 	}
 	
-	public PartnerBrandManagementObject openBrandManagePartnerByNameLink(WebDriver driver, String pageName) {
+	public PartnerBrandManagementPageObject openBrandManagePartnerByNameLink(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, BasePageUI.DYNAMIC_PARTNER_SIDER_LINK_BY_NAME, pageName);
 		clickToElement(driver, BasePageUI.DYNAMIC_PARTNER_SIDER_LINK_BY_NAME, pageName);
 		return PageGeneratorManager.getPartnerBrandMangementPage(driver);
