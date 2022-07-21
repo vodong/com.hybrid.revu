@@ -28,7 +28,7 @@ import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
 import reportConfig.ExtentTestManager;
 
-public class Advertiser_Korea_Management_Role extends BaseTest {
+public class Create_Advertiser_Korea_Manager_Role extends BaseTest {
 
 	WebDriver driver;
 	AdminDashBoardPageObject adminDashBoardPage;
