@@ -1,7 +1,7 @@
 package pageUIs.revu.admin;
 
 
-public class AdminCreateBrandPageUI {
+public class ManagerCreateBrandPageUI {
 	public static final String TITLE_COMPANY_INFORMATION_NAME = "CSS=div.pb-5 div.wrap-title h3";
 	public static final String TITLE_ACCOUNT_INFORMATION_NAME = "CSS=div.section-account-info div.wrap-title h3";
 	public static final String TITLE_AREA_NAME = "XPATH=//h3[text()='%s']";

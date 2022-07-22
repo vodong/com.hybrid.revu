@@ -49,11 +49,6 @@ public class Create_Edit_Login_Advertiser_Korea_Partner_Role extends BaseTest {
 			@Optional("chrome") String browserName, @Optional("Windows") String osName,
 			@Optional("10") String osVersion, @Optional("localhost") String ipAddress,
 			@Optional("4444") String portNumber) {
-		// Maven
-//		String environmentName = System.getProperty("envMaven");
-//		ConfigFactory.setProperty("envOwner", environmentName);
-//		environment = ConfigFactory.create(Environment.class);
-//		driver = getBrowserDriver(browserName, environment.appUrl());
 
 		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 
@@ -70,10 +65,10 @@ public class Create_Edit_Login_Advertiser_Korea_Partner_Role extends BaseTest {
 		adminHomePage.openCountryList();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Select Country");
-		adminHomePage.hoverCountryName("Korea");
+		adminHomePage.hoverCountryName(GlobalConstants.getGlobalConstants().getKoreaCountry());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Select language");
-		adminHomePage.selectLanguage("한국어");
+		adminHomePage.selectLanguage(GlobalConstants.getGlobalConstants().getKoreaLanguage());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Open Login Form");
 		adminHomePage.openLoginPopup();

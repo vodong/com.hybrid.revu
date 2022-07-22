@@ -70,10 +70,10 @@ public class Create_Edit_Login_Advertiser_Taiwan_Partner_Role extends BaseTest {
 		adminHomePage.openCountryList();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Select Country");
-		adminHomePage.hoverCountryName("Taiwan");
+		adminHomePage.hoverCountryName(GlobalConstants.getGlobalConstants().getTaiwanCountry());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Select language");
-		adminHomePage.selectLanguage("繁體中文");
+		adminHomePage.selectLanguage(GlobalConstants.getGlobalConstants().getTaiwanLanguage());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Open Login Form");
 		adminHomePage.openLoginPopup();

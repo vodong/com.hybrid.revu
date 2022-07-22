@@ -17,20 +17,7 @@
 		<!--<parameter name="osName" value="Windows" />-->
 		<!--<parameter name="osVersion" value="10" />-->
 		<classes>
-			<class name="com.revu.admin.kr.Create_Edit_Login_Advertiser_Korea_Manager_Role"/>
-			<class name="com.revu.admin.kr.Create_Edit_Login_Advertiser_Korea_Partner_Role"/>
-		</classes>
-	  </test>
-
-	  	<test name="Run on Chrome">
-		<parameter name="browser" value="Chrome" />
-		<parameter name="ipAddress" value="localhost" />
-		<parameter name="portNumber" value="4444" />
-		<!--<parameter name="osName" value="Windows" />-->
-		<!--<parameter name="osVersion" value="10" />-->
-		<classes>
-			<class name="com.revu.admin.tw.Create_Edit_Login_Advertiser_Taiwan_Manager_Role"/>
-			<class name="com.revu.admin.tw.Create_Edit_Login_Advertiser_Taiwan_Partner_Role"/>
+			<class name="com.revu.admin.kr.Create_Edit_Campaign_Korea_Manager_Role"/>
 		</classes>
 	  </test>
 </suite> <!-- Suite -->

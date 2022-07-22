@@ -75,6 +75,13 @@ public class GlobalConstants {
 	private final String deleteButtonKR = "삭제하기";
 	private final String searchButtonAtSearchFilterKR = "검색";
 	private final String resetButtonAtSearchFilterKR = "초기화";
+	
+	//Campaign Information Korea
+	private final String campaignLinkKR = "캠페인";
+	private final String campaignScreeningLinkKR = "캠페인 심사";
+	private final String campaignListLinkKR = "캠페인 리스트";
+	private final String newCampaignRegistrationKR = "새 캠페인 등록";
+	private final String campaignRegisterTitleKR = "캠페인 등록";
 
 	// Brand Management Information Taiwan
 	private final String partnerNameSearchFieldTaiwan = "Edward_POE_Company";
@@ -119,10 +126,22 @@ public class GlobalConstants {
 	private final String resetButtonAtSearchFilterEN = "Reset";
 	private final String deleteButtonEN = "Delete";
 	
+	//Campaign Information English
+	private final String campaignLinkEN = "Campaign";
+	private final String campaignScreeningLinkEN = "Campaign screening";
+	private final String campaignListLinkEN = "Campaign List";
+	private final String newCampaignRegistrationEN = "New Campaign Registration";
+	private final String campaignRegisterTitleEN = "Campaign Register";
+
+	
 	//Language
 	private final String koreaLanguage = "한국어";
 	private final String taiwanLanguage = "繁體中文";
 	private final String englishLangguage = "English";
+	
+	//Country Name
+	private final String koreaCountry = "Korea";
+	private final String taiwanCountry = "Taiwan";
 
 	// Browser Stack
 	private final String browserUserName = "vodongpham_vbRLlM";

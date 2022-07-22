@@ -20,12 +20,12 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;
-import pageObjects.revu.Admin.AdminBrandManagementPageObject;
-import pageObjects.revu.Admin.AdminCreateBrandManagementPageObject;
 import pageObjects.revu.Admin.AdminDashBoardPageObject;
-import pageObjects.revu.Admin.AdminDetailBrandManagementPageObject;
 import pageObjects.revu.Admin.AdminHomePageObject;
 import pageObjects.revu.Advertiser.AdvertiserDashBoardPageObject;
+import pageObjects.revu.Manager.ManagerBrandManagementPageObject;
+import pageObjects.revu.Manager.ManagerCreateBrandManagementPageObject;
+import pageObjects.revu.Manager.ManagerDetailBrandManagementPageObject;
 import reportConfig.ExtentTestManager;
 
 public class Create_Edit_Login_Advertiser_Taiwan_Manager_Role extends BaseTest {
@@ -33,10 +33,10 @@ public class Create_Edit_Login_Advertiser_Taiwan_Manager_Role extends BaseTest {
 	WebDriver driver;
 	AdminDashBoardPageObject adminDashBoardPage;
 	AdminHomePageObject adminHomePage;
-	AdminBrandManagementPageObject adminBrandManagementPage;
+	ManagerBrandManagementPageObject adminBrandManagementPage;
 	AdvertiserDashBoardPageObject advertiserDashBoardPage;
-	AdminDetailBrandManagementPageObject adminDetailBrandPage;
-	AdminCreateBrandManagementPageObject adminCreateNewBrandPage;
+	ManagerDetailBrandManagementPageObject adminDetailBrandPage;
+	ManagerCreateBrandManagementPageObject adminCreateNewBrandPage;
 	String partnerEmailAddress, getCurrentUrl, getCurrentPageID, representativeName, getCurrentUrlAfterRefesh;
 	String imageAvatart = "Avatar.jpg";
 	String brandName;
@@ -65,10 +65,10 @@ public class Create_Edit_Login_Advertiser_Taiwan_Manager_Role extends BaseTest {
 		adminHomePage.openCountryList();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Select Country");
-		adminHomePage.hoverCountryName("Taiwan");
+		adminHomePage.hoverCountryName(GlobalConstants.getGlobalConstants().getTaiwanCountry());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Select language");
-		adminHomePage.selectLanguage("繁體中文");
+		adminHomePage.selectLanguage(GlobalConstants.getGlobalConstants().getTaiwanLanguage());
 
 		ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Open Login Form");
 		adminHomePage.openLoginPopup();

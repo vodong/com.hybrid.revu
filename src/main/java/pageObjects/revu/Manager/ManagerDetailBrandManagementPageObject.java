@@ -1,26 +1,26 @@
-package pageObjects.revu.Admin;
+package pageObjects.revu.Manager;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.revu.admin.AdminDetailBrandPageUI;
+import pageUIs.revu.admin.ManagerDetailBrandPageUI;
 import pageUIs.revu.admin.BasePageUI;
 
-public class AdminDetailBrandManagementPageObject extends BasePage {
+public class ManagerDetailBrandManagementPageObject extends BasePage {
 	private WebDriver driver;
 
-	public AdminDetailBrandManagementPageObject(WebDriver driver) {
+	public ManagerDetailBrandManagementPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public void clickToSeeBrandPageButton() {
-		waitForElementClickable(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
-		clickToElement(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
+		waitForElementClickable(driver, ManagerDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
+		clickToElement(driver, ManagerDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
 	}
 
 	public String getSeeBrandTextButton() {
-		waitForElementVisible(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
-		return getElementText(driver, AdminDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
+		waitForElementVisible(driver, ManagerDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
+		return getElementText(driver, ManagerDetailBrandPageUI.SEE_BRAND_PAGE_BUTTON);
 	}
 
 	public void enterToEmailTextBox(String emailaddress) {
@@ -58,8 +58,8 @@ public class AdminDetailBrandManagementPageObject extends BasePage {
 	}
 
 	public String getErrorMessageAtEmailTextBox() {
-		waitForElementVisible(driver, AdminDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
-		return getElementText(driver, AdminDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
+		waitForElementVisible(driver, ManagerDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
+		return getElementText(driver, ManagerDetailBrandPageUI.ERROR_MESSAGE_AT_EMAIl_TEXTBOX);
 	}
 
 	public void clickOnLogOutButton() {

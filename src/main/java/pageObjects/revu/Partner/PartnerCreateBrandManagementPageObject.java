@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import commons.GlobalConstants;
 import pageUIs.revu.Partner.PartnerCreateBrandManagementPageUI;
-import pageUIs.revu.admin.AdminCreateBrandPageUI;
+import pageUIs.revu.admin.ManagerCreateBrandPageUI;
 
 public class PartnerCreateBrandManagementPageObject extends BasePage{
 	private WebDriver driver;
@@ -72,7 +72,7 @@ public class PartnerCreateBrandManagementPageObject extends BasePage{
 
 	public void selectField(String textValue) {
 		waitForElementVisible(driver, PartnerCreateBrandManagementPageUI.FIELD_DROPDOWN_LIST);
-		selectitemindropdownlist(driver, PartnerCreateBrandManagementPageUI.FIELD_DROPDOWN_LIST, AdminCreateBrandPageUI.FIELD_DROPDOWN_LIST_OPTION, textValue);
+		selectitemindropdownlist(driver, PartnerCreateBrandManagementPageUI.FIELD_DROPDOWN_LIST, ManagerCreateBrandPageUI.FIELD_DROPDOWN_LIST_OPTION, textValue);
 	}
 
 	public void clickToPasswordSettingButton(String textValue) {
@@ -139,7 +139,7 @@ public class PartnerCreateBrandManagementPageObject extends BasePage{
 
 	public void selectPartnerByName(String textValue) {
 		waitForElementVisible(driver, PartnerCreateBrandManagementPageUI.PARTNER_TEXTBOX);
-		selectitemindropdownlist(driver, PartnerCreateBrandManagementPageUI.PARTNER_TEXTBOX, AdminCreateBrandPageUI.PARTNER_DROPDOWN_LIST, textValue);
+		selectitemindropdownlist(driver, PartnerCreateBrandManagementPageUI.PARTNER_TEXTBOX, ManagerCreateBrandPageUI.PARTNER_DROPDOWN_LIST, textValue);
 		sleepInSecond(shorttime);
 	}
 

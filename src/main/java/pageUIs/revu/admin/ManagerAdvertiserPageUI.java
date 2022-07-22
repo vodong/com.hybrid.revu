@@ -1,7 +1,7 @@
 package pageUIs.revu.admin;
 
 
-public class AdminAdvertiserPageUI {
+public class ManagerAdvertiserPageUI {
 	public static final String SEARCH_FILTER_AREA = "XPATH=//div/label[text()='%s']/parent::div//input[@placeholder='%s']";
 	public static final String SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST = "XPATH=//div//label[text()='%s']/parent::div//select-custome//span[contains(.,'%s')]";
 //	public static final String SEARCH_FILTER_AREA_FIELD_DROPDOWN_LIST = "XPATH=//select/option[contains(text(),'%s')]/ancestor::div[@class='row']//label[text()='%s']";

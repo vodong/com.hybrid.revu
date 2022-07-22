@@ -1,93 +1,23 @@
-1658374979240	geckodriver	INFO	Listening on 127.0.0.1:29694
-1658374979274	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileZBBS9m"
-1658374979512	Marionette	INFO	Marionette enabled
-1658374979515	Marionette	INFO	Listening on port 55322
-Read port: 55322
-1658374979775	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileZBBS9m\\search.json.mozlz4", (void 0)))
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
+1658482324220	geckodriver	INFO	Listening on 127.0.0.1:22752
+1658482324459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileEAJtLr"
+1658482324698	Marionette	INFO	Marionette enabled
+1658482324702	Marionette	INFO	Listening on port 61446
+Read port: 61446
+1658482324955	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileEAJtLr\\search.json.mozlz4", (void 0)))
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 165465: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 171512: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658461955974, line 121269: unreachable code after return statement
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronousJa message for:" "htvaScript tps:/error/admin.test.ent.revu.net"
-: resource://gre/modules/LoginManagerParent.jsm, line 136: Typeconsole.warn: LoginReErcipror: gRecipees: "geManagtRecier ispes: falling back to a synchronous n message for:ull
-" "httpJavaScrisp://adt errmin.test.eornt.revu.:net"
- resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.entJavaScript er.revu.net"
+ror: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 165465: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 171512: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658461955974, line 121269: unreachable code after return statement
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://adminJavaS.testcript.ent.revu.net" error
-: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.reJavuvaScript error: resource://gre/.net"
-modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://JavaScript error: resoadmin.testurc.ee://gre/modules/LoginMannt.revu.neagerParentt".jsm, line 136: TypeError:
- gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658371554627, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous mesJavaScript error: resage for:" "htsource://gre/mtps://odules/LadoginMmin.test.eanagent.revu.nerParent.jsm, line 136t"
-: TypeErrorco: gRecipeManager is nnsull
-ole.warn: LoginRecipes: "getRecipes: fallingJavaScr back to a synchript eonous messrror:age for:"  resource://gre/modules/LoginMana"httgerParent.jsm, line 1ps://admin.tes36: TypeError: gRecipeManager is nullt.ent.revu
-.net"
-console.warn: LoginRecipes: "getRecipes: falling back to aJavaScript error: resource synchron://gre/modules/LoginManagerPareous message fornt:" "https:.j//sm, line 1admin36: T.test.ent.revu.netypeErr"
-or: gRecipconsole.weManager arnis: LoginRecipe null
-s: "getRecipes:JavaScript erro falling back tr: resource:/o a synch/gre/modules/LoginManagerronoParent.jsmus message fo, liner:" "https://a 136: TypeErrodmin.test.r: gRent.revuecipeManager i.ns null
-et"
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658371554627, line 171512: unreachable code after return statement
-1658375301913	Marionette	INFO	Stopped listening on port 55322
-[Parent 9424, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1658482366941	Marionette	INFO	Stopped listening on port 61446
