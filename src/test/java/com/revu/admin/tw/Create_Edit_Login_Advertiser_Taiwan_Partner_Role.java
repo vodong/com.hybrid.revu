@@ -28,7 +28,7 @@ import pageObjects.revu.Partner.PartnerCreateBrandManagementPageObject;
 import pageObjects.revu.Partner.PartnerDetailBrandManagementPageObject;
 import reportConfig.ExtentTestManager;
 
-public class Create_Advertiser_Taiwan_Partner_Role extends BaseTest {
+public class Create_Edit_Login_Advertiser_Taiwan_Partner_Role extends BaseTest {
 
 	WebDriver driver;
 	AdminDashBoardPageObject adminDashBoardPage;

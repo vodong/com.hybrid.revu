@@ -17,8 +17,8 @@
 		<!--<parameter name="osName" value="Windows" />-->
 		<!--<parameter name="osVersion" value="10" />-->
 		<classes>
-			<class name="com.revu.admin.kr.Create_Advertiser_Korea_Manager_Role"/>
-			<class name="com.revu.admin.kr.Create_Advertiser_Korea_Partner_Role"/>
+			<class name="com.revu.admin.kr.Create_Edit_Login_Advertiser_Korea_Manager_Role"/>
+			<class name="com.revu.admin.kr.Create_Edit_Login_Advertiser_Korea_Partner_Role"/>
 		</classes>
 	  </test>
 
@@ -29,8 +29,8 @@
 		<!--<parameter name="osName" value="Windows" />-->
 		<!--<parameter name="osVersion" value="10" />-->
 		<classes>
-			<class name="com.revu.admin.tw.Create_Advertiser_Taiwan_Manager_Role"/>
-			<class name="com.revu.admin.tw.Create_Advertiser_Taiwan_Partner_Role"/>
+			<class name="com.revu.admin.tw.Create_Edit_Login_Advertiser_Taiwan_Manager_Role"/>
+			<class name="com.revu.admin.tw.Create_Edit_Login_Advertiser_Taiwan_Partner_Role"/>
 		</classes>
 	  </test>
 </suite> <!-- Suite -->
