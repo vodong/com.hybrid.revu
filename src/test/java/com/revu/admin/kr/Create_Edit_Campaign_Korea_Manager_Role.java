@@ -16,6 +16,7 @@ import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
 import commons.GlobalConstants;
+import commons.GlobalConstantsCreateCampaign;
 import commons.PageGeneratorManager;
 import environmentConfig.Environment;
 import pageObjects.revu.Admin.AdminDashBoardPageObject;
@@ -86,20 +87,20 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		adminDashBoardPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getEnglishLangguage());
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 02: Click On Campaign Link");
-		adminDashBoardPage.clickOnByMenuNameLink(driver, GlobalConstants.getGlobalConstants().getCampaignLinkEN());
+		adminDashBoardPage.clickOnByMenuNameLink(driver, GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignLinkEN());
 	}
 	
 	@Test
 	public void Manage_Role_KR_TC_04_Check_Campaign_Menu_Translate_To_English(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Check Translate To English Campaign Menu");		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 01: Verify Campaign Screening Link Is Displayed");
-		assertTrue(adminDashBoardPage.isCampaignScreeningLinkIsDisplayed(GlobalConstants.getGlobalConstants().getCampaignScreeningLinkEN()));
+		assertTrue(adminDashBoardPage.isCampaignScreeningLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignScreeningLinkEN()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 02: Verify Campaign List Link Is Displayed");
-		assertTrue(adminDashBoardPage.isCampaignListLinkIsDisplayed(GlobalConstants.getGlobalConstants().getCampaignListLinkEN()));
+		assertTrue(adminDashBoardPage.isCampaignListLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignListLinkEN()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 03: Verify New Campaign Registration Link Is Displayed");
-		assertTrue(adminDashBoardPage.isNewCampaignRegistrationLinkIsDisplayed(GlobalConstants.getGlobalConstants().getNewCampaignRegistrationEN()));
+		assertTrue(adminDashBoardPage.isNewCampaignRegistrationLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getNewCampaignRegistrationEN()));
 	}
 	
 	@Test
@@ -109,24 +110,24 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		adminDashBoardPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getKoreaLanguage());
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 02: Verify Campaign Screening Link Is Displayed");
-		assertTrue(adminDashBoardPage.isCampaignScreeningLinkIsDisplayed(GlobalConstants.getGlobalConstants().getCampaignScreeningLinkKR()));
+		assertTrue(adminDashBoardPage.isCampaignScreeningLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignScreeningLinkKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 03: Verify Campaign List Link Is Displayed");
-		assertTrue(adminDashBoardPage.isCampaignListLinkIsDisplayed(GlobalConstants.getGlobalConstants().getCampaignListLinkKR()));
+		assertTrue(adminDashBoardPage.isCampaignListLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignListLinkKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 04: Verify New Campaign Registration Link Is Displayed");
-		assertTrue(adminDashBoardPage.isNewCampaignRegistrationLinkIsDisplayed(GlobalConstants.getGlobalConstants().getNewCampaignRegistrationKR()));
+		assertTrue(adminDashBoardPage.isNewCampaignRegistrationLinkIsDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getNewCampaignRegistrationKR()));
 	}
 	
 	@Test
 	public void Manage_Role_KR_TC_06_Open_New_Campaign_Registration_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Open New Campaign Registration Page");	
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 01: Click On New Campaign Registration Link");
-		adminDashBoardPage.clickOnNewCampaignRegistrationLink(GlobalConstants.getGlobalConstants().getCampaignRegisterTitleKR());
+		adminDashBoardPage.clickOnNewCampaignRegistrationLink(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignRegisterTitleKR());
 		managerCreateCampaignPage = PageGeneratorManager.getManagerCreateCampaignPage(driver);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 02: Verify Open Campaign Registration Successfully");
-		assertEquals(managerCreateCampaignPage.getTitleCampaignRegistratior(driver), GlobalConstants.getGlobalConstants().getCampaignRegisterTitleKR());
+		assertEquals(managerCreateCampaignPage.getTitleCampaignRegistratior(driver), GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignRegisterTitleKR());
 	}
 
 	@Test
@@ -136,7 +137,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		managerCreateCampaignPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getKoreaLanguage());
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 02: Verify Advertiser Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getAdvertiserAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getAdvertiserAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 03: Verify Partner Textbox Area");
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
@@ -148,7 +149,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 06: Verify Scope Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getScopeAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getScopeAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 07: Verify Channel Label And Revu Select Radio Button");
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
@@ -163,7 +164,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 11: Verify Influencer Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getInfluencerAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getInfluencerAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 12: Verify SNS Lable And Instagram Radio Button");
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
@@ -178,7 +179,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 15: Verify Product and Point Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getProductPointAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getProductPointAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 16: Verify Type Lable And Product Radio Button");
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
@@ -220,7 +221,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isCheckboxDisplayed("", ""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 28: Verify Campaign Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getCampaignAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCampaignAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 29: Verify Campaign Name Textbox Area");
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
@@ -247,7 +248,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 37: Verify Content Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getContentAreaTitleKR()));
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getContentAreaTitleKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 38: Verify Content missions TextBox Area And Place Holder");
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
@@ -331,7 +332,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 65: Verify Schedule Title");
-		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getScheduleAreaTitleKR()));	
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getScheduleAreaTitleKR()));	
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 66: Verify Draft review Lable And Review Radio Button");
 		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
@@ -367,13 +368,13 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 09: Verify Temporary Save Button");
-		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstants.getGlobalConstants().getTemprorarySaveButtonKR()));
+		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getTemprorarySaveButtonKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 10: Verify Create Button");
-		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstants.getGlobalConstants().getCreateButtonKR()));
+		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getCreateButtonKR()));
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 10: Verify Preview Button");
-		assertTrue(managerCreateCampaignPage.isPreviewButtonDisplayed(GlobalConstants.getGlobalConstants().getPreviewButtonKR()));
+		assertTrue(managerCreateCampaignPage.isPreviewButtonDisplayed(GlobalConstantsCreateCampaign.getGlobalConstantsCreateCampaign().getPreviewButtonKR()));
 	}
 
 	@Parameters({ "browser"})
