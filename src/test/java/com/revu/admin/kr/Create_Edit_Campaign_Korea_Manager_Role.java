@@ -117,7 +117,7 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Admin Page - Step 04: Verify New Campaign Registration Link Is Displayed");
 		assertTrue(adminDashBoardPage.isNewCampaignRegistrationLinkIsDisplayed(GlobalConstants.getGlobalConstants().getNewCampaignRegistrationKR()));
 	}
-
+	
 	@Test
 	public void Manage_Role_KR_TC_06_Open_New_Campaign_Registration_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Open New Campaign Registration Page");	
@@ -129,10 +129,257 @@ public class Create_Edit_Campaign_Korea_Manager_Role extends BaseTest {
 		assertEquals(managerCreateCampaignPage.getTitleCampaignRegistratior(driver), GlobalConstants.getGlobalConstants().getCampaignRegisterTitleKR());
 	}
 
+	@Test
+	public void Manage_Role_KR_TC_07_Check_Translate_To_Korea_New_Campaign_Page(Method method) {
+		ExtentTestManager.startTest(method.getName(), "Check Translate To Korea Language");	
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 01: Select Korea Country");
+		managerCreateCampaignPage.openSelectLanguageList(driver, GlobalConstants.getGlobalConstants().getKoreaLanguage());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 02: Verify Advertiser Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getAdvertiserAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 03: Verify Partner Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 04: Verify Advertiser(Brand) Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 05: Verify Sales rep Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 06: Verify Scope Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getScopeAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 07: Verify Channel Label And Revu Select Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 08: Verify Recruitment range Lable And Public Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 09: Verify Recruitment range Lable And Pro only Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 10: Verify Recruitment range Lable And Private Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 11: Verify Influencer Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getInfluencerAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 12: Verify SNS Lable And Instagram Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 13: Verify SNS Lable And Youtube Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 13: Verify Number of influencers Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 14: Verify Number of contents (per influencer) Lable And Post Number Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 15: Verify Product and Point Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getProductPointAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 16: Verify Type Lable And Product Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 17: Verify Type Lable And Place Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 18: Verify Product 1 Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 19: Verify Add Button Is Displayed");
+		assertTrue(managerCreateCampaignPage.isAddButtonDisplayed(""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 20: Verify Set options Lable And Set Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 21: Verify Set options Lable And Not Set Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 22: Verify Option information Textbox Area And Option Name Place Holder");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+				
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 23: Verify Option information Textbox Area And Enter option value Place Holder");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 24: Verify Add Button Is Displayed");
+		assertTrue(managerCreateCampaignPage.isPlusButtonDisplayed(""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 25: Verify Product price Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 25: Verify Product descriptions Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 26: Verify Point amount Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 27: Verify No points provided Checkbox Is Displayed");
+		assertTrue(managerCreateCampaignPage.isCheckboxDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 28: Verify Campaign Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getCampaignAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 29: Verify Campaign Name Textbox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 30: Verify Main thumbnail Area And Upload Button Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadAreaDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 31: Verify Main thumbnail Area And Caution Text Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadCautionTextDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 32: Verify Detail thumbnails Area And Caution Text Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadAreaDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 33: Verify Detail thumbnail Area And Caution Text Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadCautionTextDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 34: Verify Video URL(Youtube) TextBox Area And Place Holder");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 35: Verify Campaign guideline TextBox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 36: Verify Campaign caution TextBox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 37: Verify Content Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getContentAreaTitleKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 38: Verify Content missions TextBox Area And Place Holder");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 39: Verify Detail guideline Area And Upload Button Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadAreaDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 40: Verify Detail guideline Area And Caution Text Are Displayed");
+		assertTrue(managerCreateCampaignPage.isUploadCautionTextDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 41: Verify Required hashtags TextBox Area And Place Holder");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 42: Verify Required hashtags TextBox Area And Add hastags button are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndButtonDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 43: Verify Required hashtags TextBox Area And Apply individual hashtags are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndCheckBoxDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 44: Verify Optional hashtags TextBox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 45: Verify Optional hashtags TextBox Area And Add hastags button are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndButtonDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 46: Verify Person tags TextBox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 47: Verify Person tags TextBox Area And Add hastags button are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndButtonDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 48: Verify Receive information Area And Phone number Checkbox are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndCheckboxDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 49: Verify Receive information Area And Shipping Information Checkbox are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndCheckboxDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 50: Verify Receive information Area And Bank Account Checkbox are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndCheckboxDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 51: Verify Survey 1 TextBox Area");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 52: Verify Survey 1 TextBox Area And Add surver button are Displayed");
+		assertTrue(managerCreateCampaignPage.isLabelAndButtonDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 53: Verify Use of Content Lable And Use Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 54: Verify Use of Content Lable And Nonuse Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 55: Verify Boundaries Lable And Common license Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 56: Verify Boundaries Lable And Commercial license Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 57: Verify License Column Is Displayed In Boundaries Table");
+		assertTrue(managerCreateCampaignPage.isColumNameDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 58: Verify Boundaries Column Is Displayed In Boundaries Table");
+		assertTrue(managerCreateCampaignPage.isColumNameDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 59: Verify Content At Common license Row");
+		assertTrue(managerCreateCampaignPage.isContentAtRowDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 60: Verify Content At Commercial license Row");
+		assertTrue(managerCreateCampaignPage.isContentAtRowDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 61: Verify Periods Lable And 1 month Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 62: Verify Periods Lable And 3 months Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 63: Verify Periods Lable And 6 months Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 64: Verify Periods Lable And 12 months Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 65: Verify Schedule Title");
+		assertTrue(managerCreateCampaignPage.isTitleAreaDisplayed(GlobalConstants.getGlobalConstants().getScheduleAreaTitleKR()));	
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 66: Verify Draft review Lable And Review Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 67: Verify Draft review Lable And Not Review Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 68: Verify Draft Reviewer Lable And Partner Radio Button");
+		assertTrue(managerCreateCampaignPage.isLabelAndRadioButtonDisplayed("", ""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 69: Verify Application TextBox Area And Start Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 70: Verify Application TextBox Area And End Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 71: Verify Selection TextBox Area And Start Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 72: Verify Selection TextBox Area And End Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 73: Verify Draft submit TextBox Area And Start Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 74: Verify Draft submit TextBox Area And End Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 75: Verify Content post TextBox Area And Start Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 76: Verify Content post TextBox Area And End Date Datepicker");
+		assertTrue(managerCreateCampaignPage.isLabelAndPlaceHolderDisplayed("",""));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 09: Verify Temporary Save Button");
+		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstants.getGlobalConstants().getTemprorarySaveButtonKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 10: Verify Create Button");
+		assertTrue(managerCreateCampaignPage.isTemporarySaveCreateButtonDisplayed(GlobalConstants.getGlobalConstants().getCreateButtonKR()));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Campaign Registration Page - Step 10: Verify Preview Button");
+		assertTrue(managerCreateCampaignPage.isPreviewButtonDisplayed(GlobalConstants.getGlobalConstants().getPreviewButtonKR()));
+	}
+
 	@Parameters({ "browser"})
 	@AfterClass(alwaysRun = true)
 	public void afterClass(String browserName) {
-		ExtentTestManager.getTest().log(Status.INFO, "Close broser '" + browserName + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Close browser '" + browserName + "'");
 		closeBrowserAndDriver();
 	}
 }

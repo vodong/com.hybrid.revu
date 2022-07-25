@@ -1,23 +1,32 @@
-1658482324220	geckodriver	INFO	Listening on 127.0.0.1:22752
-1658482324459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileEAJtLr"
-1658482324698	Marionette	INFO	Marionette enabled
-1658482324702	Marionette	INFO	Listening on port 61446
-Read port: 61446
-1658482324955	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileEAJtLr\\search.json.mozlz4", (void 0)))
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658461955974, line 121269: unreachable code after return statement
+1658720708666	geckodriver	INFO	Listening on 127.0.0.1:44378
+1658720709158	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofilekOe5u9"
+2022-07-25 10:45:09.773 plugin-container[6610:115332] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 10:45:09.774 plugin-container[6610:115332] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658720709811	Marionette	INFO	Marionette enabled
+2022-07-25 10:45:09.842 plugin-container[6610:115332] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 10:45:09.842 plugin-container[6610:115332] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 10:45:09.842 plugin-container[6610:115358] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 10:45:09.842 plugin-container[6610:115358] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658720709968	Marionette	INFO	Listening on port 50985
+Read port: 50985
+1658720710110	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/gm/wt6pjgb90bv7ssp159j49b_h0000gn/T/rust_mozprofilekOe5u9/search.json.mozlz4", (void 0)))
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658718984179, line 165465: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658718984179, line 171512: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658718984179, line 121272: unreachable code after return statement
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
+JavaScrconisole.wptar nerror: res: LoginRecipes: "getRecipes: fallinource://grg e/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: resourcback to a synchronous messe://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gReage for:" "https://admin.testcipeManager is null
+.ent.revu.net"
+2022-07-25 03:45:38.107 plugin-container[6663:116445] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 03:45:38.107 plugin-container[6663:116445] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 03:45:38.110 plugin-container[6663:116445] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 03:45:38.110 plugin-container[6663:116445] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-25 03:45:38.110 plugin-container[6663:116457] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-25 03:45:38.110 plugin-container[6663:116457] nil host used in call to allowsAnyHTTPSCertificateForHost:
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658718984179, line 165465: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658718984179, line 171512: unreachable code after return statement
+JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658718984179, line 121272: unreachable code after return statement
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.entJavaScript er.revu.net"
-ror: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 165465: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/vendor.ent.min.js?1658461955974, line 171512: unreachable code after return statement
-JavaScript warning: https://d13zo8jzfzdg6k.cloudfront.net/ent/testing/static/dist/admin.ent.min.js?1658461955974, line 121269: unreachable code after return statement
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://admin.test.ent.revu.net"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
-JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
-1658482366941	Marionette	INFO	Stopped listening on port 61446

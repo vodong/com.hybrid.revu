@@ -49,11 +49,6 @@ public class Create_Edit_Login_Advertiser_Korea_Manager_Role extends BaseTest {
 			@Optional("chrome") String browserName, @Optional("Windows") String osName,
 			@Optional("10") String osVersion, @Optional("localhost") String ipAddress,
 			@Optional("4444") String portNumber) {
-		// Maven
-//		String environmentName = System.getProperty("envMaven");
-//		ConfigFactory.setProperty("envOwner", environmentName);
-//		environment = ConfigFactory.create(Environment.class);
-//		driver = getBrowserDriver(browserName, environment.appUrl());
 
 		driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 
@@ -971,7 +966,7 @@ public class Create_Edit_Login_Advertiser_Korea_Manager_Role extends BaseTest {
 	@Parameters({ "browser"})
 	@AfterClass(alwaysRun = true)
 	public void afterClass(String browserName) {
-		ExtentTestManager.getTest().log(Status.INFO, "Close broser '" + browserName + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Close browser '" + browserName + "'");
 		closeBrowserAndDriver();
 	}
 }

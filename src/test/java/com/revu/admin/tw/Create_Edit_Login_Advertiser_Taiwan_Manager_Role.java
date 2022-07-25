@@ -991,7 +991,7 @@ public class Create_Edit_Login_Advertiser_Taiwan_Manager_Role extends BaseTest {
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true)
 	public void afterClass(String browserName) {
-		ExtentTestManager.getTest().log(Status.INFO, "Close broser '" + browserName + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Close browser '" + browserName + "'");
 		closeBrowserAndDriver();
 	}
 }
